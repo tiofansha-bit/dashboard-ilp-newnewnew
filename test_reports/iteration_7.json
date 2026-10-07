@@ -1,0 +1,28 @@
+{
+  "summary": "Iteration 7: tested flexible Top-N controls on admin Dashboard (Ringkasan & Grafik + Hasil Jawaban & Kesimpulan) and kader beranda regression. Backend: 3/3 pytest cases pass (test_iteration7_flex_topn.py) — GET /api/dashboard/jawaban returns 28 items in kesimpulan_utama (>10) each with 'group' field; GET /api/dashboard/charts top_masalah returns 36 items (<=50, >10); GET /api/kader/beranda for kader11 returns total_keluarga=14 and sudah_dikunjungi<=14 (regression fix verified). Frontend (admin/admin123): Top-masalah chart default='10' with title '10 Masalah Terbanyak'; selecting Top 20 → title '20 Masalah Terbanyak', bar count rose 60→70; selecting 'Semua' → title 'Semua Masalah', 74 bars, chart height grows; value persists in localStorage across reload (verified '0'/Semua retained). Jawaban tab: kesimpulan-top-select Top 5 → exactly 5 kesimpulan-item-* rendered, title '5 Masalah Kesehatan Utama', text 'Menampilkan 5 dari 28'; group=dewasa (with min=1,top=Semua) → 6 items all labelled 'Usia Dewasa'; prio=merah → only rose-styled items rendered; sort=jumlah works (28 items); settings (top=15, sort=jumlah) persist after reload. All 5 group/prio/sort/min/top selectors functional and persisted via localStorage keys dash_top_masalah, kesimpulan_top, kesimpulan_group, kesimpulan_prio, kesimpulan_sort, kesimpulan_min.",
+  "backend_issues": {"critical": [], "minor": []},
+  "frontend_issues": {
+    "ui_bugs": [],
+    "integration_issues": [],
+    "design_issues": []
+  },
+  "test_report_links": [
+    "/app/backend/tests/test_iteration7_flex_topn.py",
+    "/app/test_reports/pytest/iter7.xml"
+  ],
+  "action_items": [],
+  "critical_code_review_comments": [
+    "TopSelect/usePref implementation is clean and reusable; localStorage keys are namespaced ('dash_top_masalah', 'kesimpulan_*') — good separation.",
+    "KesimpulanUtama sort 'bahaya' comparator uses (a==b)?x:y pattern which is slightly non-standard but correct — groups merah-first then by persen desc.",
+    "Chart height formula max(256, N*24) grows nicely with topN=Semua (74*24=1776px) — acceptable; no overflow observed.",
+    "Dev-mode console shows 'span cannot be a child of option' hydration warnings — this originates from the visual-editor instrumentation (x-ve-dynamic span injected into <option>), not from app code. Harmless in production build but may want to suppress in dev."
+  ],
+  "updated_files": ["/app/backend/tests/test_iteration7_flex_topn.py (new, 3 tests)"],
+  "success_rate": {"backend": "100% (3/3)", "frontend": "100% all flex Top-N flows"},
+  "test_credentials": "admin/admin123, kader11/kader123",
+  "seed_data_creation": "None — no DB writes.",
+  "retest_needed": false,
+  "main_agent_can_self_test": true,
+  "context_for_next_testing_agent": "Flex Top-N controls fully working. Backend: /api/dashboard/jawaban kesimpulan_utama has 28 items with 'group' field; /api/dashboard/charts top_masalah has 36 items (cap=50). Frontend testids: top-masalah-select (dashboard chart card), kesimpulan-top-select / kesimpulan-group-select / kesimpulan-prio-select / kesimpulan-sort-select / kesimpulan-min-select, items kesimpulan-item-0..N. localStorage keys: dash_top_masalah, kesimpulan_top, kesimpulan_group, kesimpulan_prio, kesimpulan_sort, kesimpulan_min. Note Top option value 0 = 'Semua'.",
+  "rca of the issue": "N/A — all features behave to spec."
+}

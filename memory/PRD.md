@@ -68,3 +68,8 @@ users 31 · wilayah 4 · posyandu 6 · master_questions 135 · keluarga 56 · an
 - GET /api/dashboard/jawaban: rekap jawaban kunjungan terakhir per sasaran per pertanyaan (Ya/Tidak/Sudah/Belum/opsi, angka rata2/min/maks, pemeriksaan Sudah/Belum, imunisasi Lengkap/Belum), % bermasalah, kalimat kesimpulan, top-10 "Kesimpulan Utama". Pertanyaan bersyarat (Jika HT/DM/TBC, Khusus remaja putri, Khusus ≥15 th) hanya dihitung utk sasaran yg memenuhi syarat.
 - GET /api/dashboard/insights: prioritas kunjungan, keluarga sudah/belum dikunjungi per kelurahan, kasus per kelurahan (merah/kuning/selesai), kasus per kelompok, kunjungan per posyandu, top 10 kader.
 - Frontend Dashboard: tab "Ringkasan & Grafik" (+6 grafik baru) & "Hasil Jawaban & Kesimpulan" (JawabanSummary.js, DashboardInsights.js).
+
+## Top-N masalah fleksibel (2026-06)
+- Grafik "N Masalah Terbanyak": pilihan Top 5/10/15/20/30/Semua (tersimpan di localStorage).
+- "Masalah Kesehatan Utama": filter jumlah, kelompok, prioritas, urutan (tanda bahaya/%/jumlah), min. responden. Backend kirim semua item.
+- Fix: beranda kader sudah_dikunjungi hanya dihitung dari keluarga miliknya.
