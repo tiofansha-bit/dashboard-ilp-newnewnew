@@ -379,9 +379,22 @@ async def groups(user=Depends(get_current_user)):
 def region_filter(user):
     if user["role"] == "admin":
         return {}
-    # kader melihat keluarga di wilayahnya ATAU yang ditujukan langsung ke dirinya
-    return {"$or": [{"kelurahan": {"$in": user.get("wilayah", [])}},
-                    {"kader_id": user["id"]}]}
+    # kader hanya melihat keluarga yang ia input sendiri ATAU yang ditujukan ke dirinya
+    return {"$or": [{"kader_id": user["id"]},
+                    {"created_by": user["id"], "kader_id": {"$in": [None, ""]}}]}
+
+def owns_keluarga(user, k):
+    if user["role"] == "admin":
+        return True
+    if k.get("kader_id"):
+        return k["kader_id"] == user["id"]
+    return k.get("created_by") == user["id"]
+
+async def get_owned_keluarga(kid, user):
+    k = await db.keluarga.find_one({"id": kid, "deleted": {"$ne": True}}, {"_id": 0})
+    if not k or not owns_keluarga(user, k):
+        raise HTTPException(404, "Keluarga tidak ditemukan")
+    return k
 
 @api.get("/keluarga")
 async def list_keluarga(search: str = "", kelurahan: str = "", page: int = 1, limit: int = 50, user=Depends(get_current_user)):
@@ -424,9 +437,7 @@ async def dup_check(nama: str = "", user=Depends(get_current_user)):
 
 @api.get("/keluarga/{kid}")
 async def get_keluarga(kid: str, user=Depends(get_current_user)):
-    k = await db.keluarga.find_one({"id": kid}, {"_id": 0})
-    if not k:
-        raise HTTPException(404, "Keluarga tidak ditemukan")
+    k = await get_owned_keluarga(kid, user)
     anggota = await db.anggota.find({"keluarga_id": kid, "deleted": {"$ne": True}}, {"_id": 0}).to_list(100)
     for a in anggota:
         a["umur"] = hitung_umur(a.get("tanggal_lahir"))
@@ -437,6 +448,7 @@ async def get_keluarga(kid: str, user=Depends(get_current_user)):
 
 @api.put("/keluarga/{kid}")
 async def update_keluarga(kid: str, body: KeluargaIn, user=Depends(get_current_user)):
+    await get_owned_keluarga(kid, user)
     doc = body.dict(); doc["data_lengkap"] = bool(body.nama_kk)
     await db.keluarga.update_one({"id": kid}, {"$set": doc})
     await audit(user, "update", "keluarga", kid, body.nama_kk)
@@ -447,8 +459,8 @@ async def delete_keluarga(kid: str, user=Depends(get_current_user)):
     k = await db.keluarga.find_one({"id": kid})
     if not k or k.get("deleted"):
         raise HTTPException(404, "Keluarga tidak ditemukan")
-    if user["role"] == "kader" and k.get("kelurahan") not in user.get("wilayah", []):
-        raise HTTPException(403, "Keluarga di luar wilayah tugas Anda")
+    if not owns_keluarga(user, k):
+        raise HTTPException(404, "Keluarga tidak ditemukan")
     await db.keluarga.update_one({"id": kid}, {"$set": {"deleted": True, "deleted_at": iso(), "deleted_by": user["nama"]}})
     await db.anggota.update_many({"keluarga_id": kid}, {"$set": {"deleted": True}})
     await audit(user, "delete", "keluarga", kid, k.get("nama_kk", ""))
@@ -456,6 +468,7 @@ async def delete_keluarga(kid: str, user=Depends(get_current_user)):
 
 @api.post("/anggota")
 async def add_anggota(body: AnggotaIn, user=Depends(get_current_user)):
+    await get_owned_keluarga(body.keluarga_id, user)
     if body.nik and len(body.nik) != 16:
         pass  # allowed for draft, flagged below
     doc = body.dict()
@@ -470,6 +483,10 @@ async def add_anggota(body: AnggotaIn, user=Depends(get_current_user)):
 
 @api.put("/anggota/{aid}")
 async def update_anggota(aid: str, body: AnggotaIn, user=Depends(get_current_user)):
+    cur = await db.anggota.find_one({"id": aid}, {"keluarga_id": 1})
+    if not cur:
+        raise HTTPException(404, "Anggota tidak ditemukan")
+    await get_owned_keluarga(cur["keluarga_id"], user)
     doc = body.dict()
     doc["data_lengkap"] = bool(body.nik and len(body.nik) == 16 and body.tanggal_lahir)
     await db.anggota.update_one({"id": aid}, {"$set": doc})
@@ -505,9 +522,7 @@ async def evaluate_answers(anggota, answers):
 
 @api.post("/kunjungan")
 async def create_kunjungan(body: KunjunganIn, user=Depends(get_current_user)):
-    kel = await db.keluarga.find_one({"id": body.keluarga_id}, {"_id": 0})
-    if not kel:
-        raise HTTPException(404, "Keluarga tidak ditemukan")
+    kel = await get_owned_keluarga(body.keluarga_id, user)
     vid = new_id()
     all_temuan = []
     per_anggota = []
@@ -583,7 +598,7 @@ async def list_kunjungan(mine: bool = False, keluarga_id: str = "", status: str 
 @api.get("/kunjungan/{vid}")
 async def get_kunjungan(vid: str, user=Depends(get_current_user)):
     v = await db.kunjungan.find_one({"id": vid}, {"_id": 0})
-    if not v:
+    if not v or (user["role"] != "admin" and v.get("kader_id") != user["id"]):
         raise HTTPException(404, "Kunjungan tidak ditemukan")
     return v
 
@@ -591,7 +606,7 @@ async def get_kunjungan(vid: str, user=Depends(get_current_user)):
 @api.get("/kader/beranda")
 async def kader_beranda(user=Depends(get_current_user)):
     wil = user.get("wilayah", [])
-    total_kel = await db.keluarga.count_documents({"kelurahan": {"$in": wil}, "deleted": {"$ne": True}})
+    total_kel = await db.keluarga.count_documents({**region_filter(user), "deleted": {"$ne": True}})
     dikunjungi_ids = await db.kunjungan.distinct("keluarga_id", {"kader_id": user["id"], "status": "terkirim"})
     masalah = await db.kasus.count_documents({"kader_nama": user["nama"]})
     ditindak = await db.kasus.count_documents({"kader_nama": user["nama"], "status": {"$in": ["selesai", "dirujuk", "sudah_dikunjungi"]}})
@@ -695,6 +710,156 @@ async def dashboard_charts(start: str = "", end: str = "", kelurahan: str = "", 
     status_tl = [{"status": k, "jumlah": v} for k, v in stat.items()]
     return {"cakupan_kelurahan": cov, "distribusi_kelompok": dist, "top_masalah": top,
             "tren_bulanan": trend, "status_tindak_lanjut": status_tl}
+
+def visit_query(start, end, kelurahan):
+    q = {"status": {"$in": ["terkirim", "selesai"]}}
+    if kelurahan:
+        q["kelurahan"] = kelurahan
+    if start or end:
+        q["created_at"] = dt_range(start, end)
+    return q
+
+def pct(a, b):
+    return round(a * 100 / b, 1) if b else 0
+
+def summarize_question(q, values):
+    jenis, total = q.get("jenis"), len(values)
+    pw = q.get("problem_when") or []
+    out = {"kode": q["kode"], "text": q["text"], "jenis": jenis, "section": q.get("section"),
+           "priority": q.get("priority"), "responden": total, "problem_when": pw}
+    if jenis == "number":
+        nums = []
+        for v in values:
+            try:
+                nums.append(float(str(v).replace(",", ".")))
+            except ValueError:
+                pass
+        out.update(responden=len(nums), satuan=q.get("satuan"),
+                   rata2=round(sum(nums) / len(nums), 1) if nums else None,
+                   min=min(nums) if nums else None, max=max(nums) if nums else None)
+        out["kesimpulan"] = (f"Rata-rata {out['rata2']} {q.get('satuan') or ''} (min {out['min']:g}, maks {out['max']:g}) dari {len(nums)} sasaran."
+                             if nums else "Belum ada data.")
+        return out
+    cnt = Counter()
+    if jenis == "pemeriksaan":
+        for v in values:
+            cnt["Sudah" if isinstance(v, dict) and v.get("tanggal") else "Belum"] += 1
+        pw = ["Belum"]
+    elif jenis == "imunisasi":
+        for v in values:
+            given = [x for usia in (v or {}).values() if isinstance(usia, dict) for x in usia.values()]
+            cnt["Lengkap" if given and all(given) else "Belum lengkap"] += 1
+        pw = ["Belum lengkap"]
+    else:
+        for v in values:
+            for x in (v if isinstance(v, list) else [v]):
+                if x not in (None, ""):
+                    cnt[str(x)] += 1
+    opsi = q.get("opsi") or (["Ya", "Tidak"] if jenis in ("yesno", "danger") else [])
+    order = [o for o in opsi if o in cnt] + [k for k, _ in cnt.most_common() if k not in opsi]
+    out["jawaban"] = [{"label": k, "jumlah": cnt[k], "persen": pct(cnt[k], total), "masalah": k in pw} for k in order]
+    out["problem_when"] = pw
+    masalah = sum(cnt[k] for k in pw)
+    out["masalah"], out["persen_masalah"] = masalah, pct(masalah, total)
+    if not total:
+        out["kesimpulan"] = "Belum ada data."
+    elif pw:
+        label = " / ".join(k for k in pw if cnt[k]) or " / ".join(pw)
+        out["kesimpulan"] = (f"{out['persen_masalah']}% ({masalah} dari {total}) sasaran menjawab \"{label}\" \u2014 perlu tindak lanjut."
+                             if masalah else f"Seluruh {total} sasaran dalam kondisi baik (tidak ada jawaban \"{label}\").")
+    else:
+        parts = ", ".join(f"{k} {cnt[k]} ({pct(cnt[k], total)}%)" for k, _ in cnt.most_common(3))
+        out["kesimpulan"] = f"Dari {total} sasaran: {parts}."
+    return out
+
+def question_condition(kode):
+    """Returns (description, predicate(answers, anggota)) for conditional questions."""
+    pre = kode.split("_")[0]
+    if "_HT_OBAT" in kode:
+        return "hanya sasaran terdiagnosis hipertensi", lambda a, ang: a.get(f"{pre}_HT") == "Ya"
+    if "_DM_OBAT" in kode:
+        return "hanya sasaran terdiagnosis diabetes", lambda a, ang: a.get(f"{pre}_DM") == "Ya"
+    if kode.startswith("TBC_OBAT"):
+        return "hanya pasien terdiagnosis TBC", lambda a, ang: a.get("TBC_DIAG") == "Ya"
+    if kode in ("REMAJA_TTD", "REMAJA_ANEMIA"):
+        return "hanya remaja putri", lambda a, ang: ang.get("jenis_kelamin") == "P"
+    if kode in ("REMAJA_TD", "REMAJA_GD"):
+        return "hanya usia \u226515 tahun", lambda a, ang: (hitung_umur(ang.get("tanggal_lahir")) or 0) >= 15
+    return None, None
+
+@api.get("/dashboard/jawaban")
+async def dashboard_jawaban(start: str = "", end: str = "", kelurahan: str = "", user=Depends(require_admin)):
+    qs = await db.master_questions.find({"deleted": {"$ne": True}}, {"_id": 0}).sort("urutan", 1).to_list(1000)
+    latest = {}
+    async for v in db.kunjungan.find(visit_query(start, end, kelurahan), {"per_anggota": 1, "created_at": 1}).sort("created_at", 1):
+        for pa in v.get("per_anggota", []):
+            latest[pa["anggota_id"]] = pa
+    ang_map = {a["id"]: a async for a in db.anggota.find({"id": {"$in": list(latest)}}, {"_id": 0, "id": 1, "jenis_kelamin": 1, "tanggal_lahir": 1})}
+    conds = {q["kode"]: question_condition(q["kode"]) for q in qs}
+    answers = defaultdict(list)
+    sasaran = Counter()
+    for aid, pa in latest.items():
+        sasaran[pa.get("kelompok", "-")] += 1
+        ans = pa.get("answers") or {}
+        for k, val in ans.items():
+            pred = conds.get(k, (None, None))[1]
+            if pred is None or pred(ans, ang_map.get(aid, {})):
+                answers[k].append(val)
+    groups = []
+    for g in dict.fromkeys(q["group"] for q in qs):
+        items = [dict(summarize_question(q, answers.get(q["kode"], [])), kondisi=conds[q["kode"]][0])
+                 for q in qs if q["group"] == g]
+        items = [i for i in items if i["responden"]]
+        if items:
+            groups.append({"group": g, "label": KELOMPOK_LABEL.get(g, g), "sasaran": sasaran.get(g, 0),
+                           "responden": max(i["responden"] for i in items), "questions": items})
+    flat = [dict(i, group_label=g["label"]) for g in groups for i in g["questions"]
+            if i.get("masalah") and i["responden"] >= 3]
+    flat.sort(key=lambda i: (i.get("priority") != "merah", -i["persen_masalah"]))
+    utama = [{"group_label": i["group_label"], "text": i["text"], "persen": i["persen_masalah"],
+              "masalah": i["masalah"], "responden": i["responden"], "priority": i.get("priority") or "kuning",
+              "kesimpulan": i["kesimpulan"]} for i in flat[:10]]
+    return {"total_sasaran": len(latest), "kesimpulan_utama": utama, "groups": groups}
+
+@api.get("/dashboard/insights")
+async def dashboard_insights(start: str = "", end: str = "", kelurahan: str = "", user=Depends(require_admin)):
+    vq = visit_query(start, end, kelurahan)
+    cq = {"kelurahan": kelurahan} if kelurahan else {}
+    if start or end:
+        cq["waktu_lapor"] = dt_range(start, end)
+    prio, posy, kader, kel_visit = Counter(), Counter(), Counter(), defaultdict(set)
+    async for v in db.kunjungan.find(vq, {"prioritas": 1, "posyandu": 1, "kader_nama": 1, "kelurahan": 1, "keluarga_id": 1}):
+        prio[v.get("prioritas") or "hijau"] += 1
+        posy[(v.get("posyandu") or "-").strip() or "-"] += 1
+        kader[v.get("kader_nama") or "-"] += 1
+        kel_visit[v.get("kelurahan") or "-"].add(v.get("keluarga_id"))
+    kq = {"deleted": {"$ne": True}}
+    if kelurahan:
+        kq["kelurahan"] = kelurahan
+    kel_total, kel_ids = Counter(), set()
+    async for k in db.keluarga.find(kq, {"kelurahan": 1, "id": 1}):
+        kel_total[k.get("kelurahan") or "-"] += 1
+        kel_ids.add(k["id"])
+    kel_visit = {k: v & kel_ids for k, v in kel_visit.items()}
+    kasus_kel = defaultdict(lambda: {"merah": 0, "kuning": 0, "selesai": 0, "total": 0})
+    kasus_grp = Counter()
+    async for c in db.kasus.find(cq, {"kelurahan": 1, "priority": 1, "status": 1, "group": 1}):
+        r = kasus_kel[c.get("kelurahan") or "-"]
+        r["total"] += 1
+        if c.get("priority") in ("merah", "kuning"):
+            r[c["priority"]] += 1
+        if c.get("status") == "selesai":
+            r["selesai"] += 1
+        kasus_grp[KELOMPOK_LABEL.get(c.get("group"), c.get("group") or "-")] += 1
+    return {
+        "prioritas_kunjungan": [{"prioritas": p, "jumlah": prio[p]} for p in ("hijau", "kuning", "merah")],
+        "kunjungan_posyandu": [{"posyandu": k, "jumlah": n} for k, n in posy.most_common()],
+        "top_kader": [{"kader": k, "jumlah": n} for k, n in kader.most_common(10)],
+        "kasus_kelurahan": [{"kelurahan": k, **v, "persen_selesai": pct(v["selesai"], v["total"])} for k, v in sorted(kasus_kel.items())],
+        "kasus_kelompok": [{"kelompok": k, "jumlah": n} for k, n in kasus_grp.most_common()],
+        "keluarga_kelurahan": [{"kelurahan": k, "terdaftar": n, "dikunjungi": len(kel_visit.get(k, ())),
+                                "belum": max(n - len(kel_visit.get(k, ())), 0)} for k, n in sorted(kel_total.items())],
+    }
 
 # ==================== ADMIN: KASUS ====================
 CASE_STATUS = ["baru", "sudah_dibaca", "ditugaskan", "dihubungi", "dijadwalkan",

@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import { api } from "@/lib/api";
+import JawabanSummary from "./JawabanSummary";
+import DashboardInsights from "./DashboardInsights";
 import {
   BarChart, Bar, LineChart, Line, PieChart, Pie, Cell, XAxis, YAxis, Tooltip, ResponsiveContainer, CartesianGrid,
 } from "recharts";
@@ -34,10 +36,13 @@ export default function Dashboard() {
   const [kpi, setKpi] = useState(null);
   const [charts, setCharts] = useState(null);
   const [flt, setFlt] = useState({ start: "", end: "", kelurahan: "" });
+  const [view, setView] = useState("ringkasan");
+  const [reloadKey, setReloadKey] = useState(0);
 
   const load = () => {
     api.get("/dashboard/kpi", { params: flt }).then((r) => setKpi(r.data));
     api.get("/dashboard/charts", { params: flt }).then((r) => setCharts(r.data));
+    setReloadKey((k) => k + 1);
   };
   useEffect(load, []); // eslint-disable-line
 
@@ -56,7 +61,14 @@ export default function Dashboard() {
         <button data-testid="apply-filter" onClick={load} className="rounded-lg bg-teal-600 px-4 py-1.5 text-sm font-semibold text-white hover:bg-teal-700">Terapkan</button>
       </div>
 
-      {!kpi ? <div className="flex h-40 items-center justify-center"><Loader2 className="h-7 w-7 animate-spin text-teal-600" /></div> : (
+      <div className="flex gap-2">
+        {[["ringkasan", "Ringkasan & Grafik"], ["jawaban", "Hasil Jawaban & Kesimpulan"]].map(([k, l]) => (
+          <button key={k} data-testid={`dashboard-tab-${k}`} onClick={() => setView(k)}
+            className={`rounded-xl px-4 py-2 text-sm font-semibold transition-colors ${view === k ? "bg-slate-900 text-white" : "border border-slate-200 bg-white text-slate-600 hover:bg-slate-50"}`}>{l}</button>
+        ))}
+      </div>
+
+      {view === "jawaban" ? <JawabanSummary flt={flt} reloadKey={reloadKey} /> : !kpi ? <div className="flex h-40 items-center justify-center"><Loader2 className="h-7 w-7 animate-spin text-teal-600" /></div> : (
         <>
           <div className="grid grid-cols-2 gap-3 md:grid-cols-3 xl:grid-cols-6">
             <Kpi icon={Users} label="Keluarga Terdaftar" value={kpi.keluarga_terdaftar} tone="teal" />
@@ -82,7 +94,7 @@ export default function Dashboard() {
                 <ResponsiveContainer><BarChart data={charts.cakupan_kelurahan}><CartesianGrid strokeDasharray="3 3" stroke="#f1f5f9" /><XAxis dataKey="kelurahan" fontSize={11} /><YAxis fontSize={12} /><Tooltip /><Bar dataKey="kunjungan" fill="#14B8A6" radius={[6, 6, 0, 0]} /></BarChart></ResponsiveContainer>
               </ChartCard>
               <ChartCard title="10 Masalah Terbanyak">
-                <ResponsiveContainer><BarChart layout="vertical" data={charts.top_masalah} margin={{ left: 20 }}><XAxis type="number" fontSize={12} /><YAxis type="category" dataKey="masalah" width={140} fontSize={10} /><Tooltip /><Bar dataKey="jumlah" fill="#F59E0B" radius={[0, 6, 6, 0]} /></BarChart></ResponsiveContainer>
+                <ResponsiveContainer><BarChart layout="vertical" data={charts.top_masalah} margin={{ left: 0 }}><XAxis type="number" fontSize={12} /><YAxis type="category" dataKey="masalah" width={220} fontSize={10} interval={0} tickFormatter={(t) => (t.length > 38 ? t.slice(0, 36) + "…" : t)} /><Tooltip /><Bar dataKey="jumlah" fill="#F59E0B" radius={[0, 6, 6, 0]} /></BarChart></ResponsiveContainer>
               </ChartCard>
               <ChartCard title="Distribusi Kelompok Sasaran">
                 <ResponsiveContainer><PieChart><Pie data={charts.distribusi_kelompok} dataKey="jumlah" nameKey="kelompok" innerRadius={50} outerRadius={90} paddingAngle={2}>{charts.distribusi_kelompok.map((e, i) => <Cell key={i} fill={COLORS[i % COLORS.length]} />)}</Pie><Tooltip /></PieChart></ResponsiveContainer>
@@ -90,6 +102,7 @@ export default function Dashboard() {
               </ChartCard>
             </div>
           )}
+          <DashboardInsights flt={flt} reloadKey={reloadKey} />
         </>
       )}
     </div>
