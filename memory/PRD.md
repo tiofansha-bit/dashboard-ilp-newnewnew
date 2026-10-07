@@ -73,3 +73,9 @@ users 31 · wilayah 4 · posyandu 6 · master_questions 135 · keluarga 56 · an
 - Grafik "N Masalah Terbanyak": pilihan Top 5/10/15/20/30/Semua (tersimpan di localStorage).
 - "Masalah Kesehatan Utama": filter jumlah, kelompok, prioritas, urutan (tanda bahaya/%/jumlah), min. responden. Backend kirim semua item.
 - Fix: beranda kader sudah_dikunjungi hanya dihitung dari keluarga miliknya.
+
+## Laporan rekap standar administrasi (2026-06)
+- Laporan baru: "Rekap Masalah Kesehatan per Sasaran (per Nama)" (export jenis masalah_sasaran: identitas, L/P-umur, KK, alamat, posyandu, kader, tgl kunjungan, jml & daftar bernomor seluruh masalah [TANDA BAHAYA], prioritas, status TL) dan "Rekap Masalah Kesehatan Kolektif" (masalah_kolektif: per indikator jml bermasalah/responden/% + kesimpulan). Pertanyaan bersyarat difilter sama seperti dashboard.
+- Semua ekspor (CSV/Excel/PDF): kop surat 3 baris + alamat + garis ganda, judul bergaris bawah, periode, tgl cetak, nomor halaman, blok TTD 2 kolom (Mengetahui Kepala Puskesmas + NIP | Kota, tanggal Indonesia, Pembuat Laporan). Excel: landscape A4 fit-width, header berulang.
+- Pengaturan kop & TTD: GET/PUT /api/admin/laporan-settings (db.settings key=laporan), form di halaman Laporan.
+- Pratinjau tabel: GET /api/laporan/preview/{jenis} (modal di Laporan). Rekap otomatis kini mengikuti filter tanggal/kelurahan.

@@ -1,0 +1,31 @@
+{
+  "summary": "Iteration 8: Tested rekap report changes end-to-end. Backend pytest 27 passed / 1 skipped (kader login fixture) on /app/backend/tests/test_iteration8_rekap.py: GET /api/laporan/preview/{jenis} works for all 6 jenis (new masalah_sasaran, masalah_kolektif + 4 existing), returns {title, periode, total, headers, rows}; headers[0]='No'; 400 for unknown jenis; kelurahan filter reduces total and periode text contains the kelurahan name; one row per person (NIK unique); daftar is numbered '1. ... [TANDA BAHAYA]'; rows sorted merah-first. All 18 export combinations (6 jenis x csv/excel/pdf) return 200 with valid payloads (CSV begins with UPT PUSKESMAS MELATI kop + 'Mengetahui,' + 'Pembuat Laporan,' + 'Total data:'; PDF starts with %PDF; XLSX starts with PK). PUT /api/admin/laporan-settings persists instansi='PEMERINTAH KABUPATEN TEST', kota='Kuala Kapuas', kepala_nama='dr. Test', kepala_nip='1987' and these values appear in CSV export plus in PDF text (via pypdf extract) including 'Halaman 1 dari ...'. Settings restored to defaults (puskesmas='UPT Puskesmas Melati', others empty) after test. Frontend (admin/admin123, Laporan & Rekap page): all 24 testids present (preview/csv/excel/pdf for each of 6 jenis), Rekapitulasi Otomatis updates with kelurahan filter (initial [136,432,8,436,437,46,2482] -> Selat Dalam [6,11,3,10,11,11,17]); preview modal opens for masalah_sasaran with title 'REKAP MASALAH KESEHATAN PER SASARAN' and 100 rows (preview cap), first 8 Prioritas values are Merah followed by Kuning (sort merah-first verified), daftar col shows '1. ... [TANDA BAHAYA]\\n2. ...'; preview modal for masalah_kolektif shows 28 rows with expected headers; close button works; LaporanSettings toggle expands with all 8 inputs present (instansi/dinas/puskesmas/alamat/kota/jabatan_kepala/kepala_nama/kepala_nip); CSV/Excel/PDF downloads trigger successfully with toast 'Laporan ... diunduh'.",
+  "backend_issues": {"critical": [], "minor": []},
+  "frontend_issues": {
+    "ui_bugs": [],
+    "integration_issues": [],
+    "design_issues": [
+      {"screen": "Laporan page @ 390px mobile", "issues": ["Minor horizontal overflow of 6px (scrollWidth=396 vs clientWidth=390). Likely rounding on the Ekspor filter grid or the kop-settings grid. Not blocking, buttons wrap correctly; consider adding overflow-hidden or min-w-0 on grid children to eliminate the 6px."]}
+    ]
+  },
+  "test_report_links": ["/app/backend/tests/test_iteration8_rekap.py", "/app/test_reports/pytest/iter8.xml"],
+  "action_items": [
+    "(optional) Fix minor 6px horizontal overflow on Laporan page at 390px (likely input/select padding or min-w flex item). Non-blocking.",
+    "(spec note, non-blocking) The review request spec listed headers as 'No, Nama Sasaran, NIK, L/P, Umur, Kelompok, ...' as separate columns but the implementation uses a combined 'L/P, Umur' column (e.g. 'L, 42 th'). All data is present; if the admin standard wants two columns, split _report_columns('masalah_sasaran') accordingly."
+  ],
+  "critical_code_review_comments": [
+    "_masalah_sasaran_rows: good — latest-visit map per anggota deduplicates persons (one row per person), temuan deduplication keeps unique masalah, and merah-first + jumlah desc sort implemented via lambda key. Status Tindak Lanjut computation handles missing counters safely.",
+    "laporan_preview endpoint reuses _report_columns + _report_rows DRY — tidy; limit default 100 matches max 100 preview spec.",
+    "Export CSV/XLSX/PDF all share headers/matrix/kop/ttd blocks — well-factored. PDF footer prints 'Halaman x dari {nb}' via alias_nb_pages (verified via pypdf text extract).",
+    "LaporanSettings.put endpoint coerces every field via str(...).strip() preventing None/non-string injection — good.",
+    "Minor: server.py is ~1964 lines; could be split into modules (export/, reports/, admin/) for maintainability (>700 line guideline). Not blocking."
+  ],
+  "updated_files": ["/app/backend/tests/test_iteration8_rekap.py (new, 28 cases)"],
+  "success_rate": {"backend": "100% (27 passed, 1 skipped non-blocking)", "frontend": "100% all requested flows"},
+  "test_credentials": "admin/admin123",
+  "seed_data_creation": "None. laporan_settings was temporarily set then restored to defaults. Audit log entries written by export calls (expected).",
+  "retest_needed": false,
+  "main_agent_can_self_test": true,
+  "context_for_next_testing_agent": "Rekap feature stable. New jenis keys: masalah_sasaran (14 cols incl No; 100-row preview cap), masalah_kolektif (8 cols). Frontend testids on /admin/laporan: export-filter-start/end/kelurahan/reset, preview-<key>, export-<key>-{csv,excel,pdf} for 6 keys, laporan-preview-modal, laporan-preview-close, laporan-preview-row-<i>, laporan-settings-toggle, laporan-setting-<field> for 8 fields, laporan-settings-save. Mobile 390: 6px overflow (minor). test_iteration8_rekap.py is parametrized and can be reused regression (6 jenis x 3 fmt).",
+  "rca of the issue": "N/A — all per-review-request behaviors verified. Only minor cosmetic 6px mobile overflow and a header-shape spec interpretation (L/P + Umur combined) noted."
+}

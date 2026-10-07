@@ -86,7 +86,7 @@ export default function Laporan() {
                 <span className="text-sm font-medium text-slate-700">{j.label}</span>
                 {j.desc && <p className="text-xs text-slate-500">{j.desc}</p>}
               </div>
-              <div className="flex gap-2">
+              <div className="flex flex-wrap gap-2">
                 <button data-testid={`preview-${j.key}`} onClick={() => setPreview(j.key)} className="flex items-center gap-1.5 rounded-lg border border-teal-200 bg-white px-3 py-1.5 text-xs font-semibold text-teal-700 hover:border-teal-400"><Eye className="h-4 w-4" /> Pratinjau</button>
                 <button data-testid={`export-${j.key}-csv`} onClick={() => download(j.key, "csv")} className="flex items-center gap-1.5 rounded-lg border border-slate-200 bg-white px-3 py-1.5 text-xs font-semibold text-slate-600 hover:border-teal-400"><FileText className="h-4 w-4" /> CSV</button>
                 <button data-testid={`export-${j.key}-excel`} onClick={() => download(j.key, "excel")} className="flex items-center gap-1.5 rounded-lg border border-slate-200 bg-white px-3 py-1.5 text-xs font-semibold text-slate-600 hover:border-teal-400"><FileSpreadsheet className="h-4 w-4" /> Excel</button>
