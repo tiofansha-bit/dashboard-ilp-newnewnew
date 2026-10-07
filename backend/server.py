@@ -790,6 +790,9 @@ def question_condition(kode):
 
 @api.get("/dashboard/jawaban")
 async def dashboard_jawaban(start: str = "", end: str = "", kelurahan: str = "", user=Depends(require_admin)):
+    return await jawaban_summary(start, end, kelurahan)
+
+async def jawaban_summary(start, end, kelurahan):
     qs = await db.master_questions.find({"deleted": {"$ne": True}}, {"_id": 0}).sort("urutan", 1).to_list(1000)
     latest = {}
     async for v in db.kunjungan.find(visit_query(start, end, kelurahan), {"per_anggota": 1, "created_at": 1}).sort("created_at", 1):
@@ -1010,8 +1013,8 @@ async def read_notif(nid: str, user=Depends(require_admin)):
 
 # ==================== REKAP ====================
 @api.get("/rekap")
-async def rekap(periode: str = "bulan", user=Depends(require_admin)):
-    vq = {"status": "terkirim"}
+async def rekap(start: str = "", end: str = "", kelurahan: str = "", user=Depends(require_admin)):
+    vq = visit_query(start, end, kelurahan)
     kelompok = Counter(); tb = 0; edukasi = 0; dilaporkan = 0
     unique_sasaran = set()
     async for v in db.kunjungan.find(vq, {"per_anggota": 1, "prioritas": 1}):
@@ -1025,8 +1028,11 @@ async def rekap(periode: str = "bulan", user=Depends(require_admin)):
                 if any(t["priority"] == "merah" for t in pa["temuan"]):
                     tb += 1
     kel_visited = len(await db.kunjungan.distinct("keluarga_id", vq))
-    selesai = await db.kasus.count_documents({"status": "selesai"})
-    belum = await db.kasus.count_documents({"status": {"$ne": "selesai"}})
+    cq = {"kelurahan": kelurahan} if kelurahan else {}
+    if start or end:
+        cq["waktu_lapor"] = dt_range(start, end)
+    selesai = await db.kasus.count_documents({**cq, "status": "selesai"})
+    belum = await db.kasus.count_documents({**cq, "status": {"$ne": "selesai"}})
     return {
         "keluarga_dikunjungi": kel_visited,
         "per_kelompok": [{"kelompok": KELOMPOK_LABEL.get(k, k), "jumlah": c} for k, c in kelompok.items()],
@@ -1040,7 +1046,38 @@ REPORT_TITLES = {
     "kunjungan": "REKAP KUNJUNGAN RUMAH KADER",
     "keluarga": "DAFTAR KELUARGA TERDAFTAR",
     "tindak_lanjut": "REKAP TINDAK LANJUT PUSTU",
+    "masalah_sasaran": "REKAP MASALAH KESEHATAN PER SASARAN",
+    "masalah_kolektif": "REKAP MASALAH KESEHATAN KOLEKTIF",
 }
+BULAN_ID = ["Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus",
+            "September", "Oktober", "November", "Desember"]
+LAPORAN_DEFAULT = {
+    "instansi": "", "dinas": "", "puskesmas": "UPT Puskesmas Melati", "alamat": "",
+    "kota": "", "kepala_nama": "", "kepala_nip": "", "jabatan_kepala": "",
+}
+
+
+def tgl_indo(d=None):
+    d = d or now_utc()
+    return f"{d.day} {BULAN_ID[d.month - 1]} {d.year}"
+
+
+async def laporan_settings():
+    s = await db.settings.find_one({"key": "laporan"}, {"_id": 0})
+    return {**LAPORAN_DEFAULT, **((s or {}).get("value") or {})}
+
+
+@api.get("/admin/laporan-settings")
+async def get_laporan_settings(user=Depends(require_admin)):
+    return await laporan_settings()
+
+
+@api.put("/admin/laporan-settings")
+async def put_laporan_settings(body: dict, user=Depends(require_admin)):
+    val = {k: str(body.get(k) or "").strip() for k in LAPORAN_DEFAULT}
+    await db.settings.update_one({"key": "laporan"}, {"$set": {"value": val}}, upsert=True)
+    await audit(user, "update", "laporan_settings", "", "kop & tanda tangan laporan")
+    return await laporan_settings()
 EXPORT_STATUS_LABEL = {
     "baru": "Baru", "sudah_dibaca": "Sudah Dibaca", "ditugaskan": "Ditugaskan", "dihubungi": "Dihubungi",
     "dijadwalkan": "Dijadwalkan", "sudah_dikunjungi": "Sudah Dikunjungi", "dirujuk": "Dirujuk",
@@ -1125,10 +1162,98 @@ def _report_columns(jenis):
             ("Petugas", lambda r: r.get("petugas") or "-"),
             ("Waktu", lambda r: _fmt_tgl(r.get("waktu"))),
         ]
+    if jenis == "masalah_sasaran":
+        return [
+            ("Nama Sasaran", lambda r: r["nama"]),
+            ("NIK", lambda r: r["nik"]),
+            ("L/P, Umur", lambda r: r["jk_umur"]),
+            ("Kelompok", lambda r: r["kelompok"]),
+            ("Kepala Keluarga", lambda r: r["kk"]),
+            ("Alamat", lambda r: r["alamat"]),
+            ("Posyandu", lambda r: r["posyandu"]),
+            ("Kader", lambda r: r["kader"]),
+            ("Tgl Kunjungan", lambda r: r["tanggal"]),
+            ("Jml Masalah", lambda r: str(r["jumlah"])),
+            ("Daftar Masalah Kesehatan", lambda r: r["daftar"]),
+            ("Prioritas", lambda r: EXPORT_PRIORITY_LABEL.get(r["priority"], r["priority"])),
+            ("Status Tindak Lanjut", lambda r: r["tl"]),
+        ]
+    if jenis == "masalah_kolektif":
+        return [
+            ("Kelompok Sasaran", lambda r: r["kelompok"]),
+            ("Masalah Kesehatan / Indikator", lambda r: r["text"]),
+            ("Prioritas", lambda r: EXPORT_PRIORITY_LABEL.get(r["priority"], r["priority"])),
+            ("Sasaran Bermasalah", lambda r: str(r["masalah"])),
+            ("Jml Responden", lambda r: str(r["responden"])),
+            ("Persentase", lambda r: f"{r['persen']}%"),
+            ("Kesimpulan", lambda r: r["kesimpulan"]),
+        ]
     return None
 
 
+async def _masalah_sasaran_rows(start, end, kelurahan):
+    latest = {}
+    async for v in db.kunjungan.find(visit_query(start, end, kelurahan), {"_id": 0}).sort("created_at", 1):
+        for pa in v.get("per_anggota", []):
+            latest[pa["anggota_id"]] = (v, pa)
+    ids = list(latest)
+    ang = {a["id"]: a async for a in db.anggota.find({"id": {"$in": ids}}, {"_id": 0})}
+    kel_ids = list({v["keluarga_id"] for v, _ in latest.values()})
+    kel = {k["id"]: k async for k in db.keluarga.find({"id": {"$in": kel_ids}}, {"_id": 0})}
+    tl = defaultdict(Counter)
+    async for c in db.kasus.find({"anggota_id": {"$in": ids}}, {"anggota_id": 1, "status": 1}):
+        tl[c["anggota_id"]]["total"] += 1
+        tl[c["anggota_id"]][c.get("status")] += 1
+    rows = []
+    for aid, (v, pa) in latest.items():
+        a = ang.get(aid, {})
+        ans = pa.get("answers") or {}
+        tem = []
+        for t in pa.get("temuan") or []:
+            pred = question_condition(t.get("kode") or "")[1]
+            if (pred is None or pred(ans, a)) and t["masalah"] not in [x["masalah"] for x in tem]:
+                tem.append(t)
+        if not tem:
+            continue
+        tem.sort(key=lambda t: t.get("priority") != "merah")
+        k = kel.get(v["keluarga_id"], {})
+        umur = hitung_umur(a.get("tanggal_lahir"))
+        c = tl.get(aid, Counter())
+        selesai = c.get("selesai", 0)
+        proses = c.get("total", 0) - selesai - c.get("baru", 0) - c.get("sudah_dibaca", 0)
+        alamat = ", ".join(x for x in [k.get("alamat") or "", f"RT {v.get('rt') or '-'}/RW {v.get('rw') or '-'}", v.get("kelurahan") or ""] if x)
+        rows.append({
+            "nama": a.get("nama") or pa.get("nama") or "-", "nik": a.get("nik") or "-",
+            "jk_umur": f"{a.get('jenis_kelamin') or '-'}, {umur if umur is not None else '-'} th",
+            "kelompok": KELOMPOK_LABEL.get(pa.get("kelompok"), pa.get("kelompok") or "-"),
+            "kk": v.get("keluarga_nama") or "-", "alamat": alamat, "posyandu": (v.get("posyandu") or "-").strip(),
+            "kader": v.get("kader_nama") or "-", "tanggal": _fmt_tgl(v.get("tanggal") or v.get("created_at")),
+            "jumlah": len(tem),
+            "daftar": "\n".join(f"{i}. {t['masalah']}{' [TANDA BAHAYA]' if t.get('priority') == 'merah' else ''}" for i, t in enumerate(tem, 1)),
+            "priority": "merah" if any(t.get("priority") == "merah" for t in tem) else "kuning",
+            "tl": (f"Selesai {selesai}/{c['total']}, proses {max(proses, 0)}, belum {c['total'] - selesai - max(proses, 0)}" if c.get("total") else "Belum ada kasus"),
+        })
+    rows.sort(key=lambda r: (r["priority"] != "merah", -r["jumlah"], r["nama"].lower()))
+    return rows
+
+
+async def _masalah_kolektif_rows(start, end, kelurahan):
+    data = await jawaban_summary(start, end, kelurahan)
+    rows = []
+    for g in data["groups"]:
+        items = sorted([q for q in g["questions"] if q.get("masalah")], key=lambda q: (q.get("priority") != "merah", -q["persen_masalah"]))
+        for q in items:
+            rows.append({"kelompok": g["label"], "text": q["text"] + (f" ({q['kondisi']})" if q.get("kondisi") else ""),
+                         "priority": q.get("priority") or "kuning", "masalah": q["masalah"], "responden": q["responden"],
+                         "persen": q["persen_masalah"], "kesimpulan": q["kesimpulan"]})
+    return rows
+
+
 async def _report_rows(jenis, start, end, kelurahan):
+    if jenis == "masalah_sasaran":
+        return await _masalah_sasaran_rows(start, end, kelurahan)
+    if jenis == "masalah_kolektif":
+        return await _masalah_kolektif_rows(start, end, kelurahan)
     if jenis == "kasus":
         q = {}
         if kelurahan:
@@ -1170,15 +1295,32 @@ def _periode_str(start, end, kelurahan):
     return per
 
 
+@api.get("/laporan/preview/{jenis}")
+async def laporan_preview(jenis: str, start: str = "", end: str = "", kelurahan: str = "", limit: int = 100, user=Depends(require_admin)):
+    cols = _report_columns(jenis)
+    if cols is None:
+        raise HTTPException(400, "Jenis laporan tidak dikenal")
+    rows = await _report_rows(jenis, start, end, kelurahan)
+    return {"title": REPORT_TITLES[jenis], "periode": _periode_str(start, end, kelurahan), "total": len(rows),
+            "headers": ["No"] + [c[0] for c in cols],
+            "rows": [[str(i)] + [c[1](r) for c in cols] for i, r in enumerate(rows[:limit], 1)]}
+
 @api.get("/export/{jenis}")
 async def export(jenis: str, fmt: str = "csv", start: str = "", end: str = "", kelurahan: str = "", user=Depends(require_admin)):
     cols = _report_columns(jenis)
     if cols is None:
         raise HTTPException(400, "Jenis laporan tidak dikenal")
     rows = await _report_rows(jenis, start, end, kelurahan)
-    ak = await db.akreditasi.find_one({}, {"_id": 0, "puskesmas": 1})
-    puskesmas = (ak or {}).get("puskesmas") or "UPT Puskesmas Melati"
+    st = await laporan_settings()
+    puskesmas = st["puskesmas"] or "UPT Puskesmas Melati"
+    kop = [x for x in [st["instansi"].upper(), st["dinas"].upper(), puskesmas.upper()] if x]
+    alamat = st["alamat"]
     title = REPORT_TITLES[jenis]
+    jab_kepala = st["jabatan_kepala"] or f"Kepala {puskesmas}"
+    ttd_tgl = f"{st['kota'] + ', ' if st['kota'] else ''}{tgl_indo()}"
+    ttd_left = ["Mengetahui,", jab_kepala, "", "", "", st["kepala_nama"] or "( ................................ )",
+                f"NIP. {st['kepala_nip']}" if st["kepala_nip"] else "NIP. ..............................."]
+    ttd_right = [ttd_tgl, "Pembuat Laporan,", "", "", "", user["nama"], ""]
     periode = _periode_str(start, end, kelurahan)
     dicetak = f"Dicetak: {_fmt_tgl(iso(), True)} oleh {user['nama']}"
     headers = ["No"] + [c[0] for c in cols]
@@ -1192,13 +1334,17 @@ async def export(jenis: str, fmt: str = "csv", start: str = "", end: str = "", k
     if fmt == "csv":
         import csv
         buf = io.StringIO()
-        buf.write(f"{title}\r\n{puskesmas}\r\n{periode}\r\n{dicetak}\r\n\r\n")
+        for line in kop + ([alamat] if alamat else []) + ["", title, periode, dicetak, ""]:
+            buf.write(line + "\r\n")
         w = csv.writer(buf)
         w.writerow(headers)
         for row in matrix:
             w.writerow(row)
         w.writerow([])
         w.writerow(["", f"Total data: {len(matrix)}"])
+        w.writerow([])
+        for lft, rgt in zip(ttd_left, ttd_right):
+            w.writerow(["", lft, "", "", rgt])
         return StreamingResponse(io.BytesIO(buf.getvalue().encode("utf-8-sig")), media_type="text/csv",
             headers={"Content-Disposition": f"attachment; filename={fname}.csv"})
 
@@ -1212,12 +1358,18 @@ async def export(jenis: str, fmt: str = "csv", start: str = "", end: str = "", k
         thin = Side(style="thin", color="B0B0B0")
         border = Border(left=thin, right=thin, top=thin, bottom=thin)
         # kop
-        meta = [(title, 14, True), (puskesmas, 11, True), (periode, 9, False), (dicetak, 9, False)]
+        meta = [(t, 12 if i < len(kop) - 1 else 13, True) for i, t in enumerate(kop)]
+        if alamat:
+            meta.append((alamat, 9, False))
+        n_kop = len(meta)
+        meta += [("", 6, False), (title, 13, True), (periode, 9, False), (dicetak, 9, False)]
         for ri, (txt, sz, bold) in enumerate(meta, 1):
             ws.merge_cells(f"A{ri}:{last_col}{ri}")
             c = ws.cell(row=ri, column=1, value=txt)
-            c.font = Font(size=sz, bold=bold, color="0F766E" if ri == 1 else "334155")
-            c.alignment = Alignment(horizontal="center" if ri <= 2 else "left", vertical="center")
+            c.font = Font(size=sz, bold=bold, color="0F172A", underline="single" if txt == title else None)
+            c.alignment = Alignment(horizontal="center", vertical="center")
+        for ci in range(1, ncol + 1):
+            ws.cell(row=n_kop, column=ci).border = Border(bottom=Side(style="double", color="000000"))
         head_row = len(meta) + 2
         # header
         for ci, h in enumerate(headers, 1):
@@ -1240,7 +1392,22 @@ async def export(jenis: str, fmt: str = "csv", start: str = "", end: str = "", k
         for ci, wd in enumerate(widths, 1):
             ws.column_dimensions[get_column_letter(ci)].width = max(6, min(wd + 3, 48))
         ws.freeze_panes = f"A{head_row + 1}"
-        ws.cell(row=head_row + len(matrix) + 2, column=1, value=f"Total data: {len(matrix)}").font = Font(bold=True, italic=True)
+        end_row = head_row + len(matrix) + 2
+        ws.cell(row=end_row, column=1, value=f"Total data: {len(matrix)}").font = Font(bold=True, italic=True)
+        lc, rc = 2, max(ncol - 2, 3)
+        for i, (lft, rgt) in enumerate(zip(ttd_left, ttd_right)):
+            r = end_row + 2 + i
+            for col, txt in ((lc, lft), (rc, rgt)):
+                c = ws.cell(row=r, column=col, value=txt)
+                c.alignment = Alignment(horizontal="center")
+                c.font = Font(bold=i == 5, underline="single" if i == 5 else None)
+        ws.page_setup.orientation = "landscape"
+        ws.page_setup.paperSize = ws.PAPERSIZE_A4
+        ws.page_setup.fitToWidth = 1
+        ws.page_setup.fitToHeight = 0
+        ws.sheet_properties.pageSetUpPr.fitToPage = True
+        ws.print_title_rows = f"{head_row}:{head_row}"
+        ws.oddFooter.center.text = "Halaman &P dari &N"
         out = io.BytesIO(); wb.save(out); out.seek(0)
         return StreamingResponse(out, media_type="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
             headers={"Content-Disposition": f"attachment; filename={fname}.xlsx"})
@@ -1249,16 +1416,33 @@ async def export(jenis: str, fmt: str = "csv", start: str = "", end: str = "", k
         from fpdf import FPDF
 
         def latin(s):
-            return str(s).encode("latin-1", "replace").decode("latin-1")
+            s = str(s)
+            for a, b in (("\u2014", "-"), ("\u2013", "-"), ("\u2265", ">="), ("\u2264", "<="), ("\u2026", "..."),
+                         ("\u201c", '"'), ("\u201d", '"'), ("\u2019", "'"), ("\u2022", "-")):
+                s = s.replace(a, b)
+            return s.encode("latin-1", "replace").decode("latin-1")
 
         weights = {
-            "No": 0.5, "Masalah Ditemukan": 3.2, "Tindak Lanjut": 3.2, "Alamat": 2.6,
+            "No": 0.6, "Masalah Ditemukan": 3.2, "Tindak Lanjut": 3.2, "Alamat": 2.6,
             "Nama Sasaran": 2.2, "Kepala Keluarga": 2.2, "Nama Kepala Keluarga": 2.4, "Nama": 2.2,
             "Kelompok": 1.6, "Prioritas": 1.8, "Status": 1.8, "Kader Pelapor": 1.8, "Kader": 1.8,
             "Waktu Lapor": 1.6, "Target Selesai": 1.6, "Tanggal": 1.2, "Waktu": 1.2, "Tanggal Lahir": 1.4,
-            "NIK": 1.8, "No. Telp": 1.4, "No. HP": 1.4, "Petugas": 1.6,
+            "NIK": 2.5, "No. Telp": 1.4, "No. HP": 1.4, "Petugas": 1.6,
+            "Daftar Masalah Kesehatan": 4.2, "L/P, Umur": 1.1, "Jml Masalah": 1.0,
+            "Tgl Kunjungan": 1.6, "Status Tindak Lanjut": 1.9, "Masalah Kesehatan / Indikator": 4.0,
+            "Kelompok Sasaran": 1.8, "Sasaran Bermasalah": 1.2, "Jml Responden": 1.1, "Persentase": 1.1, "Kesimpulan": 4.0,
         }
-        pdf = FPDF(orientation="L", unit="mm", format="A4")
+
+        class PDF(FPDF):
+            def footer(self):
+                self.set_y(-10)
+                self.set_font("Helvetica", "I", 7)
+                self.set_text_color(100, 116, 139)
+                self.cell(0, 5, latin(f"{title} - {puskesmas}"), align="L")
+                self.cell(0, 5, f"Halaman {self.page_no()} dari {{nb}}", align="R")
+
+        pdf = PDF(orientation="L", unit="mm", format="A4")
+        pdf.alias_nb_pages()
         pdf.set_auto_page_break(False)
         pdf.set_margins(10, 10, 10)
         epw = pdf.epw
@@ -1269,10 +1453,19 @@ async def export(jenis: str, fmt: str = "csv", start: str = "", end: str = "", k
 
         def header_kop():
             pdf.add_page()
-            pdf.set_font("Helvetica", "B", 13)
+            pdf.set_text_color(15, 23, 42)
+            for i, t in enumerate(kop):
+                pdf.set_font("Helvetica", "B", 13 if i == len(kop) - 1 else 11)
+                pdf.cell(epw, 5.5, latin(t), align="C", new_x="LMARGIN", new_y="NEXT")
+            if alamat:
+                pdf.set_font("Helvetica", "", 8)
+                pdf.cell(epw, 4.5, latin(alamat), align="C", new_x="LMARGIN", new_y="NEXT")
+            y = pdf.get_y() + 1
+            pdf.set_line_width(0.7); pdf.line(pdf.l_margin, y, pdf.l_margin + epw, y)
+            pdf.set_line_width(0.2); pdf.line(pdf.l_margin, y + 1, pdf.l_margin + epw, y + 1)
+            pdf.set_y(y + 3)
+            pdf.set_font("Helvetica", "BU", 12)
             pdf.cell(epw, 6, latin(title), align="C", new_x="LMARGIN", new_y="NEXT")
-            pdf.set_font("Helvetica", "B", 10)
-            pdf.cell(epw, 5, latin(puskesmas), align="C", new_x="LMARGIN", new_y="NEXT")
             pdf.set_font("Helvetica", "", 8)
             pdf.cell(epw, 4.5, latin(periode), align="C", new_x="LMARGIN", new_y="NEXT")
             pdf.cell(epw, 4.5, latin(dicetak), align="C", new_x="LMARGIN", new_y="NEXT")
@@ -1280,29 +1473,36 @@ async def export(jenis: str, fmt: str = "csv", start: str = "", end: str = "", k
             draw_head()
 
         def draw_head():
-            pdf.set_font("Helvetica", "B", 7.5)
+            hl = [wrap(h, colw[i] - 1.5) for i, h in enumerate(headers)]
+            pdf.set_font("Helvetica", "B", 7)
+            hh = max(len(x) for x in hl) * 3.4 + 2.5
             pdf.set_fill_color(15, 118, 110)
             pdf.set_text_color(255, 255, 255)
             x, y = pdf.get_x(), pdf.get_y()
-            for i, h in enumerate(headers):
-                pdf.multi_cell(colw[i], 6, latin(h), border=1, align="C", fill=True,
-                               max_line_height=3, new_x="RIGHT", new_y="TOP")
-            pdf.set_xy(x, y + 6)
+            for i, lines in enumerate(hl):
+                pdf.rect(x, y, colw[i], hh, style="DF")
+                ty = y + (hh - len(lines) * 3.4) / 2
+                for ln in lines:
+                    pdf.set_xy(x, ty)
+                    pdf.cell(colw[i], 3.4, latin(ln), align="C")
+                    ty += 3.4
+                x += colw[i]
+            pdf.set_xy(pdf.l_margin, y + hh)
             pdf.set_text_color(30, 41, 59)
 
         def wrap(txt, w):
             pdf.set_font("Helvetica", "", 7)
-            words = str(txt).split()
-            lines, cur = [], ""
-            for wd in words:
-                t = (cur + " " + wd).strip()
-                if pdf.get_string_width(latin(t)) <= w - 2:
-                    cur = t
-                else:
-                    if cur:
-                        lines.append(cur)
-                    cur = wd
-            if cur:
+            lines = []
+            for para in str(txt).split("\n"):
+                cur = ""
+                for wd in para.split():
+                    t = (cur + " " + wd).strip()
+                    if pdf.get_string_width(latin(t)) <= w - 2:
+                        cur = t
+                    else:
+                        if cur:
+                            lines.append(cur)
+                        cur = wd
                 lines.append(cur)
             return lines or [""]
 
@@ -1331,20 +1531,19 @@ async def export(jenis: str, fmt: str = "csv", start: str = "", end: str = "", k
             fill = not fill
 
         pdf.ln(2)
-        pdf.set_font("Helvetica", "B", 8)
-        if pdf.get_y() + 40 > pdf.h - 10:
+        if pdf.get_y() + 50 > bottom_limit:
             pdf.add_page()
+        pdf.set_font("Helvetica", "B", 8)
         pdf.cell(epw, 5, latin(f"Total data: {len(matrix)}"), new_x="LMARGIN", new_y="NEXT")
-        # tanda tangan
         pdf.ln(4)
-        pdf.set_font("Helvetica", "", 9)
-        col = epw / 2
+        col = epw / 3
         yb = pdf.get_y()
-        pdf.set_xy(pdf.l_margin + col, yb)
-        pdf.multi_cell(col, 5, latin(f"{_fmt_tgl(iso())}\nMengetahui,\nKepala {puskesmas}"), align="C")
-        yb2 = pdf.get_y() + 20
-        pdf.set_xy(pdf.l_margin + col, yb2)
-        pdf.cell(col, 5, latin("( ................................ )"), align="C")
+        for x0, lines in ((pdf.l_margin, ttd_left), (pdf.l_margin + 2 * col, ttd_right)):
+            pdf.set_xy(x0, yb)
+            for i, ln in enumerate(lines):
+                pdf.set_font("Helvetica", "BU" if i == 5 else "", 9)
+                pdf.set_x(x0)
+                pdf.cell(col, 5, latin(ln), align="C", new_x="LMARGIN", new_y="NEXT")
         out = io.BytesIO(pdf.output()); out.seek(0)
         return StreamingResponse(out, media_type="application/pdf",
             headers={"Content-Disposition": f"attachment; filename={fname}.pdf"})

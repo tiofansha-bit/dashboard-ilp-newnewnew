@@ -18,7 +18,7 @@ load_dotenv(BASE / ".env")
 
 COLLECTIONS = ["users", "wilayah", "posyandu", "master_questions",
                "keluarga", "anggota", "kunjungan", "kasus",
-               "notifikasi", "audit_logs", "akreditasi", "tindak_lanjut_pustu"]
+               "notifikasi", "audit_logs", "akreditasi", "tindak_lanjut_pustu", "settings"]
 
 def db():
     cli = MongoClient(os.environ["MONGO_URL"])
