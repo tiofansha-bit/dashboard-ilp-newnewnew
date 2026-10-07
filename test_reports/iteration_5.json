@@ -1,0 +1,31 @@
+{
+  "summary": "Comprehensive post-import verification (GitHub project + production MongoDB). All critical flows pass. Backend: 33/33 pytest tests pass in test_iteration5_production_sync.py — KPI matches EXACT production-import values (keluarga_terdaftar=127, keluarga_dikunjungi=136, cakupan=107.1, sasaran_dikunjungi=481, kasus_merah=8, kasus_kuning=2520, belum_ditindaklanjuti=2456, sedang_ditindaklanjuti=26, selesai=46, median_respons_jam=36.0, data_belum_lengkap=9, total_kunjungan=149); 127 keluarga total; 137 master questions; TBC group has TBC_BATUK/TBC_DEMAM/TBC_KONTAK (5+ qs). NEW mode PIN endpoints verified: POST /api/mode/verify-pin requires admin (401 no-auth, 403 kader, 200 correct, 401 wrong 'PIN salah'); POST /api/mode/change-pin validates (400 wrong current 'PIN saat ini salah', 400 non-digit/too short/too long); roundtrip change→verify→restore to 123456 works, DB restored. Laporan export for kasus/keluarga/kunjungan/tindak_lanjut in CSV/Excel/PDF all download; CSV contains 'UPT Puskesmas Melati', 'Periode:', 'Dicetak:' lines; Content-Disposition filename matches laporan_<jenis>_YYYYMMDD.<ext>. All admin API menus (dashboard, kasus, admin/tindak-lanjut, admin/tindak-lanjut/sumber, keluarga, rekap, admin/kader, master/questions, audit, akreditasi) return 200. Frontend (30/30 Playwright checks): admin/admin123 login works; dashboard shows all 12 KPIs on screen (127, 136, 107.1%, 481, 8, 2520, 2456, 26, 46, 36 jam, 9, 149); old 'Mode' sidebar menu absent; every admin menu navigates without errors; Tindak Lanjut Pustu renders tl-filter-posyandu, tl-tab-rekap, tl-add-manual-btn and 1000 tl-followup-btn-<id> buttons; hidden-mode-trigger opens PIN popover, wrong PIN surfaces mode-pin-error='PIN salah', correct PIN 123456 reveals mode-select-akreditasi + mode-select-asli; Akreditasi view loads; akre-edit-unlock + PIN 123456 reveals Baru/Duplikat/Versi/Edit buttons; switch back to asli mode works. Kader kader11/kader123 login works, Beranda/Keluarga/Tugas/Profil all load with real data (30 keluarga in Selat Tengah). No test data persisted — mode PIN restored, no families/visits created.",
+  "backend_issues": {"critical": [], "minor": []},
+  "frontend_issues": {
+    "ui_bugs": [],
+    "integration_issues": [],
+    "design_issues": [
+      {"screen": "Import Data (admin) / login", "issues": ["Pre-existing React hydration warning: <span> rendered as child of <option> (reported in iter 4; caused by preview overlay instrumentation, not app code)."]}
+    ]
+  },
+  "test_report_links": [
+    "/app/backend/tests/test_iteration5_production_sync.py",
+    "/app/test_reports/pytest/iter5.xml"
+  ],
+  "action_items": [],
+  "critical_code_review_comments": [
+    "Mode PIN endpoints (server.py:245-275) correctly use bcrypt-stored PIN in db.settings with env fallback — good; verify_mode_pin returns 401 and change_mode_pin returns 400 as spec requires.",
+    "Export filename pattern laporan_<jenis>_YYYYMMDD confirmed consistent across csv/xlsx/pdf.",
+    "server.py is 1599 lines — recommend module split in a future iteration (export, mode, master, akreditasi handlers)."
+  ],
+  "updated_files": [
+    "/app/backend/tests/test_iteration5_production_sync.py (new)"
+  ],
+  "success_rate": {"backend": "100% (33/33)", "frontend": "100% (30/30 interactive checks)"},
+  "test_credentials": "admin/admin123, kader11/kader123, Mode PIN 123456 (from /app/memory/test_credentials.md)",
+  "seed_data_creation": "None persisted. Mode PIN was briefly changed to 778899 during roundtrip test then restored to 123456 (verified). No kunjungan or kasus or TL records left behind.",
+  "retest_needed": false,
+  "main_agent_can_self_test": true,
+  "context_for_next_testing_agent": "Backend regression suite now covers: KPI exact values, mode PIN endpoints (auth guards + roundtrip), Laporan export headers/filenames, TBC universal group, admin menu smoke. Field name gotcha for KPI: use `sedang_ditindaklanjuti` and `median_respons_jam` (not `sedang`/`median_jam`). Followup buttons list is capped at 1000. Admin ModeControl UI testids: hidden-mode-trigger, mode-pin-input, mode-pin-submit, mode-pin-error, mode-select-asli, mode-select-akreditasi, mode-change-pin, mode-pin-current, mode-pin-new, mode-pin-save. Akreditasi edit unlock testids: akre-edit-unlock, akre-edit-pin-input, akre-edit-pin-submit. TBC screening section testid: tbc-screening-section (only visible mid-wizard for non-TBC members; backend group endpoint confirms presence).",
+  "rca of the issue": "N/A — no bugs found. Only test issue: initial KPI test used wrong field names (`sedang`, `median_jam`) vs actual (`sedang_ditindaklanjuti`, `median_respons_jam`); fixed in test file."
+}
