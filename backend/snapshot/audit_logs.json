@@ -1,0 +1,2002 @@
+[
+ {
+  "id": "6aea39ca-2ee8-4a37-b392-ee93b32f872a",
+  "user_id": "83d32e19-a6e5-4d2f-87e2-93a12609b88f",
+  "user_nama": "Petugas Puskesmas Melati",
+  "aksi": "export",
+  "entitas": "kasus",
+  "entitas_id": "",
+  "detail": "csv -",
+  "waktu": "2026-10-07T04:45:42.654566+00:00"
+ },
+ {
+  "id": "d2336d01-72ce-4e4a-9df2-887ccd7b3208",
+  "user_id": "83d32e19-a6e5-4d2f-87e2-93a12609b88f",
+  "user_nama": "Petugas Puskesmas Melati",
+  "aksi": "export",
+  "entitas": "kasus",
+  "entitas_id": "",
+  "detail": "csv 2020-01-01-2030-01-01",
+  "waktu": "2026-10-07T04:45:31.545441+00:00"
+ },
+ {
+  "id": "0a170648-4d7c-4090-9e86-605e83bba6f3",
+  "user_id": "83d32e19-a6e5-4d2f-87e2-93a12609b88f",
+  "user_nama": "Petugas Puskesmas Melati",
+  "aksi": "export",
+  "entitas": "kasus",
+  "entitas_id": "",
+  "detail": "csv 2026-08-22-2026-08-28",
+  "waktu": "2026-10-07T04:45:23.177292+00:00"
+ },
+ {
+  "id": "d9e207d1-1fe3-41d1-8c71-b3bccd20da26",
+  "user_id": "ccf3270d-ab2b-4d27-93f3-a38f5f5a059b",
+  "user_nama": "Masitah",
+  "aksi": "create",
+  "entitas": "kunjungan",
+  "entitas_id": "06163156-5b64-403a-89c9-41dd23559a8a",
+  "detail": "Jaspary Anwar - kuning",
+  "waktu": "2026-10-05T02:13:32.427143+00:00"
+ },
+ {
+  "id": "588def32-8082-4240-8093-355d00e83d6f",
+  "user_id": "ccf3270d-ab2b-4d27-93f3-a38f5f5a059b",
+  "user_nama": "Masitah",
+  "aksi": "create",
+  "entitas": "anggota",
+  "entitas_id": "77a2b494-d5bf-4577-a02f-d20e0474d9cf",
+  "detail": "Muhammad Alvin",
+  "waktu": "2026-10-05T02:04:46.557354+00:00"
+ },
+ {
+  "id": "8048dc97-3acd-4ddd-9a35-484f11706658",
+  "user_id": "ccf3270d-ab2b-4d27-93f3-a38f5f5a059b",
+  "user_nama": "Masitah",
+  "aksi": "create",
+  "entitas": "anggota",
+  "entitas_id": "a0572142-2e3f-439b-9c35-fac02985216d",
+  "detail": "Rabiyatul Afifah",
+  "waktu": "2026-10-05T02:03:45.268762+00:00"
+ },
+ {
+  "id": "71ac42fc-8147-4718-84b0-c6ca90c02b74",
+  "user_id": "ccf3270d-ab2b-4d27-93f3-a38f5f5a059b",
+  "user_nama": "Masitah",
+  "aksi": "create",
+  "entitas": "anggota",
+  "entitas_id": "4a2142db-6206-46f6-96f9-af4206cdd0cf",
+  "detail": "Alfurqun",
+  "waktu": "2026-10-05T01:59:50.859078+00:00"
+ },
+ {
+  "id": "b909217e-1ea7-408b-b8b5-d19dad4e10d7",
+  "user_id": "ccf3270d-ab2b-4d27-93f3-a38f5f5a059b",
+  "user_nama": "Masitah",
+  "aksi": "create",
+  "entitas": "anggota",
+  "entitas_id": "27fcd472-d182-4a8b-8af1-a8c1af83cabb",
+  "detail": "Noor Latifah Hasanah",
+  "waktu": "2026-10-05T01:57:37.021559+00:00"
+ },
+ {
+  "id": "531ba346-2491-4e8d-b06b-37976e5cd6da",
+  "user_id": "ccf3270d-ab2b-4d27-93f3-a38f5f5a059b",
+  "user_nama": "Masitah",
+  "aksi": "create",
+  "entitas": "anggota",
+  "entitas_id": "844f5333-a355-4bbe-bbba-178e6eb1f227",
+  "detail": "Kamil Liya Kamal",
+  "waktu": "2026-10-05T01:56:23.078775+00:00"
+ },
+ {
+  "id": "588d9f52-0d90-45cf-8a9c-276a862549a2",
+  "user_id": "ccf3270d-ab2b-4d27-93f3-a38f5f5a059b",
+  "user_nama": "Masitah",
+  "aksi": "create",
+  "entitas": "anggota",
+  "entitas_id": "e3a12c71-e53a-468b-881e-08b6d187420a",
+  "detail": "M. Rifki Sa'ludin",
+  "waktu": "2026-10-05T01:55:09.205685+00:00"
+ },
+ {
+  "id": "2120eddf-8c96-475e-bf64-f2206810279e",
+  "user_id": "ccf3270d-ab2b-4d27-93f3-a38f5f5a059b",
+  "user_nama": "Masitah",
+  "aksi": "create",
+  "entitas": "anggota",
+  "entitas_id": "27c07dbe-bba9-42dd-9020-6ac8abc6ed3a",
+  "detail": "Aldiary Noor",
+  "waktu": "2026-10-05T01:53:31.666776+00:00"
+ },
+ {
+  "id": "76d08f09-9b52-4fcc-8b29-8a191fea2473",
+  "user_id": "ccf3270d-ab2b-4d27-93f3-a38f5f5a059b",
+  "user_nama": "Masitah",
+  "aksi": "create",
+  "entitas": "anggota",
+  "entitas_id": "0fc1413d-dc16-4a1d-95b7-089b54cb553f",
+  "detail": "Barliany",
+  "waktu": "2026-10-05T01:51:39.402613+00:00"
+ },
+ {
+  "id": "e335416f-68db-4149-9593-2e1b80af6a09",
+  "user_id": "ccf3270d-ab2b-4d27-93f3-a38f5f5a059b",
+  "user_nama": "Masitah",
+  "aksi": "create",
+  "entitas": "anggota",
+  "entitas_id": "8ea11083-43c4-45c2-ac69-aba1f81a361a",
+  "detail": "Jaspary Anwar ",
+  "waktu": "2026-10-05T01:50:08.828775+00:00"
+ },
+ {
+  "id": "8e4215f5-a5ac-4206-9c91-c688bb00afb1",
+  "user_id": "ccf3270d-ab2b-4d27-93f3-a38f5f5a059b",
+  "user_nama": "Masitah",
+  "aksi": "update",
+  "entitas": "keluarga",
+  "entitas_id": "dc77217e-4ce4-418e-bfa5-1cb73d875bd9",
+  "detail": "Jaspary Anwar",
+  "waktu": "2026-10-05T01:49:05.475813+00:00"
+ },
+ {
+  "id": "927bc85a-3b94-41b0-9c43-4d577d02e892",
+  "user_id": "ccf3270d-ab2b-4d27-93f3-a38f5f5a059b",
+  "user_nama": "Masitah",
+  "aksi": "create",
+  "entitas": "keluarga",
+  "entitas_id": "dc77217e-4ce4-418e-bfa5-1cb73d875bd9",
+  "detail": "Jaspary Anwar",
+  "waktu": "2026-10-05T01:46:29.484045+00:00"
+ },
+ {
+  "id": "eb2c09b6-09f3-4fc8-8c33-8c97cacd628d",
+  "user_id": "ccf3270d-ab2b-4d27-93f3-a38f5f5a059b",
+  "user_nama": "Masitah",
+  "aksi": "create",
+  "entitas": "kunjungan",
+  "entitas_id": "a49d1bf5-7ff0-46ee-ae86-da3956143b65",
+  "detail": "Abdul Samad  - kuning",
+  "waktu": "2026-10-05T01:43:41.240480+00:00"
+ },
+ {
+  "id": "b432fe02-1f59-433c-b736-e8f491a09505",
+  "user_id": "ccf3270d-ab2b-4d27-93f3-a38f5f5a059b",
+  "user_nama": "Masitah",
+  "aksi": "create",
+  "entitas": "anggota",
+  "entitas_id": "0b5e3247-ac0a-4284-92fe-a2f7d29d82e6",
+  "detail": "Muhammad Zahwan. A",
+  "waktu": "2026-10-05T01:39:45.624864+00:00"
+ },
+ {
+  "id": "d190a9b6-5cf8-4c82-9cd5-0633a7d8d462",
+  "user_id": "ccf3270d-ab2b-4d27-93f3-a38f5f5a059b",
+  "user_nama": "Masitah",
+  "aksi": "create",
+  "entitas": "anggota",
+  "entitas_id": "2fdb15a6-65d0-4852-aa1b-d642e3ea903d",
+  "detail": "Chandra Suryanata",
+  "waktu": "2026-10-05T01:38:06.345402+00:00"
+ },
+ {
+  "id": "5b5705df-5e35-4ed4-9b57-f37ab1ddff52",
+  "user_id": "ccf3270d-ab2b-4d27-93f3-a38f5f5a059b",
+  "user_nama": "Masitah",
+  "aksi": "create",
+  "entitas": "anggota",
+  "entitas_id": "d34b548f-3e00-4bc9-9fb0-dcb607f0278c",
+  "detail": "Ilawaty",
+  "waktu": "2026-10-05T01:36:18.096703+00:00"
+ },
+ {
+  "id": "380de007-af13-48dc-98e0-174d98abc77c",
+  "user_id": "ccf3270d-ab2b-4d27-93f3-a38f5f5a059b",
+  "user_nama": "Masitah",
+  "aksi": "update",
+  "entitas": "anggota",
+  "entitas_id": "e3a1eafc-0b1f-472d-b239-058e24a8fb72",
+  "detail": "Abdul Samad ",
+  "waktu": "2026-10-05T01:35:32.880716+00:00"
+ },
+ {
+  "id": "568ba16d-d73d-4a5e-996c-1190436da24d",
+  "user_id": "ccf3270d-ab2b-4d27-93f3-a38f5f5a059b",
+  "user_nama": "Masitah",
+  "aksi": "create",
+  "entitas": "anggota",
+  "entitas_id": "e3a1eafc-0b1f-472d-b239-058e24a8fb72",
+  "detail": "Abdul Samad ",
+  "waktu": "2026-10-05T01:35:26.262159+00:00"
+ },
+ {
+  "id": "3d0552bf-4ef5-46fe-9d33-d3a0a3fe8694",
+  "user_id": "ccf3270d-ab2b-4d27-93f3-a38f5f5a059b",
+  "user_nama": "Masitah",
+  "aksi": "create",
+  "entitas": "keluarga",
+  "entitas_id": "c8877b77-8765-4bae-ba91-c82c27be802b",
+  "detail": "Abdul Samad ",
+  "waktu": "2026-10-05T01:33:41.524138+00:00"
+ },
+ {
+  "id": "3d38e994-78ca-4768-bc14-96b74ba9bc0e",
+  "user_id": "ccf3270d-ab2b-4d27-93f3-a38f5f5a059b",
+  "user_nama": "Masitah",
+  "aksi": "create",
+  "entitas": "kunjungan",
+  "entitas_id": "5bc2f589-456e-464c-9fe1-cafe85abd4b1",
+  "detail": "Herianto U.S - kuning",
+  "waktu": "2026-10-05T01:30:25.290085+00:00"
+ },
+ {
+  "id": "6a6f5d77-bcd4-428c-8190-c94b7d60d10a",
+  "user_id": "ccf3270d-ab2b-4d27-93f3-a38f5f5a059b",
+  "user_nama": "Masitah",
+  "aksi": "update",
+  "entitas": "anggota",
+  "entitas_id": "d295447a-d67c-477f-9773-ae4ff28d9620",
+  "detail": "Ledia Amelia",
+  "waktu": "2026-10-05T01:26:00.482400+00:00"
+ },
+ {
+  "id": "1429c23c-ff28-4468-9fc2-ba0a61aa65a1",
+  "user_id": "ccf3270d-ab2b-4d27-93f3-a38f5f5a059b",
+  "user_nama": "Masitah",
+  "aksi": "update",
+  "entitas": "anggota",
+  "entitas_id": "a701cd2c-6cab-49c9-bac6-83e28f98b99a",
+  "detail": "Revia",
+  "waktu": "2026-10-05T01:25:43.550979+00:00"
+ },
+ {
+  "id": "7120dce5-7a92-47fb-9be7-74683ede7e2a",
+  "user_id": "ccf3270d-ab2b-4d27-93f3-a38f5f5a059b",
+  "user_nama": "Masitah",
+  "aksi": "create",
+  "entitas": "anggota",
+  "entitas_id": "d295447a-d67c-477f-9773-ae4ff28d9620",
+  "detail": "Ledia Amelia",
+  "waktu": "2026-10-05T01:23:49.204296+00:00"
+ },
+ {
+  "id": "bb6a2974-eee6-4caf-8194-12db4837d31a",
+  "user_id": "ccf3270d-ab2b-4d27-93f3-a38f5f5a059b",
+  "user_nama": "Masitah",
+  "aksi": "create",
+  "entitas": "anggota",
+  "entitas_id": "a701cd2c-6cab-49c9-bac6-83e28f98b99a",
+  "detail": "Revia",
+  "waktu": "2026-10-05T01:20:30.068335+00:00"
+ },
+ {
+  "id": "1ed3d7d1-6a27-4583-9dc0-c805d95d7aae",
+  "user_id": "ccf3270d-ab2b-4d27-93f3-a38f5f5a059b",
+  "user_nama": "Masitah",
+  "aksi": "create",
+  "entitas": "anggota",
+  "entitas_id": "77a4d267-10b4-457a-a540-ad5f677c318d",
+  "detail": "Latifah ",
+  "waktu": "2026-10-05T01:19:35.476682+00:00"
+ },
+ {
+  "id": "85990937-8480-4835-b146-dfd3d86299e9",
+  "user_id": "ccf3270d-ab2b-4d27-93f3-a38f5f5a059b",
+  "user_nama": "Masitah",
+  "aksi": "create",
+  "entitas": "anggota",
+  "entitas_id": "60b0c9f0-cc18-43f4-8aad-7502a91dff1f",
+  "detail": "Herianto U.S",
+  "waktu": "2026-10-05T01:18:43.758695+00:00"
+ },
+ {
+  "id": "84e11a2c-96da-467b-9012-9f1842681f3c",
+  "user_id": "ccf3270d-ab2b-4d27-93f3-a38f5f5a059b",
+  "user_nama": "Masitah",
+  "aksi": "create",
+  "entitas": "keluarga",
+  "entitas_id": "9cab5117-ad35-45aa-9d7c-a4aa616c8b48",
+  "detail": "Herianto U.S",
+  "waktu": "2026-10-05T01:17:36.387558+00:00"
+ },
+ {
+  "id": "910c991d-e12c-4e18-a4df-5152af6cc5e5",
+  "user_id": "ccf3270d-ab2b-4d27-93f3-a38f5f5a059b",
+  "user_nama": "Masitah",
+  "aksi": "create",
+  "entitas": "kunjungan",
+  "entitas_id": "1d439c93-7967-4fce-9243-148457ac6fb8",
+  "detail": "Hasim - kuning",
+  "waktu": "2026-10-03T03:27:24.028172+00:00"
+ },
+ {
+  "id": "6e7b7c90-82d8-452d-bfef-3c0da0320630",
+  "user_id": "ccf3270d-ab2b-4d27-93f3-a38f5f5a059b",
+  "user_nama": "Masitah",
+  "aksi": "create",
+  "entitas": "anggota",
+  "entitas_id": "7fb9e89c-2e86-4c6c-9094-4d6a39d1ebd5",
+  "detail": "Aulia Putri ",
+  "waktu": "2026-10-03T03:24:17.448865+00:00"
+ },
+ {
+  "id": "e9419da8-0445-4e48-bf9a-1ab6700ca193",
+  "user_id": "ccf3270d-ab2b-4d27-93f3-a38f5f5a059b",
+  "user_nama": "Masitah",
+  "aksi": "create",
+  "entitas": "anggota",
+  "entitas_id": "82e21b58-d4d0-43a8-bca2-8e65037a73c5",
+  "detail": "Suriani",
+  "waktu": "2026-10-03T03:23:12.872066+00:00"
+ },
+ {
+  "id": "4ce23419-65c7-4152-8ea6-06dbf14c8575",
+  "user_id": "ccf3270d-ab2b-4d27-93f3-a38f5f5a059b",
+  "user_nama": "Masitah",
+  "aksi": "create",
+  "entitas": "anggota",
+  "entitas_id": "862637a8-a38c-4280-a27f-2d97b0d50553",
+  "detail": "Sariah",
+  "waktu": "2026-10-03T03:22:24.936677+00:00"
+ },
+ {
+  "id": "54ada1f7-2fc2-4ec0-97ed-32a12cf8d945",
+  "user_id": "ccf3270d-ab2b-4d27-93f3-a38f5f5a059b",
+  "user_nama": "Masitah",
+  "aksi": "create",
+  "entitas": "anggota",
+  "entitas_id": "b7823794-8d97-47be-9138-022c4e9a00a3",
+  "detail": "Hasim",
+  "waktu": "2026-10-03T03:20:53.661994+00:00"
+ },
+ {
+  "id": "af1f18ac-6ae4-4570-b1c8-ed815f38ed48",
+  "user_id": "ccf3270d-ab2b-4d27-93f3-a38f5f5a059b",
+  "user_nama": "Masitah",
+  "aksi": "create",
+  "entitas": "keluarga",
+  "entitas_id": "e6361898-ef70-486a-910f-979c2a3a0889",
+  "detail": "Hasim",
+  "waktu": "2026-10-03T03:20:07.599903+00:00"
+ },
+ {
+  "id": "89225564-66d7-4da3-b233-e42f3e9a4a1e",
+  "user_id": "ccf3270d-ab2b-4d27-93f3-a38f5f5a059b",
+  "user_nama": "Masitah",
+  "aksi": "create",
+  "entitas": "kunjungan",
+  "entitas_id": "0d1c8d4c-6a93-4867-bbe2-0fbf18b0cc36",
+  "detail": "Muhammad Nasir  - kuning",
+  "waktu": "2026-10-03T03:18:40.174499+00:00"
+ },
+ {
+  "id": "2e47749d-2195-4c75-bae8-0355c5df035f",
+  "user_id": "ccf3270d-ab2b-4d27-93f3-a38f5f5a059b",
+  "user_nama": "Masitah",
+  "aksi": "create",
+  "entitas": "anggota",
+  "entitas_id": "c3c6a842-deb2-47a9-b479-f2aab5a9d7a7",
+  "detail": "Muhammad Latif",
+  "waktu": "2026-10-03T03:15:20.761746+00:00"
+ },
+ {
+  "id": "ace5c90e-0137-4414-b3d4-eecfce35b7a3",
+  "user_id": "ccf3270d-ab2b-4d27-93f3-a38f5f5a059b",
+  "user_nama": "Masitah",
+  "aksi": "create",
+  "entitas": "anggota",
+  "entitas_id": "e4408ca1-b29f-4549-b4e7-5d922ff591b6",
+  "detail": "Nor Mayati",
+  "waktu": "2026-10-03T03:14:34.302630+00:00"
+ },
+ {
+  "id": "8d3f6723-d202-49ab-a787-2847203a7763",
+  "user_id": "ccf3270d-ab2b-4d27-93f3-a38f5f5a059b",
+  "user_nama": "Masitah",
+  "aksi": "create",
+  "entitas": "anggota",
+  "entitas_id": "585acedc-c309-48c2-a6a2-383212c1dfd6",
+  "detail": "Muhammad Nasir ",
+  "waktu": "2026-10-03T03:13:23.360381+00:00"
+ },
+ {
+  "id": "fc34e90b-b52e-44ba-8eff-52e70a659697",
+  "user_id": "ccf3270d-ab2b-4d27-93f3-a38f5f5a059b",
+  "user_nama": "Masitah",
+  "aksi": "create",
+  "entitas": "keluarga",
+  "entitas_id": "50c4af93-857c-4ca1-9b43-32633a0c3dd8",
+  "detail": "Muhammad Nasir ",
+  "waktu": "2026-10-03T03:12:23.479193+00:00"
+ },
+ {
+  "id": "4d09783c-f752-4f4c-99fd-6cf9368d4f3d",
+  "user_id": "ccf3270d-ab2b-4d27-93f3-a38f5f5a059b",
+  "user_nama": "Masitah",
+  "aksi": "create",
+  "entitas": "kunjungan",
+  "entitas_id": "455cd921-b467-45f2-926a-67a883713354",
+  "detail": "Syukur Ibrahim - kuning",
+  "waktu": "2026-10-03T03:10:56.935652+00:00"
+ },
+ {
+  "id": "301b2efb-fc26-40b6-a0d1-10fb6a882be0",
+  "user_id": "ccf3270d-ab2b-4d27-93f3-a38f5f5a059b",
+  "user_nama": "Masitah",
+  "aksi": "create",
+  "entitas": "anggota",
+  "entitas_id": "c720fc8f-66ad-40f4-a930-9fd2145241cc",
+  "detail": "Fajar Pratama Saputra ",
+  "waktu": "2026-10-03T02:49:49.900668+00:00"
+ },
+ {
+  "id": "a7283776-d847-4023-885c-51c213786fb1",
+  "user_id": "ccf3270d-ab2b-4d27-93f3-a38f5f5a059b",
+  "user_nama": "Masitah",
+  "aksi": "create",
+  "entitas": "anggota",
+  "entitas_id": "ee28452c-efc0-487f-ba23-0c6a256072fb",
+  "detail": "Emliana Tati",
+  "waktu": "2026-10-03T02:46:50.325713+00:00"
+ },
+ {
+  "id": "98cea6f6-5197-4d44-a7b1-3e1d8963b23b",
+  "user_id": "ccf3270d-ab2b-4d27-93f3-a38f5f5a059b",
+  "user_nama": "Masitah",
+  "aksi": "create",
+  "entitas": "anggota",
+  "entitas_id": "a38150e8-eb9f-477b-bad4-c7747125940e",
+  "detail": "Syukur Ibrahim ",
+  "waktu": "2026-10-03T02:45:59.548484+00:00"
+ },
+ {
+  "id": "ceacbce4-5d31-4637-9513-58c1f2bc7c29",
+  "user_id": "ccf3270d-ab2b-4d27-93f3-a38f5f5a059b",
+  "user_nama": "Masitah",
+  "aksi": "create",
+  "entitas": "keluarga",
+  "entitas_id": "45756f6c-376f-45c8-a165-b7f19d34048b",
+  "detail": "Syukur Ibrahim",
+  "waktu": "2026-10-03T02:44:56.396055+00:00"
+ },
+ {
+  "id": "a701c290-a5f6-4083-a4ee-8e0dcf8ce009",
+  "user_id": "ccf3270d-ab2b-4d27-93f3-a38f5f5a059b",
+  "user_nama": "Masitah",
+  "aksi": "create",
+  "entitas": "kunjungan",
+  "entitas_id": "199f3a63-8d8e-48d2-9a72-029e9ac18385",
+  "detail": "Rahman - kuning",
+  "waktu": "2026-10-03T02:43:19.827584+00:00"
+ },
+ {
+  "id": "75b8ef0d-cf5d-4cad-984d-742c6fcd03aa",
+  "user_id": "ccf3270d-ab2b-4d27-93f3-a38f5f5a059b",
+  "user_nama": "Masitah",
+  "aksi": "create",
+  "entitas": "anggota",
+  "entitas_id": "43a1bec6-e7b7-42fd-bb2b-c341192cdb1e",
+  "detail": "Siti Aminah ",
+  "waktu": "2026-10-03T02:39:24.147037+00:00"
+ },
+ {
+  "id": "41a7deec-1330-4acd-a2dc-41b433036361",
+  "user_id": "ccf3270d-ab2b-4d27-93f3-a38f5f5a059b",
+  "user_nama": "Masitah",
+  "aksi": "create",
+  "entitas": "anggota",
+  "entitas_id": "b0e85b68-0d2a-4a8e-88c2-0f94d45f67f5",
+  "detail": "Mahdi",
+  "waktu": "2026-10-03T02:38:24.441533+00:00"
+ },
+ {
+  "id": "cd6e58ff-e999-4e7e-ae10-10986bce703d",
+  "user_id": "ccf3270d-ab2b-4d27-93f3-a38f5f5a059b",
+  "user_nama": "Masitah",
+  "aksi": "create",
+  "entitas": "anggota",
+  "entitas_id": "773db20e-20c4-48e0-b365-348769764743",
+  "detail": "Ramnah",
+  "waktu": "2026-10-03T02:37:30.800302+00:00"
+ },
+ {
+  "id": "61626310-17bd-4bb2-bc49-0168f2a800b0",
+  "user_id": "ccf3270d-ab2b-4d27-93f3-a38f5f5a059b",
+  "user_nama": "Masitah",
+  "aksi": "create",
+  "entitas": "anggota",
+  "entitas_id": "e68fa5d5-219e-49c7-9ee1-394174f5a89e",
+  "detail": "Rahman",
+  "waktu": "2026-10-03T02:36:12.941716+00:00"
+ },
+ {
+  "id": "9f8b70f2-5bda-494e-804a-1e3602e1d3bb",
+  "user_id": "ccf3270d-ab2b-4d27-93f3-a38f5f5a059b",
+  "user_nama": "Masitah",
+  "aksi": "create",
+  "entitas": "keluarga",
+  "entitas_id": "a35580a7-937d-4a11-9f32-1140e786afc7",
+  "detail": "Rahman",
+  "waktu": "2026-10-03T02:33:58.638172+00:00"
+ },
+ {
+  "id": "6ec1ea80-619d-42f3-86f0-efc71ba19e36",
+  "user_id": "ccf3270d-ab2b-4d27-93f3-a38f5f5a059b",
+  "user_nama": "Masitah",
+  "aksi": "create",
+  "entitas": "keluarga",
+  "entitas_id": "b930ecad-c0f3-4e1d-9df4-0e30244fa910",
+  "detail": "Rahman",
+  "waktu": "2026-10-03T02:33:26.336921+00:00"
+ },
+ {
+  "id": "1cbf5b72-49e5-4e74-a019-718bfe652850",
+  "user_id": "ccf3270d-ab2b-4d27-93f3-a38f5f5a059b",
+  "user_nama": "Masitah",
+  "aksi": "create",
+  "entitas": "kunjungan",
+  "entitas_id": "b909ca6b-0043-444f-a596-e9279e83c96e",
+  "detail": "Suprianto  - kuning",
+  "waktu": "2026-10-03T02:31:09.621569+00:00"
+ },
+ {
+  "id": "4a27c1c1-1c38-445b-9fca-6f04a9d25d72",
+  "user_id": "ccf3270d-ab2b-4d27-93f3-a38f5f5a059b",
+  "user_nama": "Masitah",
+  "aksi": "create",
+  "entitas": "anggota",
+  "entitas_id": "00b0400e-54e7-41eb-9b93-f160dc26e00a",
+  "detail": "Khairunnisa ",
+  "waktu": "2026-10-03T02:23:15.197210+00:00"
+ },
+ {
+  "id": "e2933161-9e6b-4168-a780-1297b320575c",
+  "user_id": "6f9e831d-a48f-4d30-80fe-a1971f21dc16",
+  "user_nama": "Fitriani",
+  "aksi": "update",
+  "entitas": "anggota",
+  "entitas_id": "bc31d258-f863-4fc2-b2a8-212e054c9179",
+  "detail": "Ramlan",
+  "waktu": "2026-10-03T02:22:27.572443+00:00"
+ },
+ {
+  "id": "d2a1d4f1-79cf-44a4-829a-9a83275f99f8",
+  "user_id": "ccf3270d-ab2b-4d27-93f3-a38f5f5a059b",
+  "user_nama": "Masitah",
+  "aksi": "create",
+  "entitas": "anggota",
+  "entitas_id": "867a6595-e7ff-415a-87cc-0bec412a4e30",
+  "detail": "Azril Rahandhika",
+  "waktu": "2026-10-03T02:22:18.158919+00:00"
+ },
+ {
+  "id": "36a34639-ae79-45e9-8e50-fc7c0c749315",
+  "user_id": "6f9e831d-a48f-4d30-80fe-a1971f21dc16",
+  "user_nama": "Fitriani",
+  "aksi": "create",
+  "entitas": "anggota",
+  "entitas_id": "bc31d258-f863-4fc2-b2a8-212e054c9179",
+  "detail": "Ramlan",
+  "waktu": "2026-10-03T02:22:00.420228+00:00"
+ },
+ {
+  "id": "01edcaaa-da13-45f2-9d20-c791aa42de59",
+  "user_id": "ccf3270d-ab2b-4d27-93f3-a38f5f5a059b",
+  "user_nama": "Masitah",
+  "aksi": "create",
+  "entitas": "anggota",
+  "entitas_id": "67b26d1e-b4db-47bc-99d5-ed4ce9ff02e2",
+  "detail": "M. Rifki Ilham",
+  "waktu": "2026-10-03T02:21:09.331433+00:00"
+ },
+ {
+  "id": "bedbabcf-54bb-4ea4-a06f-483f45b2bceb",
+  "user_id": "6f9e831d-a48f-4d30-80fe-a1971f21dc16",
+  "user_nama": "Fitriani",
+  "aksi": "create",
+  "entitas": "keluarga",
+  "entitas_id": "96250b54-dedd-4cd7-920d-7a936252ae60",
+  "detail": "Ramlan",
+  "waktu": "2026-10-03T02:20:32.071697+00:00"
+ },
+ {
+  "id": "2010511c-1429-4cd4-b2ab-620e9653d058",
+  "user_id": "ccf3270d-ab2b-4d27-93f3-a38f5f5a059b",
+  "user_nama": "Masitah",
+  "aksi": "create",
+  "entitas": "anggota",
+  "entitas_id": "647e1d9d-9242-4503-9375-79e365628013",
+  "detail": "Nurbayati",
+  "waktu": "2026-10-03T02:19:45.436153+00:00"
+ },
+ {
+  "id": "c6f2fe10-3cba-4a76-a8ab-1fdefe097e2b",
+  "user_id": "6f9e831d-a48f-4d30-80fe-a1971f21dc16",
+  "user_nama": "Fitriani",
+  "aksi": "create",
+  "entitas": "kunjungan",
+  "entitas_id": "55f387cc-3f07-47bd-83ae-014604a9e020",
+  "detail": "Juhani - kuning",
+  "waktu": "2026-10-03T02:18:19.857950+00:00"
+ },
+ {
+  "id": "e9542a11-1bc6-481d-b6f2-5737b67e1f6b",
+  "user_id": "ccf3270d-ab2b-4d27-93f3-a38f5f5a059b",
+  "user_nama": "Masitah",
+  "aksi": "update",
+  "entitas": "anggota",
+  "entitas_id": "0dc856ed-b29b-4742-b6ac-13481bb526b9",
+  "detail": "Suprianto ",
+  "waktu": "2026-10-03T02:18:03.975648+00:00"
+ },
+ {
+  "id": "24c54e70-55a7-4e90-a2f0-1bc3d7a8adb0",
+  "user_id": "ccf3270d-ab2b-4d27-93f3-a38f5f5a059b",
+  "user_nama": "Masitah",
+  "aksi": "create",
+  "entitas": "anggota",
+  "entitas_id": "0dc856ed-b29b-4742-b6ac-13481bb526b9",
+  "detail": "Suprianto ",
+  "waktu": "2026-10-03T02:17:49.357721+00:00"
+ },
+ {
+  "id": "0c5e250e-9423-46c9-bdcc-28ed7ede6e51",
+  "user_id": "6f9e831d-a48f-4d30-80fe-a1971f21dc16",
+  "user_nama": "Fitriani",
+  "aksi": "create",
+  "entitas": "anggota",
+  "entitas_id": "d9ac672a-7de8-4aaf-8506-10282105131c",
+  "detail": "Tini",
+  "waktu": "2026-10-03T02:16:46.303504+00:00"
+ },
+ {
+  "id": "b81f77a0-187f-4938-9de2-caf6384b99b9",
+  "user_id": "ccf3270d-ab2b-4d27-93f3-a38f5f5a059b",
+  "user_nama": "Masitah",
+  "aksi": "create",
+  "entitas": "keluarga",
+  "entitas_id": "bc2a32a6-e0ce-4d3d-a7f3-81850947afb2",
+  "detail": "Suprianto ",
+  "waktu": "2026-10-03T02:16:28.977789+00:00"
+ },
+ {
+  "id": "1b06cb17-7082-4e72-8c6c-b8b16db26bee",
+  "user_id": "6f9e831d-a48f-4d30-80fe-a1971f21dc16",
+  "user_nama": "Fitriani",
+  "aksi": "create",
+  "entitas": "anggota",
+  "entitas_id": "961ab35c-3111-498a-9948-ad1dc2099d8d",
+  "detail": "Juhani",
+  "waktu": "2026-10-03T02:13:17.636715+00:00"
+ },
+ {
+  "id": "0b6fc328-fd38-4b9b-a87b-5d3bc5ef6163",
+  "user_id": "6f9e831d-a48f-4d30-80fe-a1971f21dc16",
+  "user_nama": "Fitriani",
+  "aksi": "create",
+  "entitas": "keluarga",
+  "entitas_id": "1724fab4-17d7-4a06-8be7-40d66a946dca",
+  "detail": "Juhani",
+  "waktu": "2026-10-03T02:05:30.777011+00:00"
+ },
+ {
+  "id": "eb965c9c-9167-4104-bca9-f361f69df4ac",
+  "user_id": "6f9e831d-a48f-4d30-80fe-a1971f21dc16",
+  "user_nama": "Fitriani",
+  "aksi": "create",
+  "entitas": "kunjungan",
+  "entitas_id": "9cd60496-470b-4dcb-af86-6772e9b551c6",
+  "detail": "Suriansyah - kuning",
+  "waktu": "2026-10-03T02:03:47.851503+00:00"
+ },
+ {
+  "id": "90abad6c-29ac-41f2-acfd-1bdb926d8164",
+  "user_id": "ccf3270d-ab2b-4d27-93f3-a38f5f5a059b",
+  "user_nama": "Masitah",
+  "aksi": "create",
+  "entitas": "kunjungan",
+  "entitas_id": "9650dd3e-7638-42b6-844d-64d6ef2ebe99",
+  "detail": "Salemi - kuning",
+  "waktu": "2026-10-03T02:01:58.944562+00:00"
+ },
+ {
+  "id": "128c43ef-93f1-4742-a31d-5299eb4e9b96",
+  "user_id": "6f9e831d-a48f-4d30-80fe-a1971f21dc16",
+  "user_nama": "Fitriani",
+  "aksi": "create",
+  "entitas": "anggota",
+  "entitas_id": "dae160d2-16f6-4042-8a95-3804872b60f2",
+  "detail": "Ahmad Reza Maulana",
+  "waktu": "2026-10-03T01:55:40.129224+00:00"
+ },
+ {
+  "id": "c0f48c28-ec4e-4701-b51b-f4868a765be4",
+  "user_id": "6f9e831d-a48f-4d30-80fe-a1971f21dc16",
+  "user_nama": "Fitriani",
+  "aksi": "create",
+  "entitas": "anggota",
+  "entitas_id": "80cecad2-c3aa-48b6-9f94-3bd24d0476cf",
+  "detail": "Aulia Rahma Dina",
+  "waktu": "2026-10-03T01:54:55.821187+00:00"
+ },
+ {
+  "id": "7f6dc7ee-6527-48cf-bc00-e9a7225f88dd",
+  "user_id": "ccf3270d-ab2b-4d27-93f3-a38f5f5a059b",
+  "user_nama": "Masitah",
+  "aksi": "create",
+  "entitas": "anggota",
+  "entitas_id": "15fb0e4f-4867-423a-981c-175f4a0fc9c4",
+  "detail": "Muhammad Rasid",
+  "waktu": "2026-10-03T01:52:17.681604+00:00"
+ },
+ {
+  "id": "aab24b2d-fb12-4e2a-b29b-f54def306486",
+  "user_id": "ccf3270d-ab2b-4d27-93f3-a38f5f5a059b",
+  "user_nama": "Masitah",
+  "aksi": "create",
+  "entitas": "anggota",
+  "entitas_id": "1f971a48-8a7b-4807-a4c2-58ad850470fb",
+  "detail": "Shafwan Arifuddin ",
+  "waktu": "2026-10-03T01:50:23.279242+00:00"
+ },
+ {
+  "id": "b9e2bd31-a9fa-4be8-9ab1-b9f1c6421e43",
+  "user_id": "6f9e831d-a48f-4d30-80fe-a1971f21dc16",
+  "user_nama": "Fitriani",
+  "aksi": "create",
+  "entitas": "anggota",
+  "entitas_id": "197458d3-b652-495c-bf05-441d6259efcb",
+  "detail": "Maulida",
+  "waktu": "2026-10-03T01:49:01.886365+00:00"
+ },
+ {
+  "id": "8235427b-da47-4666-b349-6526274f9870",
+  "user_id": "ccf3270d-ab2b-4d27-93f3-a38f5f5a059b",
+  "user_nama": "Masitah",
+  "aksi": "create",
+  "entitas": "anggota",
+  "entitas_id": "1b02bba1-1079-432d-a69b-a2773dd9894a",
+  "detail": "Nana",
+  "waktu": "2026-10-03T01:45:57.748027+00:00"
+ },
+ {
+  "id": "ad28fbd6-c335-4bfb-884e-6778517da739",
+  "user_id": "ccf3270d-ab2b-4d27-93f3-a38f5f5a059b",
+  "user_nama": "Masitah",
+  "aksi": "update",
+  "entitas": "anggota",
+  "entitas_id": "09611dd7-8809-400e-a8c9-8f91d1e2d76b",
+  "detail": "Salemi",
+  "waktu": "2026-10-03T01:40:33.533378+00:00"
+ },
+ {
+  "id": "45b4349f-9096-42d9-a5de-68bfbad69a01",
+  "user_id": "ccf3270d-ab2b-4d27-93f3-a38f5f5a059b",
+  "user_nama": "Masitah",
+  "aksi": "create",
+  "entitas": "anggota",
+  "entitas_id": "09611dd7-8809-400e-a8c9-8f91d1e2d76b",
+  "detail": "Salemi",
+  "waktu": "2026-10-03T01:40:28.693552+00:00"
+ },
+ {
+  "id": "69cd87a3-b99f-4f25-8124-f4c4ddce1332",
+  "user_id": "ccf3270d-ab2b-4d27-93f3-a38f5f5a059b",
+  "user_nama": "Masitah",
+  "aksi": "create",
+  "entitas": "keluarga",
+  "entitas_id": "9b888097-07e2-4ed4-9747-74347a3dc13b",
+  "detail": "Salemi",
+  "waktu": "2026-10-03T01:39:35.110982+00:00"
+ },
+ {
+  "id": "4f0f0bcc-e666-492a-bb97-5fc78a658a95",
+  "user_id": "6f9e831d-a48f-4d30-80fe-a1971f21dc16",
+  "user_nama": "Fitriani",
+  "aksi": "create",
+  "entitas": "anggota",
+  "entitas_id": "fa23c39b-0459-4edf-b923-47c2041f37aa",
+  "detail": "M. Adha Hidayatullah",
+  "waktu": "2026-10-03T01:37:41.531610+00:00"
+ },
+ {
+  "id": "678f68d0-f991-4cad-8216-a0aa50bf1e72",
+  "user_id": "6f9e831d-a48f-4d30-80fe-a1971f21dc16",
+  "user_nama": "Fitriani",
+  "aksi": "create",
+  "entitas": "anggota",
+  "entitas_id": "b828ff7a-b964-4d55-9d7d-447775b419f7",
+  "detail": "Mahrita",
+  "waktu": "2026-10-03T01:36:55.787658+00:00"
+ },
+ {
+  "id": "13e5ebe2-123a-4c9d-a08c-29e22d7b2979",
+  "user_id": "6f9e831d-a48f-4d30-80fe-a1971f21dc16",
+  "user_nama": "Fitriani",
+  "aksi": "create",
+  "entitas": "anggota",
+  "entitas_id": "afd7d6b5-7317-4cb2-a376-05a678826617",
+  "detail": "Suriansyah",
+  "waktu": "2026-10-03T01:35:38.911382+00:00"
+ },
+ {
+  "id": "aa10a64e-e5f8-448d-8725-099ef70a8d1f",
+  "user_id": "ccf3270d-ab2b-4d27-93f3-a38f5f5a059b",
+  "user_nama": "Masitah",
+  "aksi": "create",
+  "entitas": "kunjungan",
+  "entitas_id": "812a76e4-41d6-4cf3-9e35-cf6a6a68f9b2",
+  "detail": "Padliyanor - kuning",
+  "waktu": "2026-10-03T01:33:20.500515+00:00"
+ },
+ {
+  "id": "42b75a43-9ab2-42ff-9e6a-a5140af3a222",
+  "user_id": "6f9e831d-a48f-4d30-80fe-a1971f21dc16",
+  "user_nama": "Fitriani",
+  "aksi": "create",
+  "entitas": "keluarga",
+  "entitas_id": "2b1c0c96-0984-4179-8c3d-08e9d858a0f0",
+  "detail": "Suriansyah",
+  "waktu": "2026-10-03T01:32:37.943454+00:00"
+ },
+ {
+  "id": "0903c0c2-61ca-4da5-aad4-c1c99e82290d",
+  "user_id": "6f9e831d-a48f-4d30-80fe-a1971f21dc16",
+  "user_nama": "Fitriani",
+  "aksi": "create",
+  "entitas": "kunjungan",
+  "entitas_id": "d194fbc3-9fd8-4e50-9a9c-d6b8ad4a2112",
+  "detail": "Havid Akbar - kuning",
+  "waktu": "2026-10-03T01:30:53.028871+00:00"
+ },
+ {
+  "id": "d97f38f5-8c65-4391-965b-7cf2e66a4329",
+  "user_id": "ccf3270d-ab2b-4d27-93f3-a38f5f5a059b",
+  "user_nama": "Masitah",
+  "aksi": "create",
+  "entitas": "anggota",
+  "entitas_id": "ef8124d7-cac2-4a0e-bc6e-55750c685a82",
+  "detail": "Septi Maulida ",
+  "waktu": "2026-10-03T01:24:50.922491+00:00"
+ },
+ {
+  "id": "7c265fa0-ef26-4715-8505-0134b6584305",
+  "user_id": "ccf3270d-ab2b-4d27-93f3-a38f5f5a059b",
+  "user_nama": "Masitah",
+  "aksi": "create",
+  "entitas": "anggota",
+  "entitas_id": "482f3eae-db7d-4598-a843-a6d239fb1257",
+  "detail": "Noor Lesti",
+  "waktu": "2026-10-03T01:23:26.990240+00:00"
+ },
+ {
+  "id": "34c26df4-2d83-45dc-99d5-4830bf24eca7",
+  "user_id": "ccf3270d-ab2b-4d27-93f3-a38f5f5a059b",
+  "user_nama": "Masitah",
+  "aksi": "create",
+  "entitas": "anggota",
+  "entitas_id": "77309bd7-20bf-4c7f-8e07-6c5f863a1c6b",
+  "detail": "Susanti ",
+  "waktu": "2026-10-03T01:22:11.421258+00:00"
+ },
+ {
+  "id": "8e034531-949e-46fe-8a71-5ac96da503e6",
+  "user_id": "6f9e831d-a48f-4d30-80fe-a1971f21dc16",
+  "user_nama": "Fitriani",
+  "aksi": "create",
+  "entitas": "anggota",
+  "entitas_id": "82826e2f-5223-400f-a71b-ca120c411f60",
+  "detail": "Haidar Arshaq Atharrazka",
+  "waktu": "2026-10-03T01:20:41.481662+00:00"
+ },
+ {
+  "id": "e605584f-f9fa-44c8-a0d0-a38afb11d71c",
+  "user_id": "ccf3270d-ab2b-4d27-93f3-a38f5f5a059b",
+  "user_nama": "Masitah",
+  "aksi": "create",
+  "entitas": "anggota",
+  "entitas_id": "fdd0cb8b-0bdf-4935-aacd-8dac82309415",
+  "detail": "Astuti",
+  "waktu": "2026-10-03T01:20:22.719882+00:00"
+ },
+ {
+  "id": "fab9c4c7-2b07-4619-ad44-6300a8169105",
+  "user_id": "6f9e831d-a48f-4d30-80fe-a1971f21dc16",
+  "user_nama": "Fitriani",
+  "aksi": "create",
+  "entitas": "anggota",
+  "entitas_id": "c9225aba-6c95-48d2-bde9-6081b86dfb92",
+  "detail": "Norhayati Z.",
+  "waktu": "2026-10-03T01:19:50.235092+00:00"
+ },
+ {
+  "id": "fe29070b-4fa2-4fcb-8be0-65193bc856e7",
+  "user_id": "ccf3270d-ab2b-4d27-93f3-a38f5f5a059b",
+  "user_nama": "Masitah",
+  "aksi": "create",
+  "entitas": "anggota",
+  "entitas_id": "ff7f784b-ee48-49f2-b46b-dd3db7df28eb",
+  "detail": "Padliyanor ",
+  "waktu": "2026-10-03T01:15:19.250996+00:00"
+ },
+ {
+  "id": "905b590a-56ed-4c33-bafd-4945fb978f39",
+  "user_id": "ccf3270d-ab2b-4d27-93f3-a38f5f5a059b",
+  "user_nama": "Masitah",
+  "aksi": "create",
+  "entitas": "keluarga",
+  "entitas_id": "514907ae-af88-4bbb-b60a-b7722249958b",
+  "detail": "Padliyanor",
+  "waktu": "2026-10-03T01:14:01.670315+00:00"
+ },
+ {
+  "id": "54f6540f-e901-46f1-96b5-bcbff997f268",
+  "user_id": "ccf3270d-ab2b-4d27-93f3-a38f5f5a059b",
+  "user_nama": "Masitah",
+  "aksi": "create",
+  "entitas": "kunjungan",
+  "entitas_id": "7e0a5d21-37a0-41ea-9220-963d7d9bad56",
+  "detail": "Sumariyo  - kuning",
+  "waktu": "2026-10-03T01:11:30.740007+00:00"
+ },
+ {
+  "id": "a96f546e-37e4-4c6b-bbd9-9bf8f0f16975",
+  "user_id": "ccf3270d-ab2b-4d27-93f3-a38f5f5a059b",
+  "user_nama": "Masitah",
+  "aksi": "create",
+  "entitas": "anggota",
+  "entitas_id": "a6d7c4cb-4883-4159-b0ce-e421d94a044d",
+  "detail": "Mahya Muhimmatul",
+  "waktu": "2026-10-03T01:07:57.147115+00:00"
+ },
+ {
+  "id": "360a5cc8-885f-419f-892c-aa1bba6e3de7",
+  "user_id": "ccf3270d-ab2b-4d27-93f3-a38f5f5a059b",
+  "user_nama": "Masitah",
+  "aksi": "create",
+  "entitas": "anggota",
+  "entitas_id": "59c9fbb8-20d9-4276-a699-cdbc2d37da0e",
+  "detail": "Alika Alya Naftah",
+  "waktu": "2026-10-03T01:06:07.284397+00:00"
+ },
+ {
+  "id": "f1827093-bd85-4fb3-b306-94af2ff51d4a",
+  "user_id": "ccf3270d-ab2b-4d27-93f3-a38f5f5a059b",
+  "user_nama": "Masitah",
+  "aksi": "create",
+  "entitas": "anggota",
+  "entitas_id": "73e66e03-4aa3-43f5-8465-97df0b23ab3f",
+  "detail": "Latif Qoni'ah",
+  "waktu": "2026-10-03T01:04:39.013296+00:00"
+ },
+ {
+  "id": "a6ef33c7-c9fd-4365-be05-d62a9579ee4d",
+  "user_id": "ccf3270d-ab2b-4d27-93f3-a38f5f5a059b",
+  "user_nama": "Masitah",
+  "aksi": "create",
+  "entitas": "anggota",
+  "entitas_id": "e441fb66-0a6f-48c8-875d-9ccb63d24e56",
+  "detail": "Sumariyo ",
+  "waktu": "2026-10-03T01:03:19.902065+00:00"
+ },
+ {
+  "id": "4e94415f-4c06-41ca-864c-addf34aa62bc",
+  "user_id": "ccf3270d-ab2b-4d27-93f3-a38f5f5a059b",
+  "user_nama": "Masitah",
+  "aksi": "create",
+  "entitas": "keluarga",
+  "entitas_id": "843e9e14-83ac-4525-952e-4686e8a3b7ae",
+  "detail": "Sumariyo ",
+  "waktu": "2026-10-03T01:01:43.039348+00:00"
+ },
+ {
+  "id": "a9a2f4cb-bee6-4f41-84f8-c749b80ac630",
+  "user_id": "ccf3270d-ab2b-4d27-93f3-a38f5f5a059b",
+  "user_nama": "Masitah",
+  "aksi": "create",
+  "entitas": "kunjungan",
+  "entitas_id": "dc7e14bb-2f24-47a6-9139-efc0a69223ff",
+  "detail": "Inon - kuning",
+  "waktu": "2026-10-02T02:16:47.547204+00:00"
+ },
+ {
+  "id": "24f2ce52-3541-4a38-8fe4-3be237bd39a8",
+  "user_id": "ccf3270d-ab2b-4d27-93f3-a38f5f5a059b",
+  "user_nama": "Masitah",
+  "aksi": "create",
+  "entitas": "anggota",
+  "entitas_id": "a8fe9e18-2058-43b9-b223-77ee34794cb0",
+  "detail": "Yulia",
+  "waktu": "2026-10-02T02:15:44.437732+00:00"
+ },
+ {
+  "id": "346e5db2-74ff-4963-8bd1-b7e6e99f21ac",
+  "user_id": "ccf3270d-ab2b-4d27-93f3-a38f5f5a059b",
+  "user_nama": "Masitah",
+  "aksi": "create",
+  "entitas": "anggota",
+  "entitas_id": "4502c618-6e66-4bb7-84d1-0e97ef63c06d",
+  "detail": "Inon ",
+  "waktu": "2026-10-02T02:15:04.543644+00:00"
+ },
+ {
+  "id": "a86e3d2f-9a1b-4dbe-86e4-4a81216ff59d",
+  "user_id": "ccf3270d-ab2b-4d27-93f3-a38f5f5a059b",
+  "user_nama": "Masitah",
+  "aksi": "create",
+  "entitas": "keluarga",
+  "entitas_id": "7438e2f6-7e24-4a75-b765-327fa78eeabe",
+  "detail": "Inon",
+  "waktu": "2026-10-02T02:14:12.684139+00:00"
+ },
+ {
+  "id": "54510bd2-caa6-4aaf-b96c-016b8d073dd6",
+  "user_id": "ccf3270d-ab2b-4d27-93f3-a38f5f5a059b",
+  "user_nama": "Masitah",
+  "aksi": "create",
+  "entitas": "kunjungan",
+  "entitas_id": "e79a4899-e6b1-480b-8224-b6b16caddf99",
+  "detail": "Syaifullah  - kuning",
+  "waktu": "2026-10-02T02:09:20.938998+00:00"
+ },
+ {
+  "id": "1a32f713-7128-4a37-a0a8-83b6f98626f5",
+  "user_id": "ccf3270d-ab2b-4d27-93f3-a38f5f5a059b",
+  "user_nama": "Masitah",
+  "aksi": "create",
+  "entitas": "anggota",
+  "entitas_id": "a645db30-241c-4b65-88b6-b6b9fb691488",
+  "detail": "Saptia",
+  "waktu": "2026-10-02T02:07:40.816184+00:00"
+ },
+ {
+  "id": "234ac343-cd85-4534-9a58-a07253ecdc62",
+  "user_id": "6f9e831d-a48f-4d30-80fe-a1971f21dc16",
+  "user_nama": "Fitriani",
+  "aksi": "create",
+  "entitas": "anggota",
+  "entitas_id": "0cefe2c8-e503-454f-9a68-5283c85c4d8e",
+  "detail": "Khalisa",
+  "waktu": "2026-10-02T02:07:32.491253+00:00"
+ },
+ {
+  "id": "dd365e39-8f51-4c21-ae31-1c78c8698337",
+  "user_id": "ccf3270d-ab2b-4d27-93f3-a38f5f5a059b",
+  "user_nama": "Masitah",
+  "aksi": "create",
+  "entitas": "anggota",
+  "entitas_id": "6be05150-9901-4430-a3da-726b7b3794e9",
+  "detail": "Jamilah ",
+  "waktu": "2026-10-02T02:07:03.359706+00:00"
+ },
+ {
+  "id": "484994e1-b1b3-4185-99fa-062a83062b3d",
+  "user_id": "6f9e831d-a48f-4d30-80fe-a1971f21dc16",
+  "user_nama": "Fitriani",
+  "aksi": "create",
+  "entitas": "anggota",
+  "entitas_id": "7cfea6ec-bcd7-453f-9eae-8c410ab14e6f",
+  "detail": "Azkia Marhani",
+  "waktu": "2026-10-02T02:07:02.816983+00:00"
+ },
+ {
+  "id": "106bcc9e-561f-4221-ba3e-c69201961c6c",
+  "user_id": "6f9e831d-a48f-4d30-80fe-a1971f21dc16",
+  "user_nama": "Fitriani",
+  "aksi": "update",
+  "entitas": "anggota",
+  "entitas_id": "5be3fb47-f5e1-4a6c-8cc5-7660622c8f93",
+  "detail": "Siti Rahmah",
+  "waktu": "2026-10-02T02:06:19.777356+00:00"
+ },
+ {
+  "id": "cb561bf5-1c6b-4188-84dd-9e8ac6a36141",
+  "user_id": "ccf3270d-ab2b-4d27-93f3-a38f5f5a059b",
+  "user_nama": "Masitah",
+  "aksi": "create",
+  "entitas": "anggota",
+  "entitas_id": "ff0095fe-d19f-4117-a20b-0c3c1945fed6",
+  "detail": "Syaifullah ",
+  "waktu": "2026-10-02T02:06:19.404484+00:00"
+ },
+ {
+  "id": "3dc46df7-f296-4854-933f-a53fa757b246",
+  "user_id": "ccf3270d-ab2b-4d27-93f3-a38f5f5a059b",
+  "user_nama": "Masitah",
+  "aksi": "create",
+  "entitas": "keluarga",
+  "entitas_id": "9e49fd4d-f489-4951-bfea-6089afea2843",
+  "detail": "Syaifullah ",
+  "waktu": "2026-10-02T02:05:37.526620+00:00"
+ },
+ {
+  "id": "b35b2548-806d-49ad-ae9b-49e0e1fdb8a6",
+  "user_id": "6f9e831d-a48f-4d30-80fe-a1971f21dc16",
+  "user_nama": "Fitriani",
+  "aksi": "create",
+  "entitas": "anggota",
+  "entitas_id": "cfecd1ad-60c6-42c6-9a99-d2a6f05a6a02",
+  "detail": "Khairiyah",
+  "waktu": "2026-10-02T02:05:22.349110+00:00"
+ },
+ {
+  "id": "42d49bd5-ec24-4235-9074-10b954a8faf7",
+  "user_id": "ccf3270d-ab2b-4d27-93f3-a38f5f5a059b",
+  "user_nama": "Masitah",
+  "aksi": "delete",
+  "entitas": "keluarga",
+  "entitas_id": "11698e61-d84e-48a7-916e-c40d1de3c21e",
+  "detail": "Syaifullah ",
+  "waktu": "2026-10-02T02:04:49.585200+00:00"
+ },
+ {
+  "id": "e52368c9-a2cb-48de-a870-169846e3b357",
+  "user_id": "6f9e831d-a48f-4d30-80fe-a1971f21dc16",
+  "user_nama": "Fitriani",
+  "aksi": "create",
+  "entitas": "anggota",
+  "entitas_id": "5be3fb47-f5e1-4a6c-8cc5-7660622c8f93",
+  "detail": "Siti Rahmah",
+  "waktu": "2026-10-02T02:04:08.725960+00:00"
+ },
+ {
+  "id": "847fabba-edca-43b0-9b64-720048dad0a4",
+  "user_id": "ccf3270d-ab2b-4d27-93f3-a38f5f5a059b",
+  "user_nama": "Masitah",
+  "aksi": "create",
+  "entitas": "anggota",
+  "entitas_id": "17c9e9fb-186e-4b14-8434-2e198f5d80be",
+  "detail": "Saptia",
+  "waktu": "2026-10-02T01:56:07.113836+00:00"
+ },
+ {
+  "id": "8cc3a07a-a753-4160-b705-f647e69b951c",
+  "user_id": "ccf3270d-ab2b-4d27-93f3-a38f5f5a059b",
+  "user_nama": "Masitah",
+  "aksi": "create",
+  "entitas": "anggota",
+  "entitas_id": "bed22158-49a4-400c-8521-c991e119dd63",
+  "detail": "Saptia",
+  "waktu": "2026-10-02T01:56:04.231615+00:00"
+ },
+ {
+  "id": "41f6bb24-bdcd-4063-8365-e72dec70c0fc",
+  "user_id": "ccf3270d-ab2b-4d27-93f3-a38f5f5a059b",
+  "user_nama": "Masitah",
+  "aksi": "create",
+  "entitas": "anggota",
+  "entitas_id": "a106b648-ecb9-4b4a-88c6-11a98906320e",
+  "detail": "Jamilah ",
+  "waktu": "2026-10-02T01:55:10.226722+00:00"
+ },
+ {
+  "id": "509c43ce-c5d6-401b-9e27-15bf1ece6c4e",
+  "user_id": "ccf3270d-ab2b-4d27-93f3-a38f5f5a059b",
+  "user_nama": "Masitah",
+  "aksi": "create",
+  "entitas": "anggota",
+  "entitas_id": "594d081c-65fc-46aa-bdda-c63d9af0a4d6",
+  "detail": "Syaifullah ",
+  "waktu": "2026-10-02T01:53:55.557234+00:00"
+ },
+ {
+  "id": "d6e89334-6e54-466c-8bb8-a564e613c6c7",
+  "user_id": "ccf3270d-ab2b-4d27-93f3-a38f5f5a059b",
+  "user_nama": "Masitah",
+  "aksi": "update",
+  "entitas": "keluarga",
+  "entitas_id": "d0d7cd8e-ec6b-493d-9b54-c408d8ce80a5",
+  "detail": "Dony Damara",
+  "waktu": "2026-10-02T01:51:43.515111+00:00"
+ },
+ {
+  "id": "55c24865-2cb9-4866-9b68-8e5bcfd496f2",
+  "user_id": "ccf3270d-ab2b-4d27-93f3-a38f5f5a059b",
+  "user_nama": "Masitah",
+  "aksi": "create",
+  "entitas": "keluarga",
+  "entitas_id": "11698e61-d84e-48a7-916e-c40d1de3c21e",
+  "detail": "Syaifullah ",
+  "waktu": "2026-10-02T01:51:13.623623+00:00"
+ },
+ {
+  "id": "e96b4446-eb6a-4fff-aeeb-8f67e88be27a",
+  "user_id": "6f9e831d-a48f-4d30-80fe-a1971f21dc16",
+  "user_nama": "Fitriani",
+  "aksi": "create",
+  "entitas": "anggota",
+  "entitas_id": "0889a215-2c16-47a3-b1cc-a15529c44988",
+  "detail": "Marhani",
+  "waktu": "2026-10-02T01:50:53.502661+00:00"
+ },
+ {
+  "id": "67934160-b0ac-45c4-867a-ce9184b1aa70",
+  "user_id": "6f9e831d-a48f-4d30-80fe-a1971f21dc16",
+  "user_nama": "Fitriani",
+  "aksi": "create",
+  "entitas": "keluarga",
+  "entitas_id": "571365aa-6633-4bed-abfd-615bddc7eb49",
+  "detail": "Marhani",
+  "waktu": "2026-10-02T01:50:14.365481+00:00"
+ },
+ {
+  "id": "e5dc8c4b-3a52-44a0-a81f-1afff6494573",
+  "user_id": "ccf3270d-ab2b-4d27-93f3-a38f5f5a059b",
+  "user_nama": "Masitah",
+  "aksi": "create",
+  "entitas": "kunjungan",
+  "entitas_id": "adb5a2fa-c7b8-4988-b0d1-fd55e549ffcc",
+  "detail": "Dony Damara - kuning",
+  "waktu": "2026-10-02T01:45:17.219743+00:00"
+ },
+ {
+  "id": "6a27e780-3e30-4564-ae5b-bc0db6e3e040",
+  "user_id": "ccf3270d-ab2b-4d27-93f3-a38f5f5a059b",
+  "user_nama": "Masitah",
+  "aksi": "create",
+  "entitas": "anggota",
+  "entitas_id": "c2baafe7-7969-4d5b-b0ea-367de092cdc7",
+  "detail": "Muhammad Arsya Al Varendra",
+  "waktu": "2026-10-02T01:36:17.875853+00:00"
+ },
+ {
+  "id": "74fc4d3a-b995-4d66-9ce0-5f5da6b701c8",
+  "user_id": "ccf3270d-ab2b-4d27-93f3-a38f5f5a059b",
+  "user_nama": "Masitah",
+  "aksi": "update",
+  "entitas": "anggota",
+  "entitas_id": "054d6d0f-bd59-4ef4-a482-df629086cd5c",
+  "detail": "Muhammad Virzha",
+  "waktu": "2026-10-02T01:33:20.737128+00:00"
+ },
+ {
+  "id": "388a7703-4dda-4383-868c-53afc1285f0e",
+  "user_id": "ccf3270d-ab2b-4d27-93f3-a38f5f5a059b",
+  "user_nama": "Masitah",
+  "aksi": "create",
+  "entitas": "anggota",
+  "entitas_id": "c446c619-0571-48d4-a0a7-a60818ec435a",
+  "detail": "Muhammad Ravindra",
+  "waktu": "2026-10-02T01:33:07.888068+00:00"
+ },
+ {
+  "id": "eb91f731-0f59-4ce1-a0ae-55bf93e0d516",
+  "user_id": "ccf3270d-ab2b-4d27-93f3-a38f5f5a059b",
+  "user_nama": "Masitah",
+  "aksi": "create",
+  "entitas": "anggota",
+  "entitas_id": "054d6d0f-bd59-4ef4-a482-df629086cd5c",
+  "detail": "Muhammad Virzha",
+  "waktu": "2026-10-02T01:31:59.530666+00:00"
+ },
+ {
+  "id": "06b78465-c7c8-4ea0-82fb-067f22bb160b",
+  "user_id": "ccf3270d-ab2b-4d27-93f3-a38f5f5a059b",
+  "user_nama": "Masitah",
+  "aksi": "create",
+  "entitas": "anggota",
+  "entitas_id": "b5bc26bf-c3b8-42a7-aae0-421f815d0a1a",
+  "detail": "Zanah",
+  "waktu": "2026-10-02T01:29:53.512729+00:00"
+ },
+ {
+  "id": "867e0163-d384-4b00-b6e1-a2840ef6db5c",
+  "user_id": "ccf3270d-ab2b-4d27-93f3-a38f5f5a059b",
+  "user_nama": "Masitah",
+  "aksi": "update",
+  "entitas": "anggota",
+  "entitas_id": "8e28a6f8-1ce1-48df-b7b1-c244cb1e360c",
+  "detail": "Dony Damara ",
+  "waktu": "2026-10-02T01:29:14.390827+00:00"
+ },
+ {
+  "id": "adc41f2f-bf11-4810-968c-719b92207a6e",
+  "user_id": "ccf3270d-ab2b-4d27-93f3-a38f5f5a059b",
+  "user_nama": "Masitah",
+  "aksi": "create",
+  "entitas": "anggota",
+  "entitas_id": "8e28a6f8-1ce1-48df-b7b1-c244cb1e360c",
+  "detail": "Zanah",
+  "waktu": "2026-10-02T01:28:27.581462+00:00"
+ },
+ {
+  "id": "110e1f4d-498d-4da5-9d20-5f3bb5d75c09",
+  "user_id": "ccf3270d-ab2b-4d27-93f3-a38f5f5a059b",
+  "user_nama": "Masitah",
+  "aksi": "create",
+  "entitas": "keluarga",
+  "entitas_id": "d0d7cd8e-ec6b-493d-9b54-c408d8ce80a5",
+  "detail": "Dony Damara",
+  "waktu": "2026-10-02T01:26:25.847331+00:00"
+ },
+ {
+  "id": "ec3d4f73-11e7-4d7b-84d6-18910260b993",
+  "user_id": "6f9e831d-a48f-4d30-80fe-a1971f21dc16",
+  "user_nama": "Fitriani",
+  "aksi": "create",
+  "entitas": "kunjungan",
+  "entitas_id": "70727d9f-9a95-4129-a2a7-0da41e9e50ed",
+  "detail": "Basuni - kuning",
+  "waktu": "2026-10-02T01:25:31.906529+00:00"
+ },
+ {
+  "id": "3ac09934-d857-4628-91a6-da4f5a9435db",
+  "user_id": "ccf3270d-ab2b-4d27-93f3-a38f5f5a059b",
+  "user_nama": "Masitah",
+  "aksi": "create",
+  "entitas": "kunjungan",
+  "entitas_id": "4c19960b-39f5-49d8-a459-f2eb457e2af2",
+  "detail": "Firman  - kuning",
+  "waktu": "2026-10-02T01:21:21.041915+00:00"
+ },
+ {
+  "id": "788929e7-8b2f-4e7e-b747-60831930ee58",
+  "user_id": "6f9e831d-a48f-4d30-80fe-a1971f21dc16",
+  "user_nama": "Fitriani",
+  "aksi": "create",
+  "entitas": "anggota",
+  "entitas_id": "de8484a0-da96-4686-9dd9-ff7c13de24d4",
+  "detail": "Saida Nafisa",
+  "waktu": "2026-10-02T01:10:28.834030+00:00"
+ },
+ {
+  "id": "5c25be34-bd26-4dd6-98ab-89fc4aa1228d",
+  "user_id": "ccf3270d-ab2b-4d27-93f3-a38f5f5a059b",
+  "user_nama": "Masitah",
+  "aksi": "update",
+  "entitas": "anggota",
+  "entitas_id": "8f7326ea-2b07-4d06-9666-cec266287177",
+  "detail": "Lamsiah",
+  "waktu": "2026-10-02T01:08:48.800791+00:00"
+ },
+ {
+  "id": "4f3f61ef-d061-4234-8617-0970f217148b",
+  "user_id": "ccf3270d-ab2b-4d27-93f3-a38f5f5a059b",
+  "user_nama": "Masitah",
+  "aksi": "create",
+  "entitas": "anggota",
+  "entitas_id": "0fb72070-a730-4f87-a75f-a6257c09c67f",
+  "detail": "Muhammad Ferdiansyah ",
+  "waktu": "2026-10-02T01:08:42.887523+00:00"
+ },
+ {
+  "id": "1b1b5efe-438b-43ce-afaf-c4550456b209",
+  "user_id": "6f9e831d-a48f-4d30-80fe-a1971f21dc16",
+  "user_nama": "Fitriani",
+  "aksi": "create",
+  "entitas": "anggota",
+  "entitas_id": "0f03417d-5dfe-403f-8096-a6b095f88c09",
+  "detail": "Muhammad Baihaqi",
+  "waktu": "2026-10-02T01:08:33.248259+00:00"
+ },
+ {
+  "id": "7c99c134-3d68-43bb-9b81-3e6fc545b07b",
+  "user_id": "ccf3270d-ab2b-4d27-93f3-a38f5f5a059b",
+  "user_nama": "Masitah",
+  "aksi": "create",
+  "entitas": "anggota",
+  "entitas_id": "a6a3ae3c-2bbd-4720-ac7f-1cbddb3ac593",
+  "detail": "Raudah",
+  "waktu": "2026-10-02T01:08:00.987810+00:00"
+ },
+ {
+  "id": "8e369c97-3487-4084-9cfe-525c48227138",
+  "user_id": "6f9e831d-a48f-4d30-80fe-a1971f21dc16",
+  "user_nama": "Fitriani",
+  "aksi": "create",
+  "entitas": "anggota",
+  "entitas_id": "f1b1b574-b9cb-40be-9b00-a130901b9fae",
+  "detail": "Ria Safitri",
+  "waktu": "2026-10-02T01:07:57.704328+00:00"
+ },
+ {
+  "id": "b208a1d0-7e50-4f9a-833c-7436abeeb50e",
+  "user_id": "6f9e831d-a48f-4d30-80fe-a1971f21dc16",
+  "user_nama": "Fitriani",
+  "aksi": "create",
+  "entitas": "anggota",
+  "entitas_id": "4df1548d-307a-42ee-b40b-016fd8de7d28",
+  "detail": "Abdus Salam",
+  "waktu": "2026-10-02T01:07:15.506659+00:00"
+ },
+ {
+  "id": "12f301cd-ec03-4d1e-9133-64c682a254cc",
+  "user_id": "ccf3270d-ab2b-4d27-93f3-a38f5f5a059b",
+  "user_nama": "Masitah",
+  "aksi": "create",
+  "entitas": "anggota",
+  "entitas_id": "8f7326ea-2b07-4d06-9666-cec266287177",
+  "detail": "Lamsiah",
+  "waktu": "2026-10-02T01:07:12.595242+00:00"
+ },
+ {
+  "id": "fc1f3b8c-3c25-4c9a-bbcc-1b7fcb6625cb",
+  "user_id": "ccf3270d-ab2b-4d27-93f3-a38f5f5a059b",
+  "user_nama": "Masitah",
+  "aksi": "create",
+  "entitas": "anggota",
+  "entitas_id": "08ed2e7d-2aa8-4364-a002-386259265db8",
+  "detail": "Firman ",
+  "waktu": "2026-10-02T01:06:16.873841+00:00"
+ },
+ {
+  "id": "aeda081e-cbf3-4d5e-9d7e-a98825f84993",
+  "user_id": "ccf3270d-ab2b-4d27-93f3-a38f5f5a059b",
+  "user_nama": "Masitah",
+  "aksi": "update",
+  "entitas": "keluarga",
+  "entitas_id": "9bb31fe1-3269-42f4-ade6-3b911c5bb350",
+  "detail": "Firman ",
+  "waktu": "2026-10-02T01:05:36.551305+00:00"
+ },
+ {
+  "id": "dc528388-3816-4832-864e-ae41d1d3d9ed",
+  "user_id": "ccf3270d-ab2b-4d27-93f3-a38f5f5a059b",
+  "user_nama": "Masitah",
+  "aksi": "create",
+  "entitas": "keluarga",
+  "entitas_id": "9bb31fe1-3269-42f4-ade6-3b911c5bb350",
+  "detail": "Firman ",
+  "waktu": "2026-10-02T01:04:28.853781+00:00"
+ },
+ {
+  "id": "a1353367-9f29-49ee-b682-971c3fa7f9a8",
+  "user_id": "6f9e831d-a48f-4d30-80fe-a1971f21dc16",
+  "user_nama": "Fitriani",
+  "aksi": "create",
+  "entitas": "anggota",
+  "entitas_id": "7cc19e96-47d9-40a6-91d8-a097b3f18c6b",
+  "detail": "Norhayah",
+  "waktu": "2026-10-02T01:04:06.145972+00:00"
+ },
+ {
+  "id": "da3a3d10-d7eb-44e8-9841-c7be86118bc7",
+  "user_id": "6f9e831d-a48f-4d30-80fe-a1971f21dc16",
+  "user_nama": "Fitriani",
+  "aksi": "create",
+  "entitas": "anggota",
+  "entitas_id": "4fea6eac-1516-46d7-bb21-c2470cea67cf",
+  "detail": "Basuni",
+  "waktu": "2026-10-02T01:02:56.520114+00:00"
+ },
+ {
+  "id": "93cb99fc-f489-4619-9a08-47c46ec7d514",
+  "user_id": "6f9e831d-a48f-4d30-80fe-a1971f21dc16",
+  "user_nama": "Fitriani",
+  "aksi": "create",
+  "entitas": "keluarga",
+  "entitas_id": "4f1c69eb-a385-4d5f-8abb-3df1e48dc94d",
+  "detail": "Basuni",
+  "waktu": "2026-10-02T01:02:22.076470+00:00"
+ },
+ {
+  "id": "f60c1fc8-c6ef-46ac-b431-6416f9cc95a0",
+  "user_id": "8ad0ed31-f2b4-4225-a7e0-290f97752c12",
+  "user_nama": "Memy",
+  "aksi": "create",
+  "entitas": "kunjungan",
+  "entitas_id": "3bce06ed-2706-4e00-8102-4626c0b6ff41",
+  "detail": "Rianto  - kuning",
+  "waktu": "2026-10-01T03:47:20.733217+00:00"
+ },
+ {
+  "id": "254ec31f-af44-421e-b691-1ba733c82ec2",
+  "user_id": "8ad0ed31-f2b4-4225-a7e0-290f97752c12",
+  "user_nama": "Memy",
+  "aksi": "create",
+  "entitas": "anggota",
+  "entitas_id": "fee8aaca-210f-4c3f-a544-03ac7498376f",
+  "detail": "Muhammad Abdan Hilmi",
+  "waktu": "2026-10-01T03:15:48.453951+00:00"
+ },
+ {
+  "id": "e68ac1c7-1d56-4866-8f8f-1489cbcf34d1",
+  "user_id": "8ad0ed31-f2b4-4225-a7e0-290f97752c12",
+  "user_nama": "Memy",
+  "aksi": "create",
+  "entitas": "anggota",
+  "entitas_id": "8af755e5-eb51-41d2-bcdf-5648bb34c9f9",
+  "detail": "Mahya Amina",
+  "waktu": "2026-10-01T03:15:10.484220+00:00"
+ },
+ {
+  "id": "622c8eb1-3f94-49fa-b4bc-1e24eb1e99c0",
+  "user_id": "8ad0ed31-f2b4-4225-a7e0-290f97752c12",
+  "user_nama": "Memy",
+  "aksi": "create",
+  "entitas": "anggota",
+  "entitas_id": "28c658eb-474e-4e4c-9db0-5566ea728c68",
+  "detail": "Bella Erpina ",
+  "waktu": "2026-10-01T03:13:53.686615+00:00"
+ },
+ {
+  "id": "07ec5eda-c407-4b07-bafa-fe8decd2e527",
+  "user_id": "8ad0ed31-f2b4-4225-a7e0-290f97752c12",
+  "user_nama": "Memy",
+  "aksi": "create",
+  "entitas": "anggota",
+  "entitas_id": "d86f2d8d-12f5-48d1-90ba-bdb1a6246589",
+  "detail": "Jaleha ",
+  "waktu": "2026-10-01T03:12:55.396431+00:00"
+ },
+ {
+  "id": "a353ab8b-fb12-4755-b197-299288d1f067",
+  "user_id": "8ad0ed31-f2b4-4225-a7e0-290f97752c12",
+  "user_nama": "Memy",
+  "aksi": "create",
+  "entitas": "anggota",
+  "entitas_id": "9d8753d0-677d-41ae-aee4-e94aa30e97a7",
+  "detail": "Rianto ",
+  "waktu": "2026-10-01T03:12:18.347671+00:00"
+ },
+ {
+  "id": "aa1b9e7c-1a04-4783-badf-6e62908b80a7",
+  "user_id": "8ad0ed31-f2b4-4225-a7e0-290f97752c12",
+  "user_nama": "Memy",
+  "aksi": "create",
+  "entitas": "keluarga",
+  "entitas_id": "d97103aa-35f9-47b5-96d4-2ae50018d893",
+  "detail": "Rianto ",
+  "waktu": "2026-10-01T03:11:27.360821+00:00"
+ },
+ {
+  "id": "f1e6071c-9cac-4089-852a-6a8c38b917d6",
+  "user_id": "8ad0ed31-f2b4-4225-a7e0-290f97752c12",
+  "user_nama": "Memy",
+  "aksi": "create",
+  "entitas": "kunjungan",
+  "entitas_id": "98792ac5-3437-4d46-ad26-a5e716bb51eb",
+  "detail": "M. Riza Faisal - kuning",
+  "waktu": "2026-10-01T02:41:59.027211+00:00"
+ },
+ {
+  "id": "80d66610-71f3-4bf0-8714-c1f4685c99dc",
+  "user_id": "8ad0ed31-f2b4-4225-a7e0-290f97752c12",
+  "user_nama": "Memy",
+  "aksi": "create",
+  "entitas": "anggota",
+  "entitas_id": "7e577bc6-394e-45df-a56f-ddb0d39f62ec",
+  "detail": "Paula Nurizky Sabyan",
+  "waktu": "2026-10-01T02:39:22.611198+00:00"
+ },
+ {
+  "id": "2448a6bd-8563-4550-9925-f491cc17e07c",
+  "user_id": "8ad0ed31-f2b4-4225-a7e0-290f97752c12",
+  "user_nama": "Memy",
+  "aksi": "create",
+  "entitas": "anggota",
+  "entitas_id": "a53c7ad9-379b-4be1-b5b6-839f43fa6d62",
+  "detail": "Ulpah",
+  "waktu": "2026-10-01T02:38:29.471722+00:00"
+ },
+ {
+  "id": "2fbf69a7-1511-4fe2-a64c-5cf1f9a897d3",
+  "user_id": "8ad0ed31-f2b4-4225-a7e0-290f97752c12",
+  "user_nama": "Memy",
+  "aksi": "create",
+  "entitas": "anggota",
+  "entitas_id": "1af666d5-88ea-4247-ba02-2a2ab705e62a",
+  "detail": "M. Riza Faisal",
+  "waktu": "2026-10-01T02:37:30.630883+00:00"
+ },
+ {
+  "id": "bae5f705-40be-45d6-a6c0-00ad4c7254b3",
+  "user_id": "8ad0ed31-f2b4-4225-a7e0-290f97752c12",
+  "user_nama": "Memy",
+  "aksi": "create",
+  "entitas": "keluarga",
+  "entitas_id": "dce6dfe1-a105-4045-8a3d-e3848ec11fb8",
+  "detail": "M. Riza Faisal",
+  "waktu": "2026-10-01T02:36:44.556403+00:00"
+ },
+ {
+  "id": "7e444ef1-01d7-4144-8571-53ea94ee1119",
+  "user_id": "8ad0ed31-f2b4-4225-a7e0-290f97752c12",
+  "user_nama": "Memy",
+  "aksi": "create",
+  "entitas": "kunjungan",
+  "entitas_id": "829169e4-c100-49bf-8fe7-b7ae5222e199",
+  "detail": "Masliah - kuning",
+  "waktu": "2026-10-01T02:34:38.971480+00:00"
+ },
+ {
+  "id": "de90c611-bbd1-4917-bc31-dfefefcd7db3",
+  "user_id": "8ad0ed31-f2b4-4225-a7e0-290f97752c12",
+  "user_nama": "Memy",
+  "aksi": "create",
+  "entitas": "anggota",
+  "entitas_id": "0ad0a683-ad7c-447b-a220-3bb6d7b2fb80",
+  "detail": "Halimah ",
+  "waktu": "2026-10-01T02:28:30.052036+00:00"
+ },
+ {
+  "id": "16f585a8-9785-4184-9080-41d17d94f42f",
+  "user_id": "8ad0ed31-f2b4-4225-a7e0-290f97752c12",
+  "user_nama": "Memy",
+  "aksi": "update",
+  "entitas": "keluarga",
+  "entitas_id": "557baa40-9385-4504-b4ee-614bec8de479",
+  "detail": "Masliah",
+  "waktu": "2026-10-01T02:27:23.576228+00:00"
+ },
+ {
+  "id": "88dc8b20-29ca-4e57-871a-0b747aac9b15",
+  "user_id": "8ad0ed31-f2b4-4225-a7e0-290f97752c12",
+  "user_nama": "Memy",
+  "aksi": "update",
+  "entitas": "anggota",
+  "entitas_id": "115208ab-5241-47cd-ad0f-49cd7a5f738c",
+  "detail": "Masliah",
+  "waktu": "2026-10-01T02:27:09.441004+00:00"
+ },
+ {
+  "id": "b338ff24-f42d-4968-b703-e0363ab51794",
+  "user_id": "8ad0ed31-f2b4-4225-a7e0-290f97752c12",
+  "user_nama": "Memy",
+  "aksi": "create",
+  "entitas": "anggota",
+  "entitas_id": "449587c5-1a0f-432a-aa95-53016df81253",
+  "detail": "Fahrid",
+  "waktu": "2026-10-01T02:26:02.456005+00:00"
+ },
+ {
+  "id": "469bb565-1802-4f8d-a479-13d1965e7d93",
+  "user_id": "8ad0ed31-f2b4-4225-a7e0-290f97752c12",
+  "user_nama": "Memy",
+  "aksi": "create",
+  "entitas": "anggota",
+  "entitas_id": "115208ab-5241-47cd-ad0f-49cd7a5f738c",
+  "detail": "Masirah",
+  "waktu": "2026-10-01T02:24:20.190697+00:00"
+ },
+ {
+  "id": "8f6ad5e1-e1cf-4359-9b1e-6392f3841b16",
+  "user_id": "8ad0ed31-f2b4-4225-a7e0-290f97752c12",
+  "user_nama": "Memy",
+  "aksi": "create",
+  "entitas": "keluarga",
+  "entitas_id": "557baa40-9385-4504-b4ee-614bec8de479",
+  "detail": "Masirah",
+  "waktu": "2026-10-01T02:23:24.798708+00:00"
+ },
+ {
+  "id": "a843711f-2cca-4ef8-8ae2-bfa79d591377",
+  "user_id": "8ad0ed31-f2b4-4225-a7e0-290f97752c12",
+  "user_nama": "Memy",
+  "aksi": "create",
+  "entitas": "kunjungan",
+  "entitas_id": "2adbdbed-5fe9-48f7-8c10-deaa77af7220",
+  "detail": "Taufik Rahman  - kuning",
+  "waktu": "2026-10-01T02:11:18.731316+00:00"
+ },
+ {
+  "id": "8e80c40c-2105-42f9-ab28-3f6162f0067d",
+  "user_id": "8ad0ed31-f2b4-4225-a7e0-290f97752c12",
+  "user_nama": "Memy",
+  "aksi": "create",
+  "entitas": "anggota",
+  "entitas_id": "d3db575f-d8ec-41c9-a075-ca599e6d252a",
+  "detail": "Fadli",
+  "waktu": "2026-10-01T02:07:13.448590+00:00"
+ },
+ {
+  "id": "2009e501-1c33-49eb-8394-7d3a682be225",
+  "user_id": "8ad0ed31-f2b4-4225-a7e0-290f97752c12",
+  "user_nama": "Memy",
+  "aksi": "create",
+  "entitas": "anggota",
+  "entitas_id": "a78b0da1-640c-47e1-b4eb-31987bde83b0",
+  "detail": "Muhammad Ramadhan ",
+  "waktu": "2026-10-01T02:06:35.600828+00:00"
+ },
+ {
+  "id": "1ada2424-23b0-4e33-aa08-d0705ff5a4a7",
+  "user_id": "8ad0ed31-f2b4-4225-a7e0-290f97752c12",
+  "user_nama": "Memy",
+  "aksi": "create",
+  "entitas": "anggota",
+  "entitas_id": "6fc77e24-9528-4582-8761-2849839c6eb9",
+  "detail": "Mukaramah",
+  "waktu": "2026-10-01T02:05:45.252135+00:00"
+ },
+ {
+  "id": "2aab848d-f75f-492a-9d52-281af94716f2",
+  "user_id": "8ad0ed31-f2b4-4225-a7e0-290f97752c12",
+  "user_nama": "Memy",
+  "aksi": "create",
+  "entitas": "anggota",
+  "entitas_id": "665d7569-7f86-4ed7-b300-f7c1d27b03b4",
+  "detail": "Taufik Rahman ",
+  "waktu": "2026-10-01T02:04:47.757006+00:00"
+ },
+ {
+  "id": "97ca258f-1d57-4237-bf40-43bdc05e762b",
+  "user_id": "8ad0ed31-f2b4-4225-a7e0-290f97752c12",
+  "user_nama": "Memy",
+  "aksi": "create",
+  "entitas": "keluarga",
+  "entitas_id": "dd4aaca6-076e-4229-819c-7f722d7a4a04",
+  "detail": "Taufik Rahman ",
+  "waktu": "2026-10-01T02:03:37.082303+00:00"
+ },
+ {
+  "id": "ed0bccc0-b849-481f-bf32-372af0a743c3",
+  "user_id": "8ad0ed31-f2b4-4225-a7e0-290f97752c12",
+  "user_nama": "Memy",
+  "aksi": "create",
+  "entitas": "kunjungan",
+  "entitas_id": "98fddce0-a25b-40ff-8fc0-4da2152657c2",
+  "detail": "Muhammad Yanto - kuning",
+  "waktu": "2026-10-01T01:59:41.018326+00:00"
+ },
+ {
+  "id": "62a65b5c-76e5-498f-aebf-1a97a08fb326",
+  "user_id": "8ad0ed31-f2b4-4225-a7e0-290f97752c12",
+  "user_nama": "Memy",
+  "aksi": "create",
+  "entitas": "anggota",
+  "entitas_id": "fbc53e6c-28e9-43b5-9cc2-d50748f5f82e",
+  "detail": "Nurul Safitri",
+  "waktu": "2026-10-01T01:49:11.866358+00:00"
+ },
+ {
+  "id": "44b2f809-d201-4334-ac99-309fb06106b3",
+  "user_id": "8ad0ed31-f2b4-4225-a7e0-290f97752c12",
+  "user_nama": "Memy",
+  "aksi": "create",
+  "entitas": "anggota",
+  "entitas_id": "eeee0695-b966-4680-8802-86ad1c1b41cb",
+  "detail": "Azisah Putri ",
+  "waktu": "2026-10-01T01:47:41.905425+00:00"
+ },
+ {
+  "id": "338318c4-6e2e-47ea-8a44-71e6d6715abb",
+  "user_id": "8ad0ed31-f2b4-4225-a7e0-290f97752c12",
+  "user_nama": "Memy",
+  "aksi": "create",
+  "entitas": "anggota",
+  "entitas_id": "238210de-ad70-46e4-81ed-71ff9131a68d",
+  "detail": "Siti Aisyah ",
+  "waktu": "2026-10-01T01:46:01.398485+00:00"
+ },
+ {
+  "id": "9a4b360d-220a-4ec4-8dc4-c199b6fc2c01",
+  "user_id": "8ad0ed31-f2b4-4225-a7e0-290f97752c12",
+  "user_nama": "Memy",
+  "aksi": "create",
+  "entitas": "anggota",
+  "entitas_id": "3cd2be4b-cd4f-4298-8eea-e63d3a20b0ab",
+  "detail": "Imah ",
+  "waktu": "2026-10-01T01:43:39.325047+00:00"
+ },
+ {
+  "id": "789e50e1-a3a3-4f20-91f4-69f22562a475",
+  "user_id": "8ad0ed31-f2b4-4225-a7e0-290f97752c12",
+  "user_nama": "Memy",
+  "aksi": "create",
+  "entitas": "anggota",
+  "entitas_id": "e2d61885-61bc-416a-bfac-f6ed74e833cd",
+  "detail": "Muhammad Yanto ",
+  "waktu": "2026-10-01T01:42:15.106132+00:00"
+ },
+ {
+  "id": "b66d7578-b9be-4587-a4c8-473a27b526de",
+  "user_id": "8ad0ed31-f2b4-4225-a7e0-290f97752c12",
+  "user_nama": "Memy",
+  "aksi": "create",
+  "entitas": "keluarga",
+  "entitas_id": "cdb9fe32-2bee-4705-ba79-652e12de05f2",
+  "detail": "Muhammad Yanto",
+  "waktu": "2026-10-01T01:41:12.042785+00:00"
+ },
+ {
+  "id": "fd92d7a5-a62b-4b5a-8756-cdc2940236f9",
+  "user_id": "8ad0ed31-f2b4-4225-a7e0-290f97752c12",
+  "user_nama": "Memy",
+  "aksi": "create",
+  "entitas": "kunjungan",
+  "entitas_id": "781cc033-f720-47df-83da-0eeda2bc223c",
+  "detail": "Ahmad Badaly - kuning",
+  "waktu": "2026-10-01T01:39:25.640915+00:00"
+ },
+ {
+  "id": "1c252a2e-b461-4cb3-b47a-2600f866fe8c",
+  "user_id": "6f9e831d-a48f-4d30-80fe-a1971f21dc16",
+  "user_nama": "Fitriani",
+  "aksi": "create",
+  "entitas": "anggota",
+  "entitas_id": "ef5d7fca-bf82-4ecf-94e3-0bee92ecde9e",
+  "detail": "Havid Akbar",
+  "waktu": "2026-10-01T01:37:48.638124+00:00"
+ },
+ {
+  "id": "479466bc-7669-48c2-bf3b-bc6d607b97d9",
+  "user_id": "6f9e831d-a48f-4d30-80fe-a1971f21dc16",
+  "user_nama": "Fitriani",
+  "aksi": "create",
+  "entitas": "keluarga",
+  "entitas_id": "b76e6c69-602a-4158-8ac1-bfafd5aa52a6",
+  "detail": "Havid Akbar",
+  "waktu": "2026-10-01T01:37:12.378228+00:00"
+ },
+ {
+  "id": "5881b7cc-9259-4d3d-8596-12642d113686",
+  "user_id": "83d32e19-a6e5-4d2f-87e2-93a12609b88f",
+  "user_nama": "Petugas Puskesmas Melati",
+  "aksi": "create",
+  "entitas": "kader",
+  "entitas_id": "6f9e831d-a48f-4d30-80fe-a1971f21dc16",
+  "detail": "Fitriani",
+  "waktu": "2026-10-01T01:34:19.098658+00:00"
+ },
+ {
+  "id": "50611b59-c24f-45c3-904a-10e2d23459db",
+  "user_id": "9a9a4d24-e3db-4cb2-84d3-4feb1727a9c1",
+  "user_nama": "Arbaidah",
+  "aksi": "create",
+  "entitas": "kunjungan",
+  "entitas_id": "6899fe6a-c16f-4e9d-97c1-24a5b894abdf",
+  "detail": "Rahman Al Nawam - kuning",
+  "waktu": "2026-10-01T01:31:54.982206+00:00"
+ },
+ {
+  "id": "f4486af8-5377-49f2-8449-d28bc0be9c52",
+  "user_id": "8ad0ed31-f2b4-4225-a7e0-290f97752c12",
+  "user_nama": "Memy",
+  "aksi": "create",
+  "entitas": "anggota",
+  "entitas_id": "f706af85-3210-4896-a8f5-f0c740379377",
+  "detail": "Muhammad Hazmi",
+  "waktu": "2026-10-01T01:31:33.938460+00:00"
+ },
+ {
+  "id": "91220050-a23e-460d-bcfb-673e682a9d58",
+  "user_id": "8ad0ed31-f2b4-4225-a7e0-290f97752c12",
+  "user_nama": "Memy",
+  "aksi": "create",
+  "entitas": "anggota",
+  "entitas_id": "b4223e48-4e31-4c64-a01d-f215ae35524d",
+  "detail": "Khalif Putra Ahmad",
+  "waktu": "2026-10-01T01:30:02.179898+00:00"
+ },
+ {
+  "id": "87fe88b8-8aea-4eb0-8b45-9541d4660d21",
+  "user_id": "9a9a4d24-e3db-4cb2-84d3-4feb1727a9c1",
+  "user_nama": "Arbaidah",
+  "aksi": "create",
+  "entitas": "anggota",
+  "entitas_id": "a0e56c43-eedd-4a99-99eb-6e5f7b1abecb",
+  "detail": "Fair Pranda",
+  "waktu": "2026-10-01T01:29:12.843353+00:00"
+ },
+ {
+  "id": "ee38a73a-750a-4449-95f6-b44f4542a52c",
+  "user_id": "8ad0ed31-f2b4-4225-a7e0-290f97752c12",
+  "user_nama": "Memy",
+  "aksi": "create",
+  "entitas": "anggota",
+  "entitas_id": "d3944f76-378d-4084-9c03-3bc1686c6d6c",
+  "detail": "Mariam",
+  "waktu": "2026-10-01T01:28:58.672190+00:00"
+ },
+ {
+  "id": "ded6ffbc-4e10-4e8d-8d65-7e9a37922bb7",
+  "user_id": "9a9a4d24-e3db-4cb2-84d3-4feb1727a9c1",
+  "user_nama": "Arbaidah",
+  "aksi": "create",
+  "entitas": "anggota",
+  "entitas_id": "19f032dc-ee22-45dc-a31b-38d30ddcc2b0",
+  "detail": "Munasari Fitnawati",
+  "waktu": "2026-10-01T01:28:27.056746+00:00"
+ },
+ {
+  "id": "293b398d-7975-490c-be8b-dc629a2f43c4",
+  "user_id": "8ad0ed31-f2b4-4225-a7e0-290f97752c12",
+  "user_nama": "Memy",
+  "aksi": "create",
+  "entitas": "anggota",
+  "entitas_id": "1bee296e-6fae-4671-8e4d-28dc941ba09a",
+  "detail": "Ahmad Badaly ",
+  "waktu": "2026-10-01T01:28:24.215938+00:00"
+ },
+ {
+  "id": "cfa24afa-4979-4951-92bc-c4e6610e072a",
+  "user_id": "8ad0ed31-f2b4-4225-a7e0-290f97752c12",
+  "user_nama": "Memy",
+  "aksi": "create",
+  "entitas": "keluarga",
+  "entitas_id": "8cebfa09-6d31-43a1-813b-8689fd8128be",
+  "detail": "Ahmad Badaly",
+  "waktu": "2026-10-01T01:27:37.741535+00:00"
+ },
+ {
+  "id": "34df1a61-ae51-4800-8267-126a2dd605cd",
+  "user_id": "9a9a4d24-e3db-4cb2-84d3-4feb1727a9c1",
+  "user_nama": "Arbaidah",
+  "aksi": "create",
+  "entitas": "anggota",
+  "entitas_id": "9fc1e107-f094-4ef2-94d0-bf4b382f6bfe",
+  "detail": "Rahman Al Nawam",
+  "waktu": "2026-10-01T01:27:34.760171+00:00"
+ },
+ {
+  "id": "74504382-1b61-4a4d-a733-bc9826805958",
+  "user_id": "9a9a4d24-e3db-4cb2-84d3-4feb1727a9c1",
+  "user_nama": "Arbaidah",
+  "aksi": "create",
+  "entitas": "keluarga",
+  "entitas_id": "67eb6a99-9c75-49df-a929-5f32cfc6c4e6",
+  "detail": "Rahman Al Nawam",
+  "waktu": "2026-10-01T01:26:42.232394+00:00"
+ },
+ {
+  "id": "a062f1a4-fe97-417e-b006-5eb312da165a",
+  "user_id": "8ad0ed31-f2b4-4225-a7e0-290f97752c12",
+  "user_nama": "Memy",
+  "aksi": "create",
+  "entitas": "kunjungan",
+  "entitas_id": "1811d1cf-91f0-45a3-8e26-b5601f08f9e1",
+  "detail": "Hamri - kuning",
+  "waktu": "2026-10-01T01:25:31.232869+00:00"
+ },
+ {
+  "id": "ab849fa7-17b1-4e09-8c8a-57f7fcce7ed5",
+  "user_id": "9a9a4d24-e3db-4cb2-84d3-4feb1727a9c1",
+  "user_nama": "Arbaidah",
+  "aksi": "create",
+  "entitas": "kunjungan",
+  "entitas_id": "ad2260a1-6d52-4b98-ba74-8c6dd1616c5c",
+  "detail": "Hairullah - kuning",
+  "waktu": "2026-10-01T01:25:05.168395+00:00"
+ },
+ {
+  "id": "00f2b18c-7bfd-46a7-8b55-da79dc32627c",
+  "user_id": "9a9a4d24-e3db-4cb2-84d3-4feb1727a9c1",
+  "user_nama": "Arbaidah",
+  "aksi": "create",
+  "entitas": "anggota",
+  "entitas_id": "92bb6e41-fa72-4e79-9405-fe68651afb48",
+  "detail": "Norbaiti",
+  "waktu": "2026-10-01T01:23:45.833093+00:00"
+ },
+ {
+  "id": "a598c35f-1cb4-441b-b7da-83267b0a36a7",
+  "user_id": "9a9a4d24-e3db-4cb2-84d3-4feb1727a9c1",
+  "user_nama": "Arbaidah",
+  "aksi": "create",
+  "entitas": "anggota",
+  "entitas_id": "9c003322-6bd5-4565-b1cb-22694715a25a",
+  "detail": "Hairullah",
+  "waktu": "2026-10-01T01:23:03.618502+00:00"
+ },
+ {
+  "id": "42010fed-fc7d-4a71-9476-fed8d90827cc",
+  "user_id": "9a9a4d24-e3db-4cb2-84d3-4feb1727a9c1",
+  "user_nama": "Arbaidah",
+  "aksi": "create",
+  "entitas": "keluarga",
+  "entitas_id": "942b235d-0366-42f2-8e89-d3fa79616a94",
+  "detail": "Hairullah",
+  "waktu": "2026-10-01T01:22:10.974719+00:00"
+ },
+ {
+  "id": "bc99ca73-9851-4733-87d0-fb6e842ebe52",
+  "user_id": "9a9a4d24-e3db-4cb2-84d3-4feb1727a9c1",
+  "user_nama": "Arbaidah",
+  "aksi": "create",
+  "entitas": "kunjungan",
+  "entitas_id": "4476768f-0bdc-4531-8afb-73923638c48f",
+  "detail": "Halimah - kuning",
+  "waktu": "2026-10-01T01:20:55.980105+00:00"
+ },
+ {
+  "id": "d2373987-9991-4df0-b53a-1aaaf0de39a6",
+  "user_id": "8ad0ed31-f2b4-4225-a7e0-290f97752c12",
+  "user_nama": "Memy",
+  "aksi": "create",
+  "entitas": "anggota",
+  "entitas_id": "091326b8-95fa-4a17-9d41-461f8458f87e",
+  "detail": "Muhammad Afdal",
+  "waktu": "2026-10-01T01:20:37.640131+00:00"
+ }
+]

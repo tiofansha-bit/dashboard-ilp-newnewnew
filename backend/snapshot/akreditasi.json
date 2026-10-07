@@ -1,0 +1,1173 @@
+[
+ {
+  "judul": "Dashboard PWS ILP",
+  "subjudul": "Kunjungan Rumah Terintegrasi",
+  "puskesmas": "UPT Puskesmas Melati",
+  "periode": "Januari - Juni 2026",
+  "penanggung_jawab": "Kepala UPT Puskesmas Melati",
+  "catatan_kaki": "Data simulasi untuk keperluan akreditasi.",
+  "is_simulasi": true,
+  "template": "Akreditasi Puskesmas",
+  "tanggal_update": "2026-09-21",
+  "kartu": [
+   {
+    "id": "033c5267-1d2c-483b-b992-41d02340d938",
+    "nama": "Keluarga Terdaftar",
+    "nilai": 2500,
+    "satuan": "KK",
+    "target": 2500,
+    "warna": "blue",
+    "ikon": "Users",
+    "status": "tercapai",
+    "catatan": ""
+   },
+   {
+    "id": "fe51a625-8406-4a26-9c7a-a205cb4cf092",
+    "nama": "Target Keluarga Dikunjungi",
+    "nilai": 2000,
+    "satuan": "KK",
+    "target": 2000,
+    "warna": "blue",
+    "ikon": "Target",
+    "status": "tercapai",
+    "catatan": ""
+   },
+   {
+    "id": "b8db7d5e-753d-46b5-af5a-10a77c7be1cd",
+    "nama": "Keluarga Telah Dikunjungi",
+    "nilai": 1720,
+    "satuan": "KK",
+    "target": 2000,
+    "warna": "green",
+    "ikon": "CheckCircle",
+    "status": "belum_tercapai",
+    "catatan": ""
+   },
+   {
+    "id": "dc45efa4-62b7-4a49-b15c-1e898a626832",
+    "nama": "Cakupan Kunjungan",
+    "nilai": 86,
+    "satuan": "%",
+    "target": 100,
+    "warna": "green",
+    "ikon": "TrendingUp",
+    "status": "perlu_perhatian",
+    "catatan": ""
+   },
+   {
+    "id": "a9ac47b0-9a43-4dfd-9e7d-727e05fec990",
+    "nama": "Sasaran Diperiksa",
+    "nilai": 4350,
+    "satuan": "org",
+    "target": 4350,
+    "warna": "blue",
+    "ikon": "Activity",
+    "status": "tercapai",
+    "catatan": ""
+   },
+   {
+    "id": "4bf66117-e0e6-42c6-a1eb-c451b37c17db",
+    "nama": "Masalah Kesehatan Ditemukan",
+    "nilai": 286,
+    "satuan": "kasus",
+    "target": 0,
+    "warna": "yellow",
+    "ikon": "AlertTriangle",
+    "status": "perlu_perhatian",
+    "catatan": ""
+   },
+   {
+    "id": "779a1134-fb5f-41b2-b8e9-97c240e803ae",
+    "nama": "Tanda Bahaya",
+    "nilai": 24,
+    "satuan": "kasus",
+    "target": 0,
+    "warna": "red",
+    "ikon": "ShieldAlert",
+    "status": "perlu_perhatian",
+    "catatan": ""
+   },
+   {
+    "id": "53550f4f-409e-49e8-805d-a0760d618062",
+    "nama": "Laporan ke Nakes",
+    "nilai": 214,
+    "satuan": "kasus",
+    "target": 0,
+    "warna": "blue",
+    "ikon": "Send",
+    "status": "tercapai",
+    "catatan": ""
+   },
+   {
+    "id": "9aa7f933-9884-415f-9eb8-428f315fbcf7",
+    "nama": "Sudah Ditindaklanjuti",
+    "nilai": 188,
+    "satuan": "kasus",
+    "target": 214,
+    "warna": "green",
+    "ikon": "CheckCheck",
+    "status": "belum_tercapai",
+    "catatan": ""
+   },
+   {
+    "id": "497e7892-1f69-4d20-b70c-6dfdd7d2187a",
+    "nama": "Penyelesaian Tindak Lanjut",
+    "nilai": 87.9,
+    "satuan": "%",
+    "target": 100,
+    "warna": "green",
+    "ikon": "TrendingUp",
+    "status": "perlu_perhatian",
+    "catatan": ""
+   },
+   {
+    "id": "9b12a7a9-e5f5-4ad3-8695-ac5c38b13422",
+    "nama": "Edukasi Diberikan",
+    "nilai": 1540,
+    "satuan": "kali",
+    "target": 0,
+    "warna": "blue",
+    "ikon": "BookOpen",
+    "status": "tercapai",
+    "catatan": ""
+   },
+   {
+    "id": "57a6a145-8687-405d-bf76-26cab6bd0bb4",
+    "nama": "Data Belum Lengkap",
+    "nilai": 42,
+    "satuan": "data",
+    "target": 0,
+    "warna": "yellow",
+    "ikon": "FileWarning",
+    "status": "perlu_perhatian",
+    "catatan": ""
+   }
+  ],
+  "grafik": [
+   {
+    "id": "967ecf71-b757-4ee6-a086-d8c23efa1c18",
+    "judul": "Cakupan per Kelurahan",
+    "tipe": "bar",
+    "data": [
+     {
+      "label": "Selat Tengah",
+      "value": 91
+     },
+     {
+      "label": "Selat Hulu",
+      "value": 87
+     },
+     {
+      "label": "Selat Dalam",
+      "value": 84
+     },
+     {
+      "label": "Selat Utara",
+      "value": 80
+     }
+    ]
+   },
+   {
+    "id": "00c63ba1-2a31-4cb7-94a9-535580fdc630",
+    "judul": "10 Masalah Terbanyak",
+    "tipe": "horizontal_bar",
+    "data": [
+     {
+      "label": "Tidak akses pelayanan",
+      "value": 78
+     },
+     {
+      "label": "Tidak minum obat teratur",
+      "value": 54
+     },
+     {
+      "label": "Imunisasi belum lengkap",
+      "value": 43
+     },
+     {
+      "label": "Belum skrining PTM",
+      "value": 38
+     },
+     {
+      "label": "Terduga TBC",
+      "value": 27
+     },
+     {
+      "label": "Belum skrining jiwa",
+      "value": 24
+     },
+     {
+      "label": "Tanda bahaya ibu & anak",
+      "value": 22
+     }
+    ]
+   },
+   {
+    "id": "28ca89ba-4c1d-489a-9c82-38bceac56412",
+    "judul": "Tren Kunjungan Bulanan",
+    "tipe": "line",
+    "data": [
+     {
+      "label": "Jan",
+      "value": 240
+     },
+     {
+      "label": "Feb",
+      "value": 290
+     },
+     {
+      "label": "Mar",
+      "value": 310
+     },
+     {
+      "label": "Apr",
+      "value": 280
+     },
+     {
+      "label": "Mei",
+      "value": 320
+     },
+     {
+      "label": "Jun",
+      "value": 280
+     }
+    ]
+   },
+   {
+    "id": "f118e6a2-49de-4963-9927-2c6c858663fa",
+    "judul": "Status Tindak Lanjut",
+    "tipe": "donut",
+    "data": [
+     {
+      "label": "Selesai",
+      "value": 188
+     },
+     {
+      "label": "Proses",
+      "value": 18
+     },
+     {
+      "label": "Baru",
+      "value": 8
+     }
+    ]
+   }
+  ],
+  "narasi": "TEST narasi update",
+  "pdca": {
+   "plan": "Meningkatkan cakupan kunjungan rumah di Selat Utara dari 80% menjadi 90%.",
+   "do": "Penjadwalan ulang kunjungan, penambahan kader, dan sosialisasi lintas sektor.",
+   "check": "Evaluasi mingguan capaian kunjungan dan jumlah tanda bahaya yang ditemukan.",
+   "act": "Standarisasi jadwal kunjungan dan replikasi ke kelurahan lain."
+  },
+  "rtl": [
+   {
+    "id": "1697a31f-8a18-4aef-a16d-da1aac82e8b7",
+    "masalah": "Cakupan rendah di Selat Utara",
+    "penyebab": "Kekurangan kader aktif",
+    "rencana": "Rekrut & latih 2 kader baru",
+    "pj": "Koordinator Promkes",
+    "target": "31 Jul 2026",
+    "status": "dalam_proses",
+    "hasil": ""
+   },
+   {
+    "id": "0a0e8978-554a-4769-9829-80dc6fb9bd7f",
+    "masalah": "Ketidakpatuhan minum obat HT/DM",
+    "penyebab": "Kurang edukasi keluarga",
+    "rencana": "Edukasi rutin & pendampingan PMO",
+    "pj": "PJ PTM",
+    "target": "30 Jun 2026",
+    "status": "dalam_proses",
+    "hasil": ""
+   }
+  ],
+  "id": "e10146c1-9ca2-4647-834d-8cfae5954619",
+  "created_at": "2026-09-21T03:49:10.852053+00:00",
+  "updated_at": "2026-09-24T06:17:31.810661+00:00",
+  "updated_by": "Petugas Puskesmas Melati",
+  "versions": [
+   {
+    "waktu": "2026-09-24T05:41:10.550360+00:00",
+    "oleh": "Petugas Puskesmas Melati",
+    "snapshot": {
+     "judul": "Dashboard Simulasi Akreditasi PWS ILP",
+     "subjudul": "Kunjungan Rumah Terintegrasi",
+     "puskesmas": "UPT Puskesmas Melati",
+     "periode": "Januari - Juni 2026",
+     "penanggung_jawab": "Kepala UPT Puskesmas Melati",
+     "catatan_kaki": "Data simulasi untuk keperluan akreditasi.",
+     "is_simulasi": true,
+     "template": "Akreditasi Puskesmas",
+     "tanggal_update": "2026-09-21",
+     "kartu": [
+      {
+       "id": "033c5267-1d2c-483b-b992-41d02340d938",
+       "nama": "Keluarga Terdaftar",
+       "nilai": 2500,
+       "satuan": "KK",
+       "target": 2500,
+       "warna": "blue",
+       "ikon": "Users",
+       "status": "tercapai",
+       "catatan": ""
+      },
+      {
+       "id": "fe51a625-8406-4a26-9c7a-a205cb4cf092",
+       "nama": "Target Keluarga Dikunjungi",
+       "nilai": 2000,
+       "satuan": "KK",
+       "target": 2000,
+       "warna": "blue",
+       "ikon": "Target",
+       "status": "tercapai",
+       "catatan": ""
+      },
+      {
+       "id": "b8db7d5e-753d-46b5-af5a-10a77c7be1cd",
+       "nama": "Keluarga Telah Dikunjungi",
+       "nilai": 1720,
+       "satuan": "KK",
+       "target": 2000,
+       "warna": "green",
+       "ikon": "CheckCircle",
+       "status": "belum_tercapai",
+       "catatan": ""
+      },
+      {
+       "id": "dc45efa4-62b7-4a49-b15c-1e898a626832",
+       "nama": "Cakupan Kunjungan",
+       "nilai": 86,
+       "satuan": "%",
+       "target": 100,
+       "warna": "green",
+       "ikon": "TrendingUp",
+       "status": "perlu_perhatian",
+       "catatan": ""
+      },
+      {
+       "id": "a9ac47b0-9a43-4dfd-9e7d-727e05fec990",
+       "nama": "Sasaran Diperiksa",
+       "nilai": 4350,
+       "satuan": "org",
+       "target": 4350,
+       "warna": "blue",
+       "ikon": "Activity",
+       "status": "tercapai",
+       "catatan": ""
+      },
+      {
+       "id": "4bf66117-e0e6-42c6-a1eb-c451b37c17db",
+       "nama": "Masalah Kesehatan Ditemukan",
+       "nilai": 286,
+       "satuan": "kasus",
+       "target": 0,
+       "warna": "yellow",
+       "ikon": "AlertTriangle",
+       "status": "perlu_perhatian",
+       "catatan": ""
+      },
+      {
+       "id": "779a1134-fb5f-41b2-b8e9-97c240e803ae",
+       "nama": "Tanda Bahaya",
+       "nilai": 24,
+       "satuan": "kasus",
+       "target": 0,
+       "warna": "red",
+       "ikon": "ShieldAlert",
+       "status": "perlu_perhatian",
+       "catatan": ""
+      },
+      {
+       "id": "53550f4f-409e-49e8-805d-a0760d618062",
+       "nama": "Laporan ke Nakes",
+       "nilai": 214,
+       "satuan": "kasus",
+       "target": 0,
+       "warna": "blue",
+       "ikon": "Send",
+       "status": "tercapai",
+       "catatan": ""
+      },
+      {
+       "id": "9aa7f933-9884-415f-9eb8-428f315fbcf7",
+       "nama": "Sudah Ditindaklanjuti",
+       "nilai": 188,
+       "satuan": "kasus",
+       "target": 214,
+       "warna": "green",
+       "ikon": "CheckCheck",
+       "status": "belum_tercapai",
+       "catatan": ""
+      },
+      {
+       "id": "497e7892-1f69-4d20-b70c-6dfdd7d2187a",
+       "nama": "Penyelesaian Tindak Lanjut",
+       "nilai": 87.9,
+       "satuan": "%",
+       "target": 100,
+       "warna": "green",
+       "ikon": "TrendingUp",
+       "status": "perlu_perhatian",
+       "catatan": ""
+      },
+      {
+       "id": "9b12a7a9-e5f5-4ad3-8695-ac5c38b13422",
+       "nama": "Edukasi Diberikan",
+       "nilai": 1540,
+       "satuan": "kali",
+       "target": 0,
+       "warna": "blue",
+       "ikon": "BookOpen",
+       "status": "tercapai",
+       "catatan": ""
+      },
+      {
+       "id": "57a6a145-8687-405d-bf76-26cab6bd0bb4",
+       "nama": "Data Belum Lengkap",
+       "nilai": 42,
+       "satuan": "data",
+       "target": 0,
+       "warna": "yellow",
+       "ikon": "FileWarning",
+       "status": "perlu_perhatian",
+       "catatan": ""
+      }
+     ],
+     "grafik": [
+      {
+       "id": "967ecf71-b757-4ee6-a086-d8c23efa1c18",
+       "judul": "Cakupan per Kelurahan",
+       "tipe": "bar",
+       "data": [
+        {
+         "label": "Selat Tengah",
+         "value": 91
+        },
+        {
+         "label": "Selat Hulu",
+         "value": 87
+        },
+        {
+         "label": "Selat Dalam",
+         "value": 84
+        },
+        {
+         "label": "Selat Utara",
+         "value": 80
+        }
+       ]
+      },
+      {
+       "id": "00c63ba1-2a31-4cb7-94a9-535580fdc630",
+       "judul": "10 Masalah Terbanyak",
+       "tipe": "horizontal_bar",
+       "data": [
+        {
+         "label": "Tidak akses pelayanan",
+         "value": 78
+        },
+        {
+         "label": "Tidak minum obat teratur",
+         "value": 54
+        },
+        {
+         "label": "Imunisasi belum lengkap",
+         "value": 43
+        },
+        {
+         "label": "Belum skrining PTM",
+         "value": 38
+        },
+        {
+         "label": "Terduga TBC",
+         "value": 27
+        },
+        {
+         "label": "Belum skrining jiwa",
+         "value": 24
+        },
+        {
+         "label": "Tanda bahaya ibu & anak",
+         "value": 22
+        }
+       ]
+      },
+      {
+       "id": "28ca89ba-4c1d-489a-9c82-38bceac56412",
+       "judul": "Tren Kunjungan Bulanan",
+       "tipe": "line",
+       "data": [
+        {
+         "label": "Jan",
+         "value": 240
+        },
+        {
+         "label": "Feb",
+         "value": 290
+        },
+        {
+         "label": "Mar",
+         "value": 310
+        },
+        {
+         "label": "Apr",
+         "value": 280
+        },
+        {
+         "label": "Mei",
+         "value": 320
+        },
+        {
+         "label": "Jun",
+         "value": 280
+        }
+       ]
+      },
+      {
+       "id": "f118e6a2-49de-4963-9927-2c6c858663fa",
+       "judul": "Status Tindak Lanjut",
+       "tipe": "donut",
+       "data": [
+        {
+         "label": "Selesai",
+         "value": 188
+        },
+        {
+         "label": "Proses",
+         "value": 18
+        },
+        {
+         "label": "Baru",
+         "value": 8
+        }
+       ]
+      }
+     ],
+     "narasi": {
+      "capaian": "Cakupan kunjungan rumah pada periode ini mencapai 86% dari target 2.000 keluarga. Capaian tertinggi terdapat di Selat Tengah (91%), sedangkan kesenjangan terbesar ditemukan di Selat Utara (80%).",
+      "masalah": "Masalah kesehatan yang paling banyak ditemukan adalah tidak mengakses pelayanan, dengan jumlah 78 sasaran.",
+      "tindak_lanjut": "Sebanyak 87,9% temuan telah ditindaklanjuti oleh petugas. Masih terdapat 26 kasus yang memerlukan penyelesaian.",
+      "rencana": "Puskesmas merencanakan sweeping kunjungan di Selat Utara dengan penanggung jawab Koordinator Promkes dan target penyelesaian 31 Juli 2026."
+     },
+     "pdca": {
+      "plan": "Meningkatkan cakupan kunjungan rumah di Selat Utara dari 80% menjadi 90%.",
+      "do": "Penjadwalan ulang kunjungan, penambahan kader, dan sosialisasi lintas sektor.",
+      "check": "Evaluasi mingguan capaian kunjungan dan jumlah tanda bahaya yang ditemukan.",
+      "act": "Standarisasi jadwal kunjungan dan replikasi ke kelurahan lain."
+     },
+     "rtl": [
+      {
+       "id": "1697a31f-8a18-4aef-a16d-da1aac82e8b7",
+       "masalah": "Cakupan rendah di Selat Utara",
+       "penyebab": "Kekurangan kader aktif",
+       "rencana": "Rekrut & latih 2 kader baru",
+       "pj": "Koordinator Promkes",
+       "target": "31 Jul 2026",
+       "status": "dalam_proses",
+       "hasil": ""
+      },
+      {
+       "id": "0a0e8978-554a-4769-9829-80dc6fb9bd7f",
+       "masalah": "Ketidakpatuhan minum obat HT/DM",
+       "penyebab": "Kurang edukasi keluarga",
+       "rencana": "Edukasi rutin & pendampingan PMO",
+       "pj": "PJ PTM",
+       "target": "30 Jun 2026",
+       "status": "dalam_proses",
+       "hasil": ""
+      }
+     ],
+     "id": "e10146c1-9ca2-4647-834d-8cfae5954619",
+     "created_at": "2026-09-21T03:49:10.852053+00:00",
+     "updated_at": "2026-09-21T03:49:10.852055+00:00",
+     "updated_by": "system"
+    }
+   },
+   {
+    "waktu": "2026-09-24T05:46:40.065373+00:00",
+    "oleh": "Petugas Puskesmas Melati",
+    "snapshot": {
+     "judul": "Dashboard Simulasi Akreditasi PWS ILP",
+     "subjudul": "Kunjungan Rumah Terintegrasi",
+     "puskesmas": "UPT Puskesmas Melati",
+     "periode": "Januari - Juni 2026",
+     "penanggung_jawab": "Kepala UPT Puskesmas Melati",
+     "catatan_kaki": "Data simulasi untuk keperluan akreditasi.",
+     "is_simulasi": true,
+     "template": "Akreditasi Puskesmas",
+     "tanggal_update": "2026-09-21",
+     "kartu": [
+      {
+       "id": "033c5267-1d2c-483b-b992-41d02340d938",
+       "nama": "Keluarga Terdaftar",
+       "nilai": 2500,
+       "satuan": "KK",
+       "target": 2500,
+       "warna": "blue",
+       "ikon": "Users",
+       "status": "tercapai",
+       "catatan": ""
+      },
+      {
+       "id": "fe51a625-8406-4a26-9c7a-a205cb4cf092",
+       "nama": "Target Keluarga Dikunjungi",
+       "nilai": 2000,
+       "satuan": "KK",
+       "target": 2000,
+       "warna": "blue",
+       "ikon": "Target",
+       "status": "tercapai",
+       "catatan": ""
+      },
+      {
+       "id": "b8db7d5e-753d-46b5-af5a-10a77c7be1cd",
+       "nama": "Keluarga Telah Dikunjungi",
+       "nilai": 1720,
+       "satuan": "KK",
+       "target": 2000,
+       "warna": "green",
+       "ikon": "CheckCircle",
+       "status": "belum_tercapai",
+       "catatan": ""
+      },
+      {
+       "id": "dc45efa4-62b7-4a49-b15c-1e898a626832",
+       "nama": "Cakupan Kunjungan",
+       "nilai": 86,
+       "satuan": "%",
+       "target": 100,
+       "warna": "green",
+       "ikon": "TrendingUp",
+       "status": "perlu_perhatian",
+       "catatan": ""
+      },
+      {
+       "id": "a9ac47b0-9a43-4dfd-9e7d-727e05fec990",
+       "nama": "Sasaran Diperiksa",
+       "nilai": 4350,
+       "satuan": "org",
+       "target": 4350,
+       "warna": "blue",
+       "ikon": "Activity",
+       "status": "tercapai",
+       "catatan": ""
+      },
+      {
+       "id": "4bf66117-e0e6-42c6-a1eb-c451b37c17db",
+       "nama": "Masalah Kesehatan Ditemukan",
+       "nilai": 286,
+       "satuan": "kasus",
+       "target": 0,
+       "warna": "yellow",
+       "ikon": "AlertTriangle",
+       "status": "perlu_perhatian",
+       "catatan": ""
+      },
+      {
+       "id": "779a1134-fb5f-41b2-b8e9-97c240e803ae",
+       "nama": "Tanda Bahaya",
+       "nilai": 24,
+       "satuan": "kasus",
+       "target": 0,
+       "warna": "red",
+       "ikon": "ShieldAlert",
+       "status": "perlu_perhatian",
+       "catatan": ""
+      },
+      {
+       "id": "53550f4f-409e-49e8-805d-a0760d618062",
+       "nama": "Laporan ke Nakes",
+       "nilai": 214,
+       "satuan": "kasus",
+       "target": 0,
+       "warna": "blue",
+       "ikon": "Send",
+       "status": "tercapai",
+       "catatan": ""
+      },
+      {
+       "id": "9aa7f933-9884-415f-9eb8-428f315fbcf7",
+       "nama": "Sudah Ditindaklanjuti",
+       "nilai": 188,
+       "satuan": "kasus",
+       "target": 214,
+       "warna": "green",
+       "ikon": "CheckCheck",
+       "status": "belum_tercapai",
+       "catatan": ""
+      },
+      {
+       "id": "497e7892-1f69-4d20-b70c-6dfdd7d2187a",
+       "nama": "Penyelesaian Tindak Lanjut",
+       "nilai": 87.9,
+       "satuan": "%",
+       "target": 100,
+       "warna": "green",
+       "ikon": "TrendingUp",
+       "status": "perlu_perhatian",
+       "catatan": ""
+      },
+      {
+       "id": "9b12a7a9-e5f5-4ad3-8695-ac5c38b13422",
+       "nama": "Edukasi Diberikan",
+       "nilai": 1540,
+       "satuan": "kali",
+       "target": 0,
+       "warna": "blue",
+       "ikon": "BookOpen",
+       "status": "tercapai",
+       "catatan": ""
+      },
+      {
+       "id": "57a6a145-8687-405d-bf76-26cab6bd0bb4",
+       "nama": "Data Belum Lengkap",
+       "nilai": 42,
+       "satuan": "data",
+       "target": 0,
+       "warna": "yellow",
+       "ikon": "FileWarning",
+       "status": "perlu_perhatian",
+       "catatan": ""
+      }
+     ],
+     "grafik": [
+      {
+       "id": "967ecf71-b757-4ee6-a086-d8c23efa1c18",
+       "judul": "Cakupan per Kelurahan",
+       "tipe": "bar",
+       "data": [
+        {
+         "label": "Selat Tengah",
+         "value": 91
+        },
+        {
+         "label": "Selat Hulu",
+         "value": 87
+        },
+        {
+         "label": "Selat Dalam",
+         "value": 84
+        },
+        {
+         "label": "Selat Utara",
+         "value": 80
+        }
+       ]
+      },
+      {
+       "id": "00c63ba1-2a31-4cb7-94a9-535580fdc630",
+       "judul": "10 Masalah Terbanyak",
+       "tipe": "horizontal_bar",
+       "data": [
+        {
+         "label": "Tidak akses pelayanan",
+         "value": 78
+        },
+        {
+         "label": "Tidak minum obat teratur",
+         "value": 54
+        },
+        {
+         "label": "Imunisasi belum lengkap",
+         "value": 43
+        },
+        {
+         "label": "Belum skrining PTM",
+         "value": 38
+        },
+        {
+         "label": "Terduga TBC",
+         "value": 27
+        },
+        {
+         "label": "Belum skrining jiwa",
+         "value": 24
+        },
+        {
+         "label": "Tanda bahaya ibu & anak",
+         "value": 22
+        }
+       ]
+      },
+      {
+       "id": "28ca89ba-4c1d-489a-9c82-38bceac56412",
+       "judul": "Tren Kunjungan Bulanan",
+       "tipe": "line",
+       "data": [
+        {
+         "label": "Jan",
+         "value": 240
+        },
+        {
+         "label": "Feb",
+         "value": 290
+        },
+        {
+         "label": "Mar",
+         "value": 310
+        },
+        {
+         "label": "Apr",
+         "value": 280
+        },
+        {
+         "label": "Mei",
+         "value": 320
+        },
+        {
+         "label": "Jun",
+         "value": 280
+        }
+       ]
+      },
+      {
+       "id": "f118e6a2-49de-4963-9927-2c6c858663fa",
+       "judul": "Status Tindak Lanjut",
+       "tipe": "donut",
+       "data": [
+        {
+         "label": "Selesai",
+         "value": 188
+        },
+        {
+         "label": "Proses",
+         "value": 18
+        },
+        {
+         "label": "Baru",
+         "value": 8
+        }
+       ]
+      }
+     ],
+     "narasi": "TEST narasi update",
+     "pdca": {
+      "plan": "Meningkatkan cakupan kunjungan rumah di Selat Utara dari 80% menjadi 90%.",
+      "do": "Penjadwalan ulang kunjungan, penambahan kader, dan sosialisasi lintas sektor.",
+      "check": "Evaluasi mingguan capaian kunjungan dan jumlah tanda bahaya yang ditemukan.",
+      "act": "Standarisasi jadwal kunjungan dan replikasi ke kelurahan lain."
+     },
+     "rtl": [
+      {
+       "id": "1697a31f-8a18-4aef-a16d-da1aac82e8b7",
+       "masalah": "Cakupan rendah di Selat Utara",
+       "penyebab": "Kekurangan kader aktif",
+       "rencana": "Rekrut & latih 2 kader baru",
+       "pj": "Koordinator Promkes",
+       "target": "31 Jul 2026",
+       "status": "dalam_proses",
+       "hasil": ""
+      },
+      {
+       "id": "0a0e8978-554a-4769-9829-80dc6fb9bd7f",
+       "masalah": "Ketidakpatuhan minum obat HT/DM",
+       "penyebab": "Kurang edukasi keluarga",
+       "rencana": "Edukasi rutin & pendampingan PMO",
+       "pj": "PJ PTM",
+       "target": "30 Jun 2026",
+       "status": "dalam_proses",
+       "hasil": ""
+      }
+     ],
+     "id": "e10146c1-9ca2-4647-834d-8cfae5954619",
+     "created_at": "2026-09-21T03:49:10.852053+00:00",
+     "updated_at": "2026-09-24T05:41:10.550371+00:00",
+     "updated_by": "Petugas Puskesmas Melati"
+    }
+   },
+   {
+    "waktu": "2026-09-24T06:17:31.810649+00:00",
+    "oleh": "Petugas Puskesmas Melati",
+    "snapshot": {
+     "judul": "Dashboard Simulasi Akreditasi PWS ILP",
+     "subjudul": "Kunjungan Rumah Terintegrasi",
+     "puskesmas": "UPT Puskesmas Melati",
+     "periode": "Januari - Juni 2026",
+     "penanggung_jawab": "Kepala UPT Puskesmas Melati",
+     "catatan_kaki": "Data simulasi untuk keperluan akreditasi.",
+     "is_simulasi": true,
+     "template": "Akreditasi Puskesmas",
+     "tanggal_update": "2026-09-21",
+     "kartu": [
+      {
+       "id": "033c5267-1d2c-483b-b992-41d02340d938",
+       "nama": "Keluarga Terdaftar",
+       "nilai": 2500,
+       "satuan": "KK",
+       "target": 2500,
+       "warna": "blue",
+       "ikon": "Users",
+       "status": "tercapai",
+       "catatan": ""
+      },
+      {
+       "id": "fe51a625-8406-4a26-9c7a-a205cb4cf092",
+       "nama": "Target Keluarga Dikunjungi",
+       "nilai": 2000,
+       "satuan": "KK",
+       "target": 2000,
+       "warna": "blue",
+       "ikon": "Target",
+       "status": "tercapai",
+       "catatan": ""
+      },
+      {
+       "id": "b8db7d5e-753d-46b5-af5a-10a77c7be1cd",
+       "nama": "Keluarga Telah Dikunjungi",
+       "nilai": 1720,
+       "satuan": "KK",
+       "target": 2000,
+       "warna": "green",
+       "ikon": "CheckCircle",
+       "status": "belum_tercapai",
+       "catatan": ""
+      },
+      {
+       "id": "dc45efa4-62b7-4a49-b15c-1e898a626832",
+       "nama": "Cakupan Kunjungan",
+       "nilai": 86,
+       "satuan": "%",
+       "target": 100,
+       "warna": "green",
+       "ikon": "TrendingUp",
+       "status": "perlu_perhatian",
+       "catatan": ""
+      },
+      {
+       "id": "a9ac47b0-9a43-4dfd-9e7d-727e05fec990",
+       "nama": "Sasaran Diperiksa",
+       "nilai": 4350,
+       "satuan": "org",
+       "target": 4350,
+       "warna": "blue",
+       "ikon": "Activity",
+       "status": "tercapai",
+       "catatan": ""
+      },
+      {
+       "id": "4bf66117-e0e6-42c6-a1eb-c451b37c17db",
+       "nama": "Masalah Kesehatan Ditemukan",
+       "nilai": 286,
+       "satuan": "kasus",
+       "target": 0,
+       "warna": "yellow",
+       "ikon": "AlertTriangle",
+       "status": "perlu_perhatian",
+       "catatan": ""
+      },
+      {
+       "id": "779a1134-fb5f-41b2-b8e9-97c240e803ae",
+       "nama": "Tanda Bahaya",
+       "nilai": 24,
+       "satuan": "kasus",
+       "target": 0,
+       "warna": "red",
+       "ikon": "ShieldAlert",
+       "status": "perlu_perhatian",
+       "catatan": ""
+      },
+      {
+       "id": "53550f4f-409e-49e8-805d-a0760d618062",
+       "nama": "Laporan ke Nakes",
+       "nilai": 214,
+       "satuan": "kasus",
+       "target": 0,
+       "warna": "blue",
+       "ikon": "Send",
+       "status": "tercapai",
+       "catatan": ""
+      },
+      {
+       "id": "9aa7f933-9884-415f-9eb8-428f315fbcf7",
+       "nama": "Sudah Ditindaklanjuti",
+       "nilai": 188,
+       "satuan": "kasus",
+       "target": 214,
+       "warna": "green",
+       "ikon": "CheckCheck",
+       "status": "belum_tercapai",
+       "catatan": ""
+      },
+      {
+       "id": "497e7892-1f69-4d20-b70c-6dfdd7d2187a",
+       "nama": "Penyelesaian Tindak Lanjut",
+       "nilai": 87.9,
+       "satuan": "%",
+       "target": 100,
+       "warna": "green",
+       "ikon": "TrendingUp",
+       "status": "perlu_perhatian",
+       "catatan": ""
+      },
+      {
+       "id": "9b12a7a9-e5f5-4ad3-8695-ac5c38b13422",
+       "nama": "Edukasi Diberikan",
+       "nilai": 1540,
+       "satuan": "kali",
+       "target": 0,
+       "warna": "blue",
+       "ikon": "BookOpen",
+       "status": "tercapai",
+       "catatan": ""
+      },
+      {
+       "id": "57a6a145-8687-405d-bf76-26cab6bd0bb4",
+       "nama": "Data Belum Lengkap",
+       "nilai": 42,
+       "satuan": "data",
+       "target": 0,
+       "warna": "yellow",
+       "ikon": "FileWarning",
+       "status": "perlu_perhatian",
+       "catatan": ""
+      }
+     ],
+     "grafik": [
+      {
+       "id": "967ecf71-b757-4ee6-a086-d8c23efa1c18",
+       "judul": "Cakupan per Kelurahan",
+       "tipe": "bar",
+       "data": [
+        {
+         "label": "Selat Tengah",
+         "value": 91
+        },
+        {
+         "label": "Selat Hulu",
+         "value": 87
+        },
+        {
+         "label": "Selat Dalam",
+         "value": 84
+        },
+        {
+         "label": "Selat Utara",
+         "value": 80
+        }
+       ]
+      },
+      {
+       "id": "00c63ba1-2a31-4cb7-94a9-535580fdc630",
+       "judul": "10 Masalah Terbanyak",
+       "tipe": "horizontal_bar",
+       "data": [
+        {
+         "label": "Tidak akses pelayanan",
+         "value": 78
+        },
+        {
+         "label": "Tidak minum obat teratur",
+         "value": 54
+        },
+        {
+         "label": "Imunisasi belum lengkap",
+         "value": 43
+        },
+        {
+         "label": "Belum skrining PTM",
+         "value": 38
+        },
+        {
+         "label": "Terduga TBC",
+         "value": 27
+        },
+        {
+         "label": "Belum skrining jiwa",
+         "value": 24
+        },
+        {
+         "label": "Tanda bahaya ibu & anak",
+         "value": 22
+        }
+       ]
+      },
+      {
+       "id": "28ca89ba-4c1d-489a-9c82-38bceac56412",
+       "judul": "Tren Kunjungan Bulanan",
+       "tipe": "line",
+       "data": [
+        {
+         "label": "Jan",
+         "value": 240
+        },
+        {
+         "label": "Feb",
+         "value": 290
+        },
+        {
+         "label": "Mar",
+         "value": 310
+        },
+        {
+         "label": "Apr",
+         "value": 280
+        },
+        {
+         "label": "Mei",
+         "value": 320
+        },
+        {
+         "label": "Jun",
+         "value": 280
+        }
+       ]
+      },
+      {
+       "id": "f118e6a2-49de-4963-9927-2c6c858663fa",
+       "judul": "Status Tindak Lanjut",
+       "tipe": "donut",
+       "data": [
+        {
+         "label": "Selesai",
+         "value": 188
+        },
+        {
+         "label": "Proses",
+         "value": 18
+        },
+        {
+         "label": "Baru",
+         "value": 8
+        }
+       ]
+      }
+     ],
+     "narasi": "TEST narasi update",
+     "pdca": {
+      "plan": "Meningkatkan cakupan kunjungan rumah di Selat Utara dari 80% menjadi 90%.",
+      "do": "Penjadwalan ulang kunjungan, penambahan kader, dan sosialisasi lintas sektor.",
+      "check": "Evaluasi mingguan capaian kunjungan dan jumlah tanda bahaya yang ditemukan.",
+      "act": "Standarisasi jadwal kunjungan dan replikasi ke kelurahan lain."
+     },
+     "rtl": [
+      {
+       "id": "1697a31f-8a18-4aef-a16d-da1aac82e8b7",
+       "masalah": "Cakupan rendah di Selat Utara",
+       "penyebab": "Kekurangan kader aktif",
+       "rencana": "Rekrut & latih 2 kader baru",
+       "pj": "Koordinator Promkes",
+       "target": "31 Jul 2026",
+       "status": "dalam_proses",
+       "hasil": ""
+      },
+      {
+       "id": "0a0e8978-554a-4769-9829-80dc6fb9bd7f",
+       "masalah": "Ketidakpatuhan minum obat HT/DM",
+       "penyebab": "Kurang edukasi keluarga",
+       "rencana": "Edukasi rutin & pendampingan PMO",
+       "pj": "PJ PTM",
+       "target": "30 Jun 2026",
+       "status": "dalam_proses",
+       "hasil": ""
+      }
+     ],
+     "id": "e10146c1-9ca2-4647-834d-8cfae5954619",
+     "created_at": "2026-09-21T03:49:10.852053+00:00",
+     "updated_at": "2026-09-24T05:46:40.065387+00:00",
+     "updated_by": "Petugas Puskesmas Melati"
+    }
+   }
+  ]
+ }
+]

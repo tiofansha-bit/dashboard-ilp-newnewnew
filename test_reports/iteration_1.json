@@ -1,0 +1,32 @@
+{
+  "summary": "Verified CORS/login bug fix. Admin (admin/admin123) and Kader (kader11/kader123) both log in via the browser UI at REACT_APP_BACKEND_URL with NO network error. Admin dashboard loads with 'Import Data' menu in sidebar. Kader Beranda loads Mila's family/kunjungan data. Import flow works: 'Impor Keluarga' shows populated 'Tujukan ke Kader (opsional)' dropdown; POST /api/admin/import/keluarga with a real .xlsx (built from template) + kader_id=<kader11 id> returned {ok:true, created:1, kader:' Mila'} and the resulting keluarga document has kader_id and kader_nama set correctly. Template download (GET /api/admin/import/template/keluarga) returns a valid xlsx (6255 bytes). Preflight OPTIONS with Origin from *.emergentcf.cloud returns 200 (CORS fix confirmed).",
+  "backend_issues": {
+    "critical": [],
+    "minor": []
+  },
+  "frontend_issues": {
+    "ui_bugs": [],
+    "integration_issues": [],
+    "design_issues": [
+      {"screen": "Admin Dashboard (charts)", "issues": ["Recharts warnings 'width(-1) and height(-1) of chart should be greater than 0' logged repeatedly at initial render (charts still render after layout settles); consider adding min-width/min-height to ResponsiveContainer wrappers."]},
+      {"screen": "Import Data page", "issues": ["React hydration warning: '<span> cannot be a child of <option>' inside the 'Tujukan ke Kader' <select>. Likely caused by visual-editor injected spans around {k.nama} in ImportData.js line ~78. Not user-visible but should be cleaned up to avoid hydration errors."]}
+    ]
+  },
+  "test_report_links": [],
+  "action_items": [
+    "(Optional) Clean up visual-editor span wrapping inside <option> elements in /app/frontend/src/pages/admin/ImportData.js to eliminate hydration warning.",
+    "(Optional) Add minWidth/minHeight to Recharts ResponsiveContainer usages to avoid console warnings on first render."
+  ],
+  "critical_code_review_comments": [
+    "server.py is 1099 lines - should be split into routers (auth, keluarga, admin, kunjungan, dashboard) for maintainability.",
+    "CORS allow_origin_regex fix looks correct and credential-safe (no wildcard *)."
+  ],
+  "updated_files": [],
+  "success_rate": {"backend": "100%", "frontend": "100%"},
+  "test_credentials": "admin/admin123, kader11/kader123 (from /app/memory/test_credentials.md updated to include kader11)",
+  "seed_data_creation": "Temporarily created 1 test family 'TEST_Keluarga_QA_001' via /api/admin/import/keluarga; hard-deleted afterwards. Also restored one accidentally soft-deleted seed family (Abdurrahman, id f3759414-9aa2-4c1e-8544-783c1092fce8) after a search-endpoint misuse during exploration. DB state is back to baseline.",
+  "retest_needed": false,
+  "should_main_agent_self_test": false,
+  "context_for_next_testing_agent": "Login endpoint expects {username,password} and sets httpOnly cookie AND returns access_token. Frontend uses withCredentials cookie flow. Import endpoint POST /api/admin/import/keluarga takes multipart form field 'kader_id' (NOT 'assign_kader'; the frontend variable is named assignKader but sends key 'kader_id'). /api/keluarga?q=... currently returns the full list scoped to user's wilayah - 'q' param does not appear to filter server-side; verify before relying on it. Endpoint listing kader is /api/admin/kader (not /api/admin/users).",
+  "rca of the issue": "User reported 'tidak bisa login network error'. Root cause: the Emergent CDN/ingress rewrites the browser Origin header to https://<id>.cluster-5.preview.emergentcf.cloud which was NOT in FastAPI's CORSMiddleware allow_origins list, so preflight OPTIONS returned 400 and the browser reported a network error. Mitigation applied by main agent: broadened CORSMiddleware to use allow_origin_regex matching *.emergentagent.com and *.emergentcf.cloud (credentials-safe). Verified: OPTIONS preflight with Origin https://63c30ed7-....cluster-5.preview.emergentcf.cloud now returns HTTP 200 and browser login for both admin and kader11 succeeds end-to-end."
+}

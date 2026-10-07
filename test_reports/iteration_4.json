@@ -1,0 +1,26 @@
+{
+  "summary": "Verified two new admin features end-to-end: FULL EDIT of custom questions on Master Pertanyaan and IMPORT PERTANYAAN on Import Data. All flows work as spec. Backend was already verified via curl by main agent; this iteration focused on UI. Login admin/admin123 works. Created custom Balita question 'QA Edit Test' (single, Ya/Tidak) via mq-add-*, then via mq-edit-<kode> the EditModal correctly showed the custom-only fields (mq-edit-section, mq-edit-jenis, mq-edit-opsi). Switching jenis to number hid mq-edit-opsi and revealed mq-edit-satuan; saved with 'kg' -> toast 'Pertanyaan diperbarui' and row now shows 'number (kg)'. Regression: edited built-in BUMIL_SUHU — EditModal correctly did NOT render section/jenis/opsi/satuan; text-only save works with toast. On Import Data page, the third card 'Impor Pertanyaan' (import-pertanyaan) is present; template download returns template_pertanyaan.xlsx; uploaded a valid 1-row xlsx (group=balita, text='QA Import Row', jenis=single, opsi='Ya; Tidak') -> import-pertanyaan-result shows '1 data berhasil diimpor'; the imported question appears in Balita group with correct jenis=single and Opsi 'Ya · Tidak'. Cleanup deleted both QA test rows (BALITA_QA_EDIT_TEST, BALITA_QA_IMPORT_ROW); GET /api/master/questions?group=balita confirms 0 QA rows remain.",
+  "backend_issues": {"critical": [], "minor": []},
+  "frontend_issues": {
+    "ui_bugs": [],
+    "integration_issues": [],
+    "design_issues": [
+      {"screen": "Import Data — Impor Keluarga kader select", "issues": ["React hydration warning: <span> rendered as child of <option> (dev instrumentation wraps option text with a <span data-ve-dynamic>). Not caused by app code but by preview overlay; harmless but pollutes console."]}
+    ]
+  },
+  "test_report_links": [],
+  "action_items": [],
+  "critical_code_review_comments": [
+    "MasterQuestions.js EditModal correctly gates custom-only fields on q.custom — good.",
+    "ImportData.js reuses ImportCard for all three imports (DRY) — nice.",
+    "Consider explicit success message when result.created === 0 (currently still fires toast). Minor."
+  ],
+  "updated_files": [],
+  "success_rate": {"backend": "100%", "frontend": "100%"},
+  "test_credentials": "admin / admin123 (from /app/memory/test_credentials.md)",
+  "seed_data_creation": "None (created + deleted BALITA_QA_EDIT_TEST and BALITA_QA_IMPORT_ROW; DB restored)",
+  "retest_needed": false,
+  "main_agent_can_self_test": true,
+  "context_for_next_testing_agent": "Both features (full edit of custom questions + import pertanyaan) are working. UI selectors: mq-add-*, mq-edit-*, mq-save, mq-delete-<kode>, import-pertanyaan, import-pertanyaan-{download,file,upload,result}. Auto-generated kode format uses group prefix + slug of text (e.g. BALITA_QA_EDIT_TEST).",
+  "rca of the issue": "N/A — no bugs found."
+}

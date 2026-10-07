@@ -1,0 +1,2314 @@
+[
+ {
+  "kode": "BUMIL_SUHU",
+  "group": "ibu_hamil",
+  "section": "ceklis",
+  "text": "Suhu tubuh ibu",
+  "definisi": "Diisi hasil pemeriksaan suhu tubuh Ibu hamil",
+  "jenis": "number",
+  "satuan": "°C",
+  "opsi": [],
+  "wajib": false,
+  "problem_when": [],
+  "priority": false,
+  "report_required": false,
+  "urutan": 1
+ },
+ {
+  "kode": "BUMIL_KIA",
+  "group": "ibu_hamil",
+  "section": "ceklis",
+  "text": "Apakah ibu memiliki Buku KIA?",
+  "definisi": "Apakah ibu memiliki Buku KIA?",
+  "jenis": "single",
+  "satuan": null,
+  "opsi": [
+   "Ya, dapat ditunjukkan",
+   "Ada, tidak dapat ditunjukkan",
+   "Tidak memiliki",
+   "Tidak tahu"
+  ],
+  "wajib": true,
+  "problem_when": [
+   "Tidak memiliki",
+   "Tidak tahu"
+  ],
+  "priority": "kuning",
+  "report_required": false,
+  "urutan": 2
+ },
+ {
+  "kode": "BUMIL_ANC",
+  "group": "ibu_hamil",
+  "section": "ceklis",
+  "text": "Apakah ibu sudah memeriksakan kehamilan (K1-K6) sesuai usia kehamilan?",
+  "definisi": "Apakah ibu sudah memeriksakan kehamilan (K1-K6) sesuai usia kehamilan?",
+  "jenis": "yesno",
+  "satuan": null,
+  "opsi": [
+   "Ya",
+   "Tidak"
+  ],
+  "wajib": true,
+  "problem_when": [
+   "Tidak"
+  ],
+  "priority": "kuning",
+  "report_required": false,
+  "urutan": 3
+ },
+ {
+  "kode": "BUMIL_PIRINGKU",
+  "group": "ibu_hamil",
+  "section": "ceklis",
+  "text": "Apakah ibu makan sesuai Isi Piringku Ibu Hamil?",
+  "definisi": "Apakah ibu makan sesuai Isi Piringku Ibu Hamil?",
+  "jenis": "yesno",
+  "satuan": null,
+  "opsi": [
+   "Ya",
+   "Tidak"
+  ],
+  "wajib": true,
+  "problem_when": [
+   "Tidak"
+  ],
+  "priority": "kuning",
+  "report_required": false,
+  "urutan": 4
+ },
+ {
+  "kode": "BUMIL_TTD_ADA",
+  "group": "ibu_hamil",
+  "section": "ceklis",
+  "text": "Apakah ibu memiliki Tablet Tambah Darah (TTD)?",
+  "definisi": "Apakah ibu memiliki Tablet Tambah Darah (TTD)?",
+  "jenis": "yesno",
+  "satuan": null,
+  "opsi": [
+   "Ya",
+   "Tidak"
+  ],
+  "wajib": true,
+  "problem_when": [
+   "Tidak"
+  ],
+  "priority": "kuning",
+  "report_required": false,
+  "urutan": 5
+ },
+ {
+  "kode": "BUMIL_TTD_MINUM",
+  "group": "ibu_hamil",
+  "section": "ceklis",
+  "text": "Apakah ibu minum TTD dalam 24 jam terakhir?",
+  "definisi": "Ibu hamil minum TTD dalam 24 jam terakhir",
+  "jenis": "yesno",
+  "satuan": null,
+  "opsi": [
+   "Ya",
+   "Tidak"
+  ],
+  "wajib": true,
+  "problem_when": [
+   "Tidak"
+  ],
+  "priority": "kuning",
+  "report_required": false,
+  "urutan": 6
+ },
+ {
+  "kode": "BUMIL_LILA",
+  "group": "ibu_hamil",
+  "section": "ceklis",
+  "text": "Hasil pengukuran LiLA",
+  "definisi": "Hasil pengukuran LiLA",
+  "jenis": "number",
+  "satuan": "cm",
+  "opsi": [],
+  "wajib": false,
+  "problem_when": [],
+  "priority": null,
+  "report_required": false,
+  "urutan": 7
+ },
+ {
+  "kode": "BUMIL_LILA_KEK",
+  "group": "ibu_hamil",
+  "section": "ceklis",
+  "text": "Apakah LiLA kurang dari 23,5 cm?",
+  "definisi": "Apakah LiLA kurang dari 23,5 cm?",
+  "jenis": "yesno",
+  "satuan": null,
+  "opsi": [
+   "Ya",
+   "Tidak"
+  ],
+  "wajib": true,
+  "problem_when": [
+   "Ya"
+  ],
+  "priority": "kuning",
+  "report_required": false,
+  "urutan": 8
+ },
+ {
+  "kode": "BUMIL_KELAS",
+  "group": "ibu_hamil",
+  "section": "ceklis",
+  "text": "Apakah ibu mengikuti Kelas Ibu Hamil?",
+  "definisi": "Apakah ibu mengikuti Kelas Ibu Hamil?",
+  "jenis": "yesno",
+  "satuan": null,
+  "opsi": [
+   "Ya",
+   "Tidak"
+  ],
+  "wajib": true,
+  "problem_when": [
+   "Tidak"
+  ],
+  "priority": "kuning",
+  "report_required": false,
+  "urutan": 9
+ },
+ {
+  "kode": "BUMIL_JIWA",
+  "group": "ibu_hamil",
+  "section": "ceklis",
+  "text": "Apakah ibu sudah menjalani skrining kesehatan jiwa?",
+  "definisi": "Apakah ibu sudah menjalani skrining kesehatan jiwa?",
+  "jenis": "yesno",
+  "satuan": null,
+  "opsi": [
+   "Ya",
+   "Tidak"
+  ],
+  "wajib": true,
+  "problem_when": [
+   "Tidak"
+  ],
+  "priority": "kuning",
+  "report_required": false,
+  "urutan": 10
+ },
+ {
+  "kode": "IBU_HAMIL_TB_11",
+  "group": "ibu_hamil",
+  "section": "tanda_bahaya",
+  "text": "Demam lebih dari dua hari",
+  "definisi": "Suhu tubuh ibu 38ᵒC atau lebih",
+  "jenis": "danger",
+  "satuan": null,
+  "opsi": [
+   "Ya",
+   "Tidak"
+  ],
+  "wajib": true,
+  "problem_when": [
+   "Ya"
+  ],
+  "priority": "merah",
+  "report_required": true,
+  "urutan": 11
+ },
+ {
+  "kode": "IBU_HAMIL_TB_12",
+  "group": "ibu_hamil",
+  "section": "tanda_bahaya",
+  "text": "Pusing/sakit kepala berat",
+  "definisi": "Sakit saat kencing atau keluar keputihan atau gatal di daerah kemaluan",
+  "jenis": "danger",
+  "satuan": null,
+  "opsi": [
+   "Ya",
+   "Tidak"
+  ],
+  "wajib": true,
+  "problem_when": [
+   "Ya"
+  ],
+  "priority": "merah",
+  "report_required": true,
+  "urutan": 12
+ },
+ {
+  "kode": "IBU_HAMIL_TB_13",
+  "group": "ibu_hamil",
+  "section": "tanda_bahaya",
+  "text": "Sulit tidur/cemas berlebih",
+  "definisi": "Sulit tidur/cemas berlebih",
+  "jenis": "danger",
+  "satuan": null,
+  "opsi": [
+   "Ya",
+   "Tidak"
+  ],
+  "wajib": true,
+  "problem_when": [
+   "Ya"
+  ],
+  "priority": "merah",
+  "report_required": true,
+  "urutan": 13
+ },
+ {
+  "kode": "IBU_HAMIL_TB_14",
+  "group": "ibu_hamil",
+  "section": "tanda_bahaya",
+  "text": "Diare Berulang",
+  "definisi": "Diare Berulang",
+  "jenis": "danger",
+  "satuan": null,
+  "opsi": [
+   "Ya",
+   "Tidak"
+  ],
+  "wajib": true,
+  "problem_when": [
+   "Ya"
+  ],
+  "priority": "merah",
+  "report_required": true,
+  "urutan": 14
+ },
+ {
+  "kode": "IBU_HAMIL_TB_15",
+  "group": "ibu_hamil",
+  "section": "tanda_bahaya",
+  "text": "Resiko TBC",
+  "definisi": "Batuk lebih dari 2 minggu atau kontak serumah dengan penderita TBC",
+  "jenis": "danger",
+  "satuan": null,
+  "opsi": [
+   "Ya",
+   "Tidak"
+  ],
+  "wajib": true,
+  "problem_when": [
+   "Ya"
+  ],
+  "priority": "merah",
+  "report_required": true,
+  "urutan": 15
+ },
+ {
+  "kode": "IBU_HAMIL_TB_16",
+  "group": "ibu_hamil",
+  "section": "tanda_bahaya",
+  "text": "Tidak ada gerakan janin",
+  "definisi": "Tidak ada gerakan janin atau kurang dari 10 kali dalam 12 jam",
+  "jenis": "danger",
+  "satuan": null,
+  "opsi": [
+   "Ya",
+   "Tidak"
+  ],
+  "wajib": true,
+  "problem_when": [
+   "Ya"
+  ],
+  "priority": "merah",
+  "report_required": true,
+  "urutan": 16
+ },
+ {
+  "kode": "IBU_HAMIL_TB_17",
+  "group": "ibu_hamil",
+  "section": "tanda_bahaya",
+  "text": "Jantung berdebar-debar atau nyeri di dada",
+  "definisi": "Jantung berdebar-debar atau nyeri di dada",
+  "jenis": "danger",
+  "satuan": null,
+  "opsi": [
+   "Ya",
+   "Tidak"
+  ],
+  "wajib": true,
+  "problem_when": [
+   "Ya"
+  ],
+  "priority": "merah",
+  "report_required": true,
+  "urutan": 17
+ },
+ {
+  "kode": "IBU_HAMIL_TB_18",
+  "group": "ibu_hamil",
+  "section": "tanda_bahaya",
+  "text": "Keluar cairan dari jalan lahir",
+  "definisi": "Keluar cairan sangat banyak dan berbau (air ketuban keluar sebelum waktunya dan atau perdarahan pada hamil muda/tua)",
+  "jenis": "danger",
+  "satuan": null,
+  "opsi": [
+   "Ya",
+   "Tidak"
+  ],
+  "wajib": true,
+  "problem_when": [
+   "Ya"
+  ],
+  "priority": "merah",
+  "report_required": true,
+  "urutan": 18
+ },
+ {
+  "kode": "IBU_HAMIL_TB_19",
+  "group": "ibu_hamil",
+  "section": "tanda_bahaya",
+  "text": "Sakit saat kencing",
+  "definisi": "Sakit saat kencing atau keluar keputihan atau gatal di daerah kemaluan",
+  "jenis": "danger",
+  "satuan": null,
+  "opsi": [
+   "Ya",
+   "Tidak"
+  ],
+  "wajib": true,
+  "problem_when": [
+   "Ya"
+  ],
+  "priority": "merah",
+  "report_required": true,
+  "urutan": 19
+ },
+ {
+  "kode": "IBU_HAMIL_TB_20",
+  "group": "ibu_hamil",
+  "section": "tanda_bahaya",
+  "text": "Nyeri perut hebat",
+  "definisi": "Nyeri perut hebat",
+  "jenis": "danger",
+  "satuan": null,
+  "opsi": [
+   "Ya",
+   "Tidak"
+  ],
+  "wajib": true,
+  "problem_when": [
+   "Ya"
+  ],
+  "priority": "merah",
+  "report_required": true,
+  "urutan": 20
+ },
+ {
+  "kode": "NIFAS_SUHU",
+  "group": "nifas",
+  "section": "ceklis",
+  "text": "Suhu tubuh ibu",
+  "definisi": "Diisi hasil pemeriksaan suhu tubuh Ibu nifas",
+  "jenis": "number",
+  "satuan": "°C",
+  "opsi": [],
+  "wajib": false,
+  "problem_when": [],
+  "priority": null,
+  "report_required": false,
+  "urutan": 1
+ },
+ {
+  "kode": "NIFAS_KIA",
+  "group": "nifas",
+  "section": "ceklis",
+  "text": "Apakah ibu memiliki Buku KIA?",
+  "definisi": "Apakah ibu memiliki Buku KIA?",
+  "jenis": "single",
+  "satuan": null,
+  "opsi": [
+   "Ya, dapat ditunjukkan",
+   "Ada, tidak dapat ditunjukkan",
+   "Tidak memiliki"
+  ],
+  "wajib": true,
+  "problem_when": [
+   "Tidak memiliki"
+  ],
+  "priority": "kuning",
+  "report_required": false,
+  "urutan": 2
+ },
+ {
+  "kode": "NIFAS_KF",
+  "group": "nifas",
+  "section": "ceklis",
+  "text": "Apakah kunjungan nifas (KF1-KF4) sudah sesuai jadwal?",
+  "definisi": "Disii tanggal kader berkunjung ke rumah ibu bersalin/nifas",
+  "jenis": "yesno",
+  "satuan": null,
+  "opsi": [
+   "Ya",
+   "Tidak"
+  ],
+  "wajib": true,
+  "problem_when": [
+   "Tidak"
+  ],
+  "priority": "kuning",
+  "report_required": false,
+  "urutan": 3
+ },
+ {
+  "kode": "NIFAS_VITA",
+  "group": "nifas",
+  "section": "ceklis",
+  "text": "Apakah ibu sudah minum kapsul Vitamin A nifas?",
+  "definisi": "Apakah ibu sudah minum kapsul Vitamin A nifas?",
+  "jenis": "yesno",
+  "satuan": null,
+  "opsi": [
+   "Ya",
+   "Tidak"
+  ],
+  "wajib": true,
+  "problem_when": [
+   "Tidak"
+  ],
+  "priority": "kuning",
+  "report_required": false,
+  "urutan": 4
+ },
+ {
+  "kode": "NIFAS_ASI",
+  "group": "nifas",
+  "section": "ceklis",
+  "text": "Apakah ibu memberikan ASI kepada bayi?",
+  "definisi": "Apakah ibu memberikan ASI kepada bayi?",
+  "jenis": "yesno",
+  "satuan": null,
+  "opsi": [
+   "Ya",
+   "Tidak"
+  ],
+  "wajib": true,
+  "problem_when": [
+   "Tidak"
+  ],
+  "priority": "kuning",
+  "report_required": false,
+  "urutan": 5
+ },
+ {
+  "kode": "NIFAS_KB",
+  "group": "nifas",
+  "section": "ceklis",
+  "text": "Apakah ibu menggunakan KB pascapersalinan?",
+  "definisi": "Apakah ibu menggunakan KB pascapersalinan?",
+  "jenis": "yesno",
+  "satuan": null,
+  "opsi": [
+   "Ya",
+   "Tidak"
+  ],
+  "wajib": true,
+  "problem_when": [],
+  "priority": null,
+  "report_required": false,
+  "urutan": 6
+ },
+ {
+  "kode": "NIFAS_JIWA",
+  "group": "nifas",
+  "section": "ceklis",
+  "text": "Apakah ibu sudah menjalani skrining kesehatan jiwa?",
+  "definisi": "Apakah ibu sudah menjalani skrining kesehatan jiwa?",
+  "jenis": "yesno",
+  "satuan": null,
+  "opsi": [
+   "Ya",
+   "Tidak"
+  ],
+  "wajib": true,
+  "problem_when": [
+   "Tidak"
+  ],
+  "priority": "kuning",
+  "report_required": false,
+  "urutan": 7
+ },
+ {
+  "kode": "NIFAS_TB_8",
+  "group": "nifas",
+  "section": "tanda_bahaya",
+  "text": "Demam",
+  "definisi": "Suhu tubuh ibu 38ᵒC atau lebih",
+  "jenis": "danger",
+  "satuan": null,
+  "opsi": [
+   "Ya",
+   "Tidak"
+  ],
+  "wajib": true,
+  "problem_when": [
+   "Ya"
+  ],
+  "priority": "merah",
+  "report_required": true,
+  "urutan": 8
+ },
+ {
+  "kode": "NIFAS_TB_9",
+  "group": "nifas",
+  "section": "tanda_bahaya",
+  "text": "Ada perasaan bersalah, mudah menangis, kehilangan minat, gelisah, gangguan tidur, gangguan konsentrasi",
+  "definisi": "Ibu merasakan perasaan bersalah, menangis tanpa sebab yang jelas, gelisah, tidak bisa tidur, dan tidak bisa konsentrasi",
+  "jenis": "danger",
+  "satuan": null,
+  "opsi": [
+   "Ya",
+   "Tidak"
+  ],
+  "wajib": true,
+  "problem_when": [
+   "Ya"
+  ],
+  "priority": "merah",
+  "report_required": true,
+  "urutan": 9
+ },
+ {
+  "kode": "NIFAS_TB_10",
+  "group": "nifas",
+  "section": "tanda_bahaya",
+  "text": "Tidak bisa BAK, BAK sedikit tapi sering, terasa panas, nyeri panggul, urin keluar tanpa disadari",
+  "definisi": "Ibu nifas tidak memberikan ASI saja",
+  "jenis": "danger",
+  "satuan": null,
+  "opsi": [
+   "Ya",
+   "Tidak"
+  ],
+  "wajib": true,
+  "problem_when": [
+   "Ya"
+  ],
+  "priority": "merah",
+  "report_required": true,
+  "urutan": 10
+ },
+ {
+  "kode": "NIFAS_TB_11",
+  "group": "nifas",
+  "section": "tanda_bahaya",
+  "text": "Nafas pendek dan terengah-engah, nafas dangkal disertai nyeri dada, nafas berat, batuk lebih dari 2 minggu",
+  "definisi": "Nafas pendek dan terengah-engah, nafas dangkal disertai nyeri dada, nafas berat, batuk lebih dari 2 minggu",
+  "jenis": "danger",
+  "satuan": null,
+  "opsi": [
+   "Ya",
+   "Tidak"
+  ],
+  "wajib": true,
+  "problem_when": [
+   "Ya"
+  ],
+  "priority": "merah",
+  "report_required": true,
+  "urutan": 11
+ },
+ {
+  "kode": "NIFAS_TB_12",
+  "group": "nifas",
+  "section": "tanda_bahaya",
+  "text": "Sakit kepala",
+  "definisi": "Sakit kepala",
+  "jenis": "danger",
+  "satuan": null,
+  "opsi": [
+   "Ya",
+   "Tidak"
+  ],
+  "wajib": true,
+  "problem_when": [
+   "Ya"
+  ],
+  "priority": "merah",
+  "report_required": true,
+  "urutan": 12
+ },
+ {
+  "kode": "NIFAS_TB_13",
+  "group": "nifas",
+  "section": "tanda_bahaya",
+  "text": "Perdarahan (pembalut basah dalam 5 menit)",
+  "definisi": "Keluar darah dalam jumlah yang banyak melalui jalan lahir",
+  "jenis": "danger",
+  "satuan": null,
+  "opsi": [
+   "Ya",
+   "Tidak"
+  ],
+  "wajib": true,
+  "problem_when": [
+   "Ya"
+  ],
+  "priority": "merah",
+  "report_required": true,
+  "urutan": 13
+ },
+ {
+  "kode": "NIFAS_TB_14",
+  "group": "nifas",
+  "section": "tanda_bahaya",
+  "text": "Area sekitar kelamin bengkak atau nyeri atau ada luka terbuka",
+  "definisi": "Area sekitar kelamin bengkak atau nyeri atau ada luka terbuka",
+  "jenis": "danger",
+  "satuan": null,
+  "opsi": [
+   "Ya",
+   "Tidak"
+  ],
+  "wajib": true,
+  "problem_when": [
+   "Ya"
+  ],
+  "priority": "merah",
+  "report_required": true,
+  "urutan": 14
+ },
+ {
+  "kode": "NIFAS_TB_15",
+  "group": "nifas",
+  "section": "tanda_bahaya",
+  "text": "Keluar cairan  dari jalan lahir",
+  "definisi": "Keluar cairan  dari jalan lahir",
+  "jenis": "danger",
+  "satuan": null,
+  "opsi": [
+   "Ya",
+   "Tidak"
+  ],
+  "wajib": true,
+  "problem_when": [
+   "Ya"
+  ],
+  "priority": "merah",
+  "report_required": true,
+  "urutan": 15
+ },
+ {
+  "kode": "NIFAS_TB_16",
+  "group": "nifas",
+  "section": "tanda_bahaya",
+  "text": "Nyeri ulu hati",
+  "definisi": "Nyeri ulu hati",
+  "jenis": "danger",
+  "satuan": null,
+  "opsi": [
+   "Ya",
+   "Tidak"
+  ],
+  "wajib": true,
+  "problem_when": [
+   "Ya"
+  ],
+  "priority": "merah",
+  "report_required": true,
+  "urutan": 16
+ },
+ {
+  "kode": "NIFAS_TB_17",
+  "group": "nifas",
+  "section": "tanda_bahaya",
+  "text": "Pandangan kabur",
+  "definisi": "Pandangan kabur",
+  "jenis": "danger",
+  "satuan": null,
+  "opsi": [
+   "Ya",
+   "Tidak"
+  ],
+  "wajib": true,
+  "problem_when": [
+   "Ya"
+  ],
+  "priority": "merah",
+  "report_required": true,
+  "urutan": 17
+ },
+ {
+  "kode": "NIFAS_TB_18",
+  "group": "nifas",
+  "section": "tanda_bahaya",
+  "text": "Payudara bengkak kemerahan disertai nyeri, benjolan disertai nyeri ada keluhan dalam menyusui",
+  "definisi": "Payudara bengkak kemerahan disertai nyeri, benjolan disertai nyeri ada keluhan dalam menyusui",
+  "jenis": "danger",
+  "satuan": null,
+  "opsi": [
+   "Ya",
+   "Tidak"
+  ],
+  "wajib": true,
+  "problem_when": [
+   "Ya"
+  ],
+  "priority": "merah",
+  "report_required": true,
+  "urutan": 18
+ },
+ {
+  "kode": "NIFAS_TB_19",
+  "group": "nifas",
+  "section": "tanda_bahaya",
+  "text": "Darah nifas berbau atau mengalir atau ada nyeri pada perut bawah",
+  "definisi": "Paraf ibu bersalin/nifas setelah dilakukan wawancara",
+  "jenis": "danger",
+  "satuan": null,
+  "opsi": [
+   "Ya",
+   "Tidak"
+  ],
+  "wajib": true,
+  "problem_when": [
+   "Ya"
+  ],
+  "priority": "merah",
+  "report_required": true,
+  "urutan": 19
+ },
+ {
+  "kode": "NIFAS_TB_20",
+  "group": "nifas",
+  "section": "tanda_bahaya",
+  "text": "Keputihan berlebih, berwarna dan berbau",
+  "definisi": "Keputihan berlebih, berwarna dan berbau",
+  "jenis": "danger",
+  "satuan": null,
+  "opsi": [
+   "Ya",
+   "Tidak"
+  ],
+  "wajib": true,
+  "problem_when": [
+   "Ya"
+  ],
+  "priority": "merah",
+  "report_required": true,
+  "urutan": 20
+ },
+ {
+  "kode": "NIFAS_TB_21",
+  "group": "nifas",
+  "section": "tanda_bahaya",
+  "text": "Jantung berdebar",
+  "definisi": "Jantung berdebar",
+  "jenis": "danger",
+  "satuan": null,
+  "opsi": [
+   "Ya",
+   "Tidak"
+  ],
+  "wajib": true,
+  "problem_when": [
+   "Ya"
+  ],
+  "priority": "merah",
+  "report_required": true,
+  "urutan": 21
+ },
+ {
+  "kode": "BAYI_SUHU",
+  "group": "bayi",
+  "section": "ceklis",
+  "text": "Suhu tubuh bayi",
+  "definisi": "Diisi hasil pemeriksaan suhu tubuh bayi 0-6 bulan",
+  "jenis": "number",
+  "satuan": "°C",
+  "opsi": [],
+  "wajib": false,
+  "problem_when": [],
+  "priority": null,
+  "report_required": false,
+  "urutan": 1
+ },
+ {
+  "kode": "BAYI_KIA",
+  "group": "bayi",
+  "section": "ceklis",
+  "text": "Apakah ada Buku KIA bayi?",
+  "definisi": "Apakah ada Buku KIA bayi?",
+  "jenis": "single",
+  "satuan": null,
+  "opsi": [
+   "Ya, dapat ditunjukkan",
+   "Ada, tidak dapat ditunjukkan",
+   "Tidak memiliki"
+  ],
+  "wajib": true,
+  "problem_when": [
+   "Tidak memiliki"
+  ],
+  "priority": "kuning",
+  "report_required": false,
+  "urutan": 2
+ },
+ {
+  "kode": "BAYI_ASI",
+  "group": "bayi",
+  "section": "ceklis",
+  "text": "Apakah bayi mendapat ASI Eksklusif?",
+  "definisi": "Apakah bayi mendapat ASI Eksklusif?",
+  "jenis": "yesno",
+  "satuan": null,
+  "opsi": [
+   "Ya",
+   "Tidak"
+  ],
+  "wajib": true,
+  "problem_when": [
+   "Tidak"
+  ],
+  "priority": "kuning",
+  "report_required": false,
+  "urutan": 3
+ },
+ {
+  "kode": "BAYI_BB",
+  "group": "bayi",
+  "section": "ceklis",
+  "text": "Berat badan bayi",
+  "definisi": "Berat badan bayi",
+  "jenis": "number",
+  "satuan": "kg",
+  "opsi": [],
+  "wajib": false,
+  "problem_when": [],
+  "priority": null,
+  "report_required": false,
+  "urutan": 4
+ },
+ {
+  "kode": "BAYI_PB",
+  "group": "bayi",
+  "section": "ceklis",
+  "text": "Panjang badan bayi",
+  "definisi": "Panjang badan bayi",
+  "jenis": "number",
+  "satuan": "cm",
+  "opsi": [],
+  "wajib": false,
+  "problem_when": [],
+  "priority": null,
+  "report_required": false,
+  "urutan": 5
+ },
+ {
+  "kode": "BAYI_LK",
+  "group": "bayi",
+  "section": "ceklis",
+  "text": "Lingkar kepala bayi",
+  "definisi": "Lingkar kepala bayi",
+  "jenis": "number",
+  "satuan": "cm",
+  "opsi": [],
+  "wajib": false,
+  "problem_when": [],
+  "priority": null,
+  "report_required": false,
+  "urutan": 6
+ },
+ {
+  "kode": "BAYI_KN",
+  "group": "bayi",
+  "section": "ceklis",
+  "text": "Apakah kunjungan neonatal (KN1-KN3) sudah lengkap sesuai umur?",
+  "definisi": "Periode kunjungan kader ke rumah bayi 0-6 bulan",
+  "jenis": "yesno",
+  "satuan": null,
+  "opsi": [
+   "Ya",
+   "Tidak"
+  ],
+  "wajib": true,
+  "problem_when": [
+   "Tidak"
+  ],
+  "priority": "kuning",
+  "report_required": false,
+  "urutan": 7
+ },
+ {
+  "kode": "BAYI_IMUN",
+  "group": "bayi",
+  "section": "ceklis",
+  "text": "Apakah imunisasi bayi sudah lengkap sesuai umur?",
+  "definisi": "Status imunisasi bayi 0-6 bulan",
+  "jenis": "yesno",
+  "satuan": null,
+  "opsi": [
+   "Ya",
+   "Tidak"
+  ],
+  "wajib": true,
+  "problem_when": [
+   "Tidak"
+  ],
+  "priority": "kuning",
+  "report_required": false,
+  "urutan": 8
+ },
+ {
+  "kode": "BAYI_TB_9",
+  "group": "bayi",
+  "section": "tanda_bahaya",
+  "text": "Napas: sesak/napas cepat/dada tertarik ke dalam",
+  "definisi": "Napas: sesak/napas cepat/dada tertarik ke dalam",
+  "jenis": "danger",
+  "satuan": null,
+  "opsi": [
+   "Ya",
+   "Tidak"
+  ],
+  "wajib": true,
+  "problem_when": [
+   "Ya"
+  ],
+  "priority": "merah",
+  "report_required": true,
+  "urutan": 9
+ },
+ {
+  "kode": "BAYI_TB_10",
+  "group": "bayi",
+  "section": "tanda_bahaya",
+  "text": "Aktivitas: tampak lemah/tidak bergerak/menangis atau merintih",
+  "definisi": "Aktivitas: tampak lemah/tidak bergerak/menangis atau merintih",
+  "jenis": "danger",
+  "satuan": null,
+  "opsi": [
+   "Ya",
+   "Tidak"
+  ],
+  "wajib": true,
+  "problem_when": [
+   "Ya"
+  ],
+  "priority": "merah",
+  "report_required": true,
+  "urutan": 10
+ },
+ {
+  "kode": "BAYI_TB_11",
+  "group": "bayi",
+  "section": "tanda_bahaya",
+  "text": "Warna kulit: biru/pucat/seperti marmer/memar",
+  "definisi": "Tampak biru di sekitar mulut/tangan/kaki/tampak \nseperti marmer/tampak pucat/ada tanda-tanda memar di kulit.",
+  "jenis": "danger",
+  "satuan": null,
+  "opsi": [
+   "Ya",
+   "Tidak"
+  ],
+  "wajib": true,
+  "problem_when": [
+   "Ya"
+  ],
+  "priority": "merah",
+  "report_required": true,
+  "urutan": 11
+ },
+ {
+  "kode": "BAYI_TB_12",
+  "group": "bayi",
+  "section": "tanda_bahaya",
+  "text": "Hisapan: tidak mau/lemah menghisap, muntah susu/hijau",
+  "definisi": "Bayi 0-6 bulan tidak mendapatkan ASI",
+  "jenis": "danger",
+  "satuan": null,
+  "opsi": [
+   "Ya",
+   "Tidak"
+  ],
+  "wajib": true,
+  "problem_when": [
+   "Ya"
+  ],
+  "priority": "merah",
+  "report_required": true,
+  "urutan": 12
+ },
+ {
+  "kode": "BAYI_TB_13",
+  "group": "bayi",
+  "section": "tanda_bahaya",
+  "text": "Kejang",
+  "definisi": "Mata mendelik/tangan menari/mulut mencucu/menangis melengking",
+  "jenis": "danger",
+  "satuan": null,
+  "opsi": [
+   "Ya",
+   "Tidak"
+  ],
+  "wajib": true,
+  "problem_when": [
+   "Ya"
+  ],
+  "priority": "merah",
+  "report_required": true,
+  "urutan": 13
+ },
+ {
+  "kode": "BAYI_TB_14",
+  "group": "bayi",
+  "section": "tanda_bahaya",
+  "text": "Suhu tubuh terlalu tinggi atau terlalu rendah",
+  "definisi": "Diisi hasil pemeriksaan suhu tubuh bayi 0-6 bulan",
+  "jenis": "danger",
+  "satuan": null,
+  "opsi": [
+   "Ya",
+   "Tidak"
+  ],
+  "wajib": true,
+  "problem_when": [
+   "Ya"
+  ],
+  "priority": "merah",
+  "report_required": true,
+  "urutan": 14
+ },
+ {
+  "kode": "BAYI_TB_15",
+  "group": "bayi",
+  "section": "tanda_bahaya",
+  "text": "BAB tidak normal / belum BAB >48 jam",
+  "definisi": "Bayi 0-6 bulan tidak mendapatkan ASI",
+  "jenis": "danger",
+  "satuan": null,
+  "opsi": [
+   "Ya",
+   "Tidak"
+  ],
+  "wajib": true,
+  "problem_when": [
+   "Ya"
+  ],
+  "priority": "merah",
+  "report_required": true,
+  "urutan": 15
+ },
+ {
+  "kode": "BAYI_TB_16",
+  "group": "bayi",
+  "section": "tanda_bahaya",
+  "text": "Tidak kencing 6 jam / warna urine tidak normal",
+  "definisi": "Bayi 0-6 bulan tidak mendapatkan ASI",
+  "jenis": "danger",
+  "satuan": null,
+  "opsi": [
+   "Ya",
+   "Tidak"
+  ],
+  "wajib": true,
+  "problem_when": [
+   "Ya"
+  ],
+  "priority": "merah",
+  "report_required": true,
+  "urutan": 16
+ },
+ {
+  "kode": "BAYI_TB_17",
+  "group": "bayi",
+  "section": "tanda_bahaya",
+  "text": "Tali pusat merah/bernanah/berbau",
+  "definisi": "Kemerahan di sekitar tali pusat/bernanah/berbau",
+  "jenis": "danger",
+  "satuan": null,
+  "opsi": [
+   "Ya",
+   "Tidak"
+  ],
+  "wajib": true,
+  "problem_when": [
+   "Ya"
+  ],
+  "priority": "merah",
+  "report_required": true,
+  "urutan": 17
+ },
+ {
+  "kode": "BAYI_TB_18",
+  "group": "bayi",
+  "section": "tanda_bahaya",
+  "text": "Mata merah atau bernanah",
+  "definisi": "Mata merah atau bernanah",
+  "jenis": "danger",
+  "satuan": null,
+  "opsi": [
+   "Ya",
+   "Tidak"
+  ],
+  "wajib": true,
+  "problem_when": [
+   "Ya"
+  ],
+  "priority": "merah",
+  "report_required": true,
+  "urutan": 18
+ },
+ {
+  "kode": "BAYI_TB_19",
+  "group": "bayi",
+  "section": "tanda_bahaya",
+  "text": "Kelainan kulit",
+  "definisi": "Tampak biru di sekitar mulut/tangan/kaki/tampak \nseperti marmer/tampak pucat/ada tanda-tanda memar di kulit.",
+  "jenis": "danger",
+  "satuan": null,
+  "opsi": [
+   "Ya",
+   "Tidak"
+  ],
+  "wajib": true,
+  "problem_when": [
+   "Ya"
+  ],
+  "priority": "merah",
+  "report_required": true,
+  "urutan": 19
+ },
+ {
+  "kode": "BAYI_TB_20",
+  "group": "bayi",
+  "section": "tanda_bahaya",
+  "text": "Belum mendapat imunisasi awal (HB0/BCG)",
+  "definisi": "Belum mendapat imunisasi awal (HB0/BCG)",
+  "jenis": "danger",
+  "satuan": null,
+  "opsi": [
+   "Ya",
+   "Tidak"
+  ],
+  "wajib": true,
+  "problem_when": [
+   "Ya"
+  ],
+  "priority": "merah",
+  "report_required": true,
+  "urutan": 20
+ },
+ {
+  "kode": "BALITA_SUHU",
+  "group": "balita",
+  "section": "ceklis",
+  "text": "Suhu tubuh anak",
+  "definisi": "Diisi hasil pemeriksaan suhu tubuh bayi 6 bulan s.d anak 71 bulan (6 tahun kurang 1 bulan)",
+  "jenis": "number",
+  "satuan": "°C",
+  "opsi": [],
+  "wajib": false,
+  "problem_when": [],
+  "priority": null,
+  "report_required": false,
+  "urutan": 1
+ },
+ {
+  "kode": "BALITA_KIA",
+  "group": "balita",
+  "section": "ceklis",
+  "text": "Apakah ada Buku KIA anak?",
+  "definisi": "Apakah ada Buku KIA anak?",
+  "jenis": "single",
+  "satuan": null,
+  "opsi": [
+   "Ya, dapat ditunjukkan",
+   "Ada, tidak dapat ditunjukkan",
+   "Tidak memiliki"
+  ],
+  "wajib": true,
+  "problem_when": [
+   "Tidak memiliki"
+  ],
+  "priority": "kuning",
+  "report_required": false,
+  "urutan": 2
+ },
+ {
+  "kode": "BALITA_BB",
+  "group": "balita",
+  "section": "ceklis",
+  "text": "Berat badan anak",
+  "definisi": "Berat badan anak",
+  "jenis": "number",
+  "satuan": "kg",
+  "opsi": [],
+  "wajib": false,
+  "problem_when": [],
+  "priority": null,
+  "report_required": false,
+  "urutan": 3
+ },
+ {
+  "kode": "BALITA_TB",
+  "group": "balita",
+  "section": "ceklis",
+  "text": "Tinggi/panjang badan anak",
+  "definisi": "Tinggi/panjang badan anak",
+  "jenis": "number",
+  "satuan": "cm",
+  "opsi": [],
+  "wajib": false,
+  "problem_when": [],
+  "priority": null,
+  "report_required": false,
+  "urutan": 4
+ },
+ {
+  "kode": "BALITA_LK",
+  "group": "balita",
+  "section": "ceklis",
+  "text": "Lingkar kepala anak",
+  "definisi": "Lingkar kepala anak",
+  "jenis": "number",
+  "satuan": "cm",
+  "opsi": [],
+  "wajib": false,
+  "problem_when": [],
+  "priority": null,
+  "report_required": false,
+  "urutan": 5
+ },
+ {
+  "kode": "BALITA_IMUN",
+  "group": "balita",
+  "section": "ceklis",
+  "text": "Apakah imunisasi anak sudah lengkap sesuai umur?",
+  "definisi": "Status imunisasi bayi 6 bulan s.d. 6 tahun",
+  "jenis": "yesno",
+  "satuan": null,
+  "opsi": [
+   "Ya",
+   "Tidak"
+  ],
+  "wajib": true,
+  "problem_when": [
+   "Tidak"
+  ],
+  "priority": "kuning",
+  "report_required": false,
+  "urutan": 6
+ },
+ {
+  "kode": "BALITA_CACING",
+  "group": "balita",
+  "section": "ceklis",
+  "text": "Apakah anak sudah mendapat obat cacing (usia >1 th)?",
+  "definisi": "Apakah anak sudah mendapat obat cacing (usia >1 th)?",
+  "jenis": "yesno",
+  "satuan": null,
+  "opsi": [
+   "Ya",
+   "Tidak"
+  ],
+  "wajib": true,
+  "problem_when": [
+   "Tidak"
+  ],
+  "priority": "kuning",
+  "report_required": false,
+  "urutan": 7
+ },
+ {
+  "kode": "BALITA_VITA",
+  "group": "balita",
+  "section": "ceklis",
+  "text": "Apakah anak sudah mendapat kapsul Vitamin A?",
+  "definisi": "Apakah anak sudah mendapat kapsul Vitamin A?",
+  "jenis": "yesno",
+  "satuan": null,
+  "opsi": [
+   "Ya",
+   "Tidak"
+  ],
+  "wajib": true,
+  "problem_when": [
+   "Tidak"
+  ],
+  "priority": "kuning",
+  "report_required": false,
+  "urutan": 8
+ },
+ {
+  "kode": "BALITA_GIZI",
+  "group": "balita",
+  "section": "ceklis",
+  "text": "Apakah pemberian makan anak sudah beragam (protein hewani, nabati, sayur, buah)?",
+  "definisi": "Makanan Pendamping ASI yang diberikan kepada bayi 6 bulan – 2 tahun",
+  "jenis": "yesno",
+  "satuan": null,
+  "opsi": [
+   "Ya",
+   "Tidak"
+  ],
+  "wajib": true,
+  "problem_when": [
+   "Tidak"
+  ],
+  "priority": "kuning",
+  "report_required": false,
+  "urutan": 9
+ },
+ {
+  "kode": "BALITA_TB_10",
+  "group": "balita",
+  "section": "tanda_bahaya",
+  "text": "Napas: sesak/napas cepat/dada tertarik ke dalam",
+  "definisi": "Napas: sesak/napas cepat/dada tertarik ke dalam",
+  "jenis": "danger",
+  "satuan": null,
+  "opsi": [
+   "Ya",
+   "Tidak"
+  ],
+  "wajib": true,
+  "problem_when": [
+   "Ya"
+  ],
+  "priority": "merah",
+  "report_required": true,
+  "urutan": 10
+ },
+ {
+  "kode": "BALITA_TB_11",
+  "group": "balita",
+  "section": "tanda_bahaya",
+  "text": "Batuk dengan bunyi napas tidak normal",
+  "definisi": "Batuk dengan bunyi grok..grok…/mengi/menangis meringis",
+  "jenis": "danger",
+  "satuan": null,
+  "opsi": [
+   "Ya",
+   "Tidak"
+  ],
+  "wajib": true,
+  "problem_when": [
+   "Ya"
+  ],
+  "priority": "merah",
+  "report_required": true,
+  "urutan": 11
+ },
+ {
+  "kode": "BALITA_TB_12",
+  "group": "balita",
+  "section": "tanda_bahaya",
+  "text": "Demam dengan kejang atau tanda perdarahan",
+  "definisi": "Terasa panas (suhu tubuh >38,5ᵒC) demam denga kejang/demam dengan tanda pendarahan (mimisan/gusi berdarah/ muntah kopi/BAB hitam)",
+  "jenis": "danger",
+  "satuan": null,
+  "opsi": [
+   "Ya",
+   "Tidak"
+  ],
+  "wajib": true,
+  "problem_when": [
+   "Ya"
+  ],
+  "priority": "merah",
+  "report_required": true,
+  "urutan": 12
+ },
+ {
+  "kode": "BALITA_TB_13",
+  "group": "balita",
+  "section": "tanda_bahaya",
+  "text": "Diare dengan mata cekung/haus terus/darah",
+  "definisi": "BAB lebih sering dan lebih encer daria biasanya disertai dengan mata cekung/haus minum terus dengan lahap/diare disertai darah",
+  "jenis": "danger",
+  "satuan": null,
+  "opsi": [
+   "Ya",
+   "Tidak"
+  ],
+  "wajib": true,
+  "problem_when": [
+   "Ya"
+  ],
+  "priority": "merah",
+  "report_required": true,
+  "urutan": 13
+ },
+ {
+  "kode": "BALITA_TB_14",
+  "group": "balita",
+  "section": "tanda_bahaya",
+  "text": "Air kencing sedikit atau warna tidak normal",
+  "definisi": "Jumlah sedikit atau tidak kencing selama 6 jam, warna kuning pekat, kecoklatan atau warna lainnya",
+  "jenis": "danger",
+  "satuan": null,
+  "opsi": [
+   "Ya",
+   "Tidak"
+  ],
+  "wajib": true,
+  "problem_when": [
+   "Ya"
+  ],
+  "priority": "merah",
+  "report_required": true,
+  "urutan": 14
+ },
+ {
+  "kode": "BALITA_TB_15",
+  "group": "balita",
+  "section": "tanda_bahaya",
+  "text": "Warna kulit biru/pucat/marmer/memar",
+  "definisi": "Jumlah sedikit atau tidak kencing selama 6 jam, warna kuning pekat, kecoklatan atau warna lainnya",
+  "jenis": "danger",
+  "satuan": null,
+  "opsi": [
+   "Ya",
+   "Tidak"
+  ],
+  "wajib": true,
+  "problem_when": [
+   "Ya"
+  ],
+  "priority": "merah",
+  "report_required": true,
+  "urutan": 15
+ },
+ {
+  "kode": "BALITA_TB_16",
+  "group": "balita",
+  "section": "tanda_bahaya",
+  "text": "Aktivitas: lemah atau tidak bergerak",
+  "definisi": "Aktivitas: lemah atau tidak bergerak",
+  "jenis": "danger",
+  "satuan": null,
+  "opsi": [
+   "Ya",
+   "Tidak"
+  ],
+  "wajib": true,
+  "problem_when": [
+   "Ya"
+  ],
+  "priority": "merah",
+  "report_required": true,
+  "urutan": 16
+ },
+ {
+  "kode": "BALITA_TB_17",
+  "group": "balita",
+  "section": "tanda_bahaya",
+  "text": "Tidak mau makan atau minum",
+  "definisi": "Makanan Pendamping ASI yang diberikan kepada bayi 6 bulan – 2 tahun",
+  "jenis": "danger",
+  "satuan": null,
+  "opsi": [
+   "Ya",
+   "Tidak"
+  ],
+  "wajib": true,
+  "problem_when": [
+   "Ya"
+  ],
+  "priority": "merah",
+  "report_required": true,
+  "urutan": 17
+ },
+ {
+  "kode": "BALITA_TB_18",
+  "group": "balita",
+  "section": "tanda_bahaya",
+  "text": "Berat badan tidak naik sesuai pertumbuhan",
+  "definisi": "Berat badan tidak naik sesuai pertumbuhan",
+  "jenis": "danger",
+  "satuan": null,
+  "opsi": [
+   "Ya",
+   "Tidak"
+  ],
+  "wajib": true,
+  "problem_when": [
+   "Ya"
+  ],
+  "priority": "merah",
+  "report_required": true,
+  "urutan": 18
+ },
+ {
+  "kode": "REMAJA_SUHU",
+  "group": "remaja",
+  "section": "ceklis",
+  "text": "Suhu tubuh",
+  "definisi": "Diisi hasil pemeriksaan suhu tubuh Ibu anak usia sekolah/remaja",
+  "jenis": "number",
+  "satuan": "°C",
+  "opsi": [],
+  "wajib": false,
+  "problem_when": [],
+  "priority": null,
+  "report_required": false,
+  "urutan": 1
+ },
+ {
+  "kode": "REMAJA_BB",
+  "group": "remaja",
+  "section": "ceklis",
+  "text": "Berat badan",
+  "definisi": "Berat badan",
+  "jenis": "number",
+  "satuan": "kg",
+  "opsi": [],
+  "wajib": false,
+  "problem_when": [],
+  "priority": null,
+  "report_required": false,
+  "urutan": 2
+ },
+ {
+  "kode": "REMAJA_TB",
+  "group": "remaja",
+  "section": "ceklis",
+  "text": "Tinggi badan",
+  "definisi": "Tinggi badan",
+  "jenis": "number",
+  "satuan": "cm",
+  "opsi": [],
+  "wajib": false,
+  "problem_when": [],
+  "priority": null,
+  "report_required": false,
+  "urutan": 3
+ },
+ {
+  "kode": "REMAJA_PIRINGKU",
+  "group": "remaja",
+  "section": "ceklis",
+  "text": "Apakah makan sesuai Isi Piringku?",
+  "definisi": "Apakah makan sesuai Isi Piringku?",
+  "jenis": "yesno",
+  "satuan": null,
+  "opsi": [
+   "Ya",
+   "Tidak"
+  ],
+  "wajib": true,
+  "problem_when": [
+   "Tidak"
+  ],
+  "priority": "kuning",
+  "report_required": false,
+  "urutan": 4
+ },
+ {
+  "kode": "REMAJA_ROKOK",
+  "group": "remaja",
+  "section": "ceklis",
+  "text": "Perilaku merokok",
+  "definisi": "Usia sekolah/remaja yang dikunjungi memiliki kebiasaan/ perilaku merokok",
+  "jenis": "single",
+  "satuan": null,
+  "opsi": [
+   "Tidak",
+   "Pasif",
+   "Aktif"
+  ],
+  "wajib": true,
+  "problem_when": [
+   "Aktif"
+  ],
+  "priority": "kuning",
+  "report_required": false,
+  "urutan": 5
+ },
+ {
+  "kode": "REMAJA_JIWA",
+  "group": "remaja",
+  "section": "ceklis",
+  "text": "Apakah sudah menjalani skrining kesehatan jiwa?",
+  "definisi": "Apakah sudah menjalani skrining kesehatan jiwa?",
+  "jenis": "yesno",
+  "satuan": null,
+  "opsi": [
+   "Ya",
+   "Tidak"
+  ],
+  "wajib": true,
+  "problem_when": [
+   "Tidak"
+  ],
+  "priority": "kuning",
+  "report_required": false,
+  "urutan": 6
+ },
+ {
+  "kode": "REMAJA_TTD",
+  "group": "remaja",
+  "section": "ceklis",
+  "text": "Khusus remaja putri: apakah minum TTD dalam 1 minggu terakhir?",
+  "definisi": "Anak Usia Sekolah/Remaja mengonsumsi makanan seimbang   aneka ragam (Makanan pokok, Lauk Pauk, Sayur dan Buah)",
+  "jenis": "yesno",
+  "satuan": null,
+  "opsi": [
+   "Ya",
+   "Tidak"
+  ],
+  "wajib": true,
+  "problem_when": [
+   "Tidak"
+  ],
+  "priority": "kuning",
+  "report_required": false,
+  "urutan": 7
+ },
+ {
+  "kode": "REMAJA_ANEMIA",
+  "group": "remaja",
+  "section": "ceklis",
+  "text": "Khusus remaja putri: apakah sudah periksa anemia (Hb) 1 tahun terakhir?",
+  "definisi": "Anak Usia Sekolah/Remaja mengonsumsi makanan seimbang   aneka ragam (Makanan pokok, Lauk Pauk, Sayur dan Buah)",
+  "jenis": "yesno",
+  "satuan": null,
+  "opsi": [
+   "Ya",
+   "Tidak"
+  ],
+  "wajib": true,
+  "problem_when": [
+   "Tidak"
+  ],
+  "priority": "kuning",
+  "report_required": false,
+  "urutan": 8
+ },
+ {
+  "kode": "REMAJA_TD",
+  "group": "remaja",
+  "section": "ceklis",
+  "text": "Khusus usia ≥15 th: apakah periksa tekanan darah 1 tahun terakhir?",
+  "definisi": "Khusus usia ≥15 th: apakah periksa tekanan darah 1 tahun terakhir?",
+  "jenis": "yesno",
+  "satuan": null,
+  "opsi": [
+   "Ya",
+   "Tidak"
+  ],
+  "wajib": true,
+  "problem_when": [
+   "Tidak"
+  ],
+  "priority": "kuning",
+  "report_required": false,
+  "urutan": 9
+ },
+ {
+  "kode": "REMAJA_GD",
+  "group": "remaja",
+  "section": "ceklis",
+  "text": "Khusus usia ≥15 th: apakah periksa gula darah 1 tahun terakhir?",
+  "definisi": "Khusus usia ≥15 th: apakah periksa gula darah 1 tahun terakhir?",
+  "jenis": "yesno",
+  "satuan": null,
+  "opsi": [
+   "Ya",
+   "Tidak"
+  ],
+  "wajib": true,
+  "problem_when": [
+   "Tidak"
+  ],
+  "priority": "kuning",
+  "report_required": false,
+  "urutan": 10
+ },
+ {
+  "kode": "DEWASA_SUHU",
+  "group": "dewasa",
+  "section": "ceklis",
+  "text": "Suhu tubuh",
+  "definisi": "Diisi hasil pemeriksaan suhu tubuh Ibu anak usia dewasa",
+  "jenis": "number",
+  "satuan": "°C",
+  "opsi": [],
+  "wajib": false,
+  "problem_when": [],
+  "priority": null,
+  "report_required": false,
+  "urutan": 1
+ },
+ {
+  "kode": "DEWASA_PIRINGKU",
+  "group": "dewasa",
+  "section": "ceklis",
+  "text": "Apakah makan sesuai Isi Piringku?",
+  "definisi": "Apakah makan sesuai Isi Piringku?",
+  "jenis": "yesno",
+  "satuan": null,
+  "opsi": [
+   "Ya",
+   "Tidak"
+  ],
+  "wajib": true,
+  "problem_when": [
+   "Tidak"
+  ],
+  "priority": "kuning",
+  "report_required": false,
+  "urutan": 2
+ },
+ {
+  "kode": "DEWASA_TD",
+  "group": "dewasa",
+  "section": "ceklis",
+  "text": "Apakah periksa tekanan darah 1 tahun terakhir?",
+  "definisi": "Apakah periksa tekanan darah 1 tahun terakhir?",
+  "jenis": "yesno",
+  "satuan": null,
+  "opsi": [
+   "Ya",
+   "Tidak"
+  ],
+  "wajib": true,
+  "problem_when": [
+   "Tidak"
+  ],
+  "priority": "kuning",
+  "report_required": false,
+  "urutan": 3
+ },
+ {
+  "kode": "DEWASA_HT",
+  "group": "dewasa",
+  "section": "ceklis",
+  "text": "Apakah terdiagnosis hipertensi?",
+  "definisi": "Apakah terdiagnosis hipertensi?",
+  "jenis": "yesno",
+  "satuan": null,
+  "opsi": [
+   "Ya",
+   "Tidak"
+  ],
+  "wajib": true,
+  "problem_when": [],
+  "priority": null,
+  "report_required": false,
+  "urutan": 4
+ },
+ {
+  "kode": "DEWASA_HT_OBAT_ADA",
+  "group": "dewasa",
+  "section": "ceklis",
+  "text": "Jika hipertensi: apakah memiliki obat hipertensi?",
+  "definisi": "Jika hipertensi: apakah memiliki obat hipertensi?",
+  "jenis": "yesno",
+  "satuan": null,
+  "opsi": [
+   "Ya",
+   "Tidak"
+  ],
+  "wajib": true,
+  "problem_when": [],
+  "priority": null,
+  "report_required": false,
+  "urutan": 5
+ },
+ {
+  "kode": "DEWASA_HT_OBAT_MINUM",
+  "group": "dewasa",
+  "section": "ceklis",
+  "text": "Jika hipertensi: apakah minum obat dalam 24 jam terakhir?",
+  "definisi": "Jika hipertensi: apakah minum obat dalam 24 jam terakhir?",
+  "jenis": "yesno",
+  "satuan": null,
+  "opsi": [
+   "Ya",
+   "Tidak"
+  ],
+  "wajib": true,
+  "problem_when": [
+   "Tidak"
+  ],
+  "priority": "kuning",
+  "report_required": false,
+  "urutan": 6
+ },
+ {
+  "kode": "DEWASA_GD",
+  "group": "dewasa",
+  "section": "ceklis",
+  "text": "Apakah periksa gula darah 1 tahun terakhir?",
+  "definisi": "Apakah periksa gula darah 1 tahun terakhir?",
+  "jenis": "yesno",
+  "satuan": null,
+  "opsi": [
+   "Ya",
+   "Tidak"
+  ],
+  "wajib": true,
+  "problem_when": [
+   "Tidak"
+  ],
+  "priority": "kuning",
+  "report_required": false,
+  "urutan": 7
+ },
+ {
+  "kode": "DEWASA_DM",
+  "group": "dewasa",
+  "section": "ceklis",
+  "text": "Apakah terdiagnosis diabetes melitus?",
+  "definisi": "Apakah terdiagnosis diabetes melitus?",
+  "jenis": "yesno",
+  "satuan": null,
+  "opsi": [
+   "Ya",
+   "Tidak"
+  ],
+  "wajib": true,
+  "problem_when": [],
+  "priority": null,
+  "report_required": false,
+  "urutan": 8
+ },
+ {
+  "kode": "DEWASA_DM_OBAT_ADA",
+  "group": "dewasa",
+  "section": "ceklis",
+  "text": "Jika DM: apakah memiliki obat diabetes?",
+  "definisi": "Jika DM: apakah memiliki obat diabetes?",
+  "jenis": "yesno",
+  "satuan": null,
+  "opsi": [
+   "Ya",
+   "Tidak"
+  ],
+  "wajib": true,
+  "problem_when": [],
+  "priority": null,
+  "report_required": false,
+  "urutan": 9
+ },
+ {
+  "kode": "DEWASA_DM_OBAT_MINUM",
+  "group": "dewasa",
+  "section": "ceklis",
+  "text": "Jika DM: apakah minum obat dalam 24 jam terakhir?",
+  "definisi": "usia dewasa minum obat hipertensi dalam 24 jam terakhir",
+  "jenis": "yesno",
+  "satuan": null,
+  "opsi": [
+   "Ya",
+   "Tidak"
+  ],
+  "wajib": true,
+  "problem_when": [
+   "Tidak"
+  ],
+  "priority": "kuning",
+  "report_required": false,
+  "urutan": 10
+ },
+ {
+  "kode": "DEWASA_ROKOK",
+  "group": "dewasa",
+  "section": "ceklis",
+  "text": "Perilaku merokok",
+  "definisi": "Usia dewasa yang dikunjungi memiliki kebiasaan/perilaku merokok",
+  "jenis": "single",
+  "satuan": null,
+  "opsi": [
+   "Tidak",
+   "Pasif",
+   "Aktif"
+  ],
+  "wajib": true,
+  "problem_when": [
+   "Aktif"
+  ],
+  "priority": "kuning",
+  "report_required": false,
+  "urutan": 11
+ },
+ {
+  "kode": "DEWASA_JIWA",
+  "group": "dewasa",
+  "section": "ceklis",
+  "text": "Apakah sudah menjalani skrining kesehatan jiwa?",
+  "definisi": "usia dewasa minum obat hipertensi dalam 24 jam terakhir",
+  "jenis": "yesno",
+  "satuan": null,
+  "opsi": [
+   "Ya",
+   "Tidak"
+  ],
+  "wajib": true,
+  "problem_when": [
+   "Tidak"
+  ],
+  "priority": "kuning",
+  "report_required": false,
+  "urutan": 12
+ },
+ {
+  "kode": "LANSIA_SUHU",
+  "group": "lansia",
+  "section": "ceklis",
+  "text": "Suhu tubuh",
+  "definisi": "Diisi hasil pemeriksaan suhu tubuh Ibu anak usia dewasa",
+  "jenis": "number",
+  "satuan": "°C",
+  "opsi": [],
+  "wajib": false,
+  "problem_when": [],
+  "priority": null,
+  "report_required": false,
+  "urutan": 1
+ },
+ {
+  "kode": "LANSIA_TD",
+  "group": "lansia",
+  "section": "ceklis",
+  "text": "Apakah periksa tekanan darah 1 bulan terakhir?",
+  "definisi": "Apakah periksa tekanan darah 1 bulan terakhir?",
+  "jenis": "yesno",
+  "satuan": null,
+  "opsi": [
+   "Ya",
+   "Tidak"
+  ],
+  "wajib": true,
+  "problem_when": [
+   "Tidak"
+  ],
+  "priority": "kuning",
+  "report_required": false,
+  "urutan": 2
+ },
+ {
+  "kode": "LANSIA_HT",
+  "group": "lansia",
+  "section": "ceklis",
+  "text": "Apakah terdiagnosis hipertensi?",
+  "definisi": "Apakah terdiagnosis hipertensi?",
+  "jenis": "yesno",
+  "satuan": null,
+  "opsi": [
+   "Ya",
+   "Tidak"
+  ],
+  "wajib": true,
+  "problem_when": [],
+  "priority": null,
+  "report_required": false,
+  "urutan": 3
+ },
+ {
+  "kode": "LANSIA_HT_OBAT_MINUM",
+  "group": "lansia",
+  "section": "ceklis",
+  "text": "Jika hipertensi: apakah minum obat dalam 24 jam terakhir?",
+  "definisi": "Jika hipertensi: apakah minum obat dalam 24 jam terakhir?",
+  "jenis": "yesno",
+  "satuan": null,
+  "opsi": [
+   "Ya",
+   "Tidak"
+  ],
+  "wajib": true,
+  "problem_when": [
+   "Tidak"
+  ],
+  "priority": "kuning",
+  "report_required": false,
+  "urutan": 4
+ },
+ {
+  "kode": "LANSIA_GD",
+  "group": "lansia",
+  "section": "ceklis",
+  "text": "Apakah periksa gula darah 1 bulan terakhir?",
+  "definisi": "Apakah periksa gula darah 1 bulan terakhir?",
+  "jenis": "yesno",
+  "satuan": null,
+  "opsi": [
+   "Ya",
+   "Tidak"
+  ],
+  "wajib": true,
+  "problem_when": [
+   "Tidak"
+  ],
+  "priority": "kuning",
+  "report_required": false,
+  "urutan": 5
+ },
+ {
+  "kode": "LANSIA_DM",
+  "group": "lansia",
+  "section": "ceklis",
+  "text": "Apakah terdiagnosis diabetes melitus?",
+  "definisi": "Apakah terdiagnosis diabetes melitus?",
+  "jenis": "yesno",
+  "satuan": null,
+  "opsi": [
+   "Ya",
+   "Tidak"
+  ],
+  "wajib": true,
+  "problem_when": [],
+  "priority": null,
+  "report_required": false,
+  "urutan": 6
+ },
+ {
+  "kode": "LANSIA_DM_OBAT_MINUM",
+  "group": "lansia",
+  "section": "ceklis",
+  "text": "Jika DM: apakah minum obat dalam 24 jam terakhir?",
+  "definisi": "Lansia minum obat hipertensi dalam 24 jam terakhir",
+  "jenis": "yesno",
+  "satuan": null,
+  "opsi": [
+   "Ya",
+   "Tidak"
+  ],
+  "wajib": true,
+  "problem_when": [
+   "Tidak"
+  ],
+  "priority": "kuning",
+  "report_required": false,
+  "urutan": 7
+ },
+ {
+  "kode": "LANSIA_AKS",
+  "group": "lansia",
+  "section": "ceklis",
+  "text": "Apakah sudah skrining Aktivitas Kehidupan Sehari-hari (AKS)?",
+  "definisi": "Lansia minum obat hipertensi dalam 24 jam terakhir",
+  "jenis": "yesno",
+  "satuan": null,
+  "opsi": [
+   "Ya",
+   "Tidak"
+  ],
+  "wajib": true,
+  "problem_when": [
+   "Tidak"
+  ],
+  "priority": "kuning",
+  "report_required": false,
+  "urutan": 8
+ },
+ {
+  "kode": "LANSIA_SKILAS",
+  "group": "lansia",
+  "section": "ceklis",
+  "text": "Apakah sudah skrining SKILAS?",
+  "definisi": "Lansia minum obat hipertensi dalam 24 jam terakhir",
+  "jenis": "yesno",
+  "satuan": null,
+  "opsi": [
+   "Ya",
+   "Tidak"
+  ],
+  "wajib": true,
+  "problem_when": [
+   "Tidak"
+  ],
+  "priority": "kuning",
+  "report_required": false,
+  "urutan": 9
+ },
+ {
+  "kode": "LANSIA_ROKOK",
+  "group": "lansia",
+  "section": "ceklis",
+  "text": "Perilaku merokok",
+  "definisi": "Lansia yang dikunjungi memiliki kebiasaan/perilaku merokok",
+  "jenis": "single",
+  "satuan": null,
+  "opsi": [
+   "Tidak",
+   "Pasif",
+   "Aktif"
+  ],
+  "wajib": true,
+  "problem_when": [
+   "Aktif"
+  ],
+  "priority": "kuning",
+  "report_required": false,
+  "urutan": 10
+ },
+ {
+  "kode": "LANSIA_JIWA",
+  "group": "lansia",
+  "section": "ceklis",
+  "text": "Apakah sudah menjalani skrining kesehatan jiwa?",
+  "definisi": "Lansia minum obat hipertensi dalam 24 jam terakhir",
+  "jenis": "yesno",
+  "satuan": null,
+  "opsi": [
+   "Ya",
+   "Tidak"
+  ],
+  "wajib": true,
+  "problem_when": [
+   "Tidak"
+  ],
+  "priority": "kuning",
+  "report_required": false,
+  "urutan": 11
+ },
+ {
+  "kode": "TBC_BATUK",
+  "group": "tbc",
+  "section": "ceklis",
+  "text": "Batuk terus-menerus",
+  "definisi": "Batuk terus menerus (berdahak maupun kering) 16 Paraf terduga/pasien TBC Paraf terduga TBC/pasien TBC setelah dilakukan wawancara",
+  "jenis": "yesno",
+  "satuan": null,
+  "opsi": [
+   "Ya",
+   "Tidak"
+  ],
+  "wajib": true,
+  "problem_when": [
+   "Ya"
+  ],
+  "priority": "kuning",
+  "report_required": false,
+  "urutan": 1
+ },
+ {
+  "kode": "TBC_DEMAM",
+  "group": "tbc",
+  "section": "ceklis",
+  "text": "Demam ≥2 minggu atau berulang tanpa sebab jelas",
+  "definisi": "Demam ≥ 2 minggu dan/atau berulang tanpa sebab yang jela. Demam umumnya tidak tinggi",
+  "jenis": "yesno",
+  "satuan": null,
+  "opsi": [
+   "Ya",
+   "Tidak"
+  ],
+  "wajib": true,
+  "problem_when": [
+   "Ya"
+  ],
+  "priority": "kuning",
+  "report_required": false,
+  "urutan": 2
+ },
+ {
+  "kode": "TBC_BB",
+  "group": "tbc",
+  "section": "ceklis",
+  "text": "BB tidak naik/turun dalam 2 bulan berturut-turut",
+  "definisi": "Berat Badan (BB) tidak naik atau turun dalam dua bulan berturut_x0002_turut (kemungkinan masalah gizi sebagai penyebab harus disingkirkan dulu dengan tatalaksana yang adekuat)",
+  "jenis": "yesno",
+  "satuan": null,
+  "opsi": [
+   "Ya",
+   "Tidak"
+  ],
+  "wajib": true,
+  "problem_when": [
+   "Ya"
+  ],
+  "priority": "kuning",
+  "report_required": false,
+  "urutan": 3
+ },
+ {
+  "kode": "TBC_KONTAK",
+  "group": "tbc",
+  "section": "ceklis",
+  "text": "Kontak erat dengan pasien TBC",
+  "definisi": "kontak serumah (tinggal serumah) atau kontak tidak serumah tetapi intensitas kontaknya mirip\ndengan kontak serumah, dengan pasien TBC",
+  "jenis": "yesno",
+  "satuan": null,
+  "opsi": [
+   "Ya",
+   "Tidak"
+  ],
+  "wajib": true,
+  "problem_when": [
+   "Ya"
+  ],
+  "priority": "kuning",
+  "report_required": false,
+  "urutan": 4
+ },
+ {
+  "kode": "TBC_DIAG",
+  "group": "tbc",
+  "section": "ceklis",
+  "text": "Sudah terdiagnosis TBC",
+  "definisi": "Sudah terdiagnosis TBC",
+  "jenis": "yesno",
+  "satuan": null,
+  "opsi": [
+   "Ya",
+   "Tidak"
+  ],
+  "wajib": true,
+  "problem_when": [],
+  "priority": null,
+  "report_required": false,
+  "urutan": 5
+ },
+ {
+  "kode": "TBC_OBAT_ADA",
+  "group": "tbc",
+  "section": "ceklis",
+  "text": "Jika pasien TBC: memiliki obat TBC?",
+  "definisi": "kontak serumah (tinggal serumah) atau kontak tidak serumah tetapi intensitas kontaknya mirip\ndengan kontak serumah, dengan pasien TBC",
+  "jenis": "yesno",
+  "satuan": null,
+  "opsi": [
+   "Ya",
+   "Tidak"
+  ],
+  "wajib": true,
+  "problem_when": [],
+  "priority": null,
+  "report_required": false,
+  "urutan": 6
+ },
+ {
+  "kode": "TBC_OBAT_MINUM",
+  "group": "tbc",
+  "section": "ceklis",
+  "text": "Jika pasien TBC: minum obat dalam 24 jam terakhir?",
+  "definisi": "Diisi nama orang yang menjadi PMO",
+  "jenis": "yesno",
+  "satuan": null,
+  "opsi": [
+   "Ya",
+   "Tidak"
+  ],
+  "wajib": true,
+  "problem_when": [
+   "Tidak"
+  ],
+  "priority": "kuning",
+  "report_required": false,
+  "urutan": 7
+ },
+ {
+  "kode": "TBC_ROKOK",
+  "group": "tbc",
+  "section": "ceklis",
+  "text": "Perilaku merokok",
+  "definisi": "Perilaku merokok",
+  "jenis": "single",
+  "satuan": null,
+  "opsi": [
+   "Tidak",
+   "Pasif",
+   "Aktif"
+  ],
+  "wajib": true,
+  "problem_when": [
+   "Aktif"
+  ],
+  "priority": "kuning",
+  "report_required": false,
+  "urutan": 8
+ }
+]

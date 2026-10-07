@@ -1,0 +1,213 @@
+{
+  "app_info": {
+    "name": "PWS ILP MELATI",
+    "description": "Digitalisasi Ceklis Kunjungan Rumah Kader & Dashboard PWS Integrasi Layanan Primer UPT Puskesmas Melati",
+    "target_roles": [
+      {
+        "role": "Kader Kesehatan",
+        "device": "Mobile PWA (Android first)",
+        "tone": "Warm, accessible, ultra-intuitive, large touch targets, Bahasa Indonesia",
+        "nav_style": "Fixed Bottom Navigation (5 items: Beranda, Keluarga, Kunjungan, Tugas, Profil)"
+      },
+      {
+        "role": "Admin / Petugas Puskesmas",
+        "device": "Desktop & Tablet Dashboard",
+        "tone": "Data-dense, professional, high-clarity, clinical precision",
+        "nav_style": "Sidebar navigation with quick filters & export controls"
+      }
+    ]
+  },
+  "design_archetype": {
+    "primary": "Organic Health & Vibrant Slate",
+    "style_mix": [
+      "Tactile Mobile Cards for Kader (Warm Organic Health)",
+      "Swiss Technical High-Density Data Grid for Admin Dashboard",
+      "Interactive Step-by-Step Guided Wizard for Home Visits"
+    ]
+  },
+  "typography": {
+    "font_family_heading": "'Plus Jakarta Sans', 'Outfit', system-ui, sans-serif",
+    "font_family_body": "'Plus Jakarta Sans', 'Inter', system-ui, sans-serif",
+    "font_family_mono": "'JetBrains Mono', monospace",
+    "hierarchy": {
+      "hero_title": "text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight",
+      "section_title": "text-xl sm:text-2xl font-bold tracking-tight text-slate-800",
+      "card_title": "text-lg font-semibold text-slate-900",
+      "sub_heading": "text-base font-medium text-slate-700",
+      "body_large": "text-base leading-relaxed text-slate-700",
+      "body_standard": "text-sm leading-normal text-slate-600",
+      "caption": "text-xs font-medium text-slate-500"
+    },
+    "guidelines": [
+      "MUST NOT use Inter for main headings; use Plus Jakarta Sans or Outfit for warmth and Indonesian context suitability",
+      "Always set tracking-tight on headings text size >= 24px",
+      "All label text on mobile buttons for Kader must be min 16px (text-base) and font-semibold for maximum legibility outdoors"
+    ]
+  },
+  "colors": {
+    "css_variables": {
+      "--primary-emerald": "#0D9488",
+      "--primary-teal": "#14B8A6",
+      "--primary-dark": "#0F766E",
+      "--bg-light": "#F8FAFC",
+      "--bg-card": "#FFFFFF",
+      "--status-green-bg": "#DCFCE7",
+      "--status-green-border": "#86EFAC",
+      "--status-green-text": "#15803D",
+      "--status-yellow-bg": "#FEF9C3",
+      "--status-yellow-border": "#FDE047",
+      "--status-yellow-text": "#A16207",
+      "--status-red-bg": "#FEE2E2",
+      "--status-red-border": "#FCA5A5",
+      "--status-red-text": "#B91C1C",
+      "--status-blue-bg": "#E0F2FE",
+      "--status-blue-border": "#BAE6FD",
+      "--status-blue-text": "#0369A1"
+    },
+    "tailwind_palette": {
+      "brand_primary": "emerald-600",
+      "brand_hover": "emerald-700",
+      "brand_light": "emerald-50",
+      "brand_turquoise": "teal-500",
+      "status_green": {
+        "bg": "bg-emerald-50",
+        "border": "border-emerald-200",
+        "text": "text-emerald-800",
+        "icon": "text-emerald-600",
+        "badge": "bg-emerald-100 text-emerald-800 border-emerald-300"
+      },
+      "status_yellow": {
+        "bg": "bg-amber-50",
+        "border": "border-amber-200",
+        "text": "text-amber-800",
+        "icon": "text-amber-600",
+        "badge": "bg-amber-100 text-amber-800 border-amber-300"
+      },
+      "status_red": {
+        "bg": "bg-rose-50",
+        "border": "border-rose-200",
+        "text": "text-rose-800",
+        "icon": "text-rose-600",
+        "badge": "bg-rose-100 text-rose-800 border-rose-300"
+      },
+      "status_blue": {
+        "bg": "bg-sky-50",
+        "border": "border-sky-200",
+        "text": "text-sky-800",
+        "icon": "text-sky-600",
+        "badge": "bg-sky-100 text-sky-800 border-sky-300"
+      }
+    },
+    "rules": [
+      "Status system strictly follows 4 colors with TEXT + ICON always present alongside color fill",
+      "Green = Baik / Selesai (CheckCircle icon)",
+      "Yellow = Perlu Pemantauan (AlertTriangle / Eye icon)",
+      "Red = Prioritas / Tanda Bahaya (AlertOctagon / ShieldAlert icon)",
+      "Blue = Informasi & Edukasi (Info / BookOpen icon)",
+      "Never use pure black #000000. Use slate-900 or slate-800 for text",
+      "Interactive buttons on Kader UI must have explicit hover text color state"
+    ]
+  },
+  "layout_and_navigation": {
+    "kader_mobile_layout": {
+      "container": "max-w-md mx-auto min-h-screen bg-slate-50 pb-24 shadow-lg border-x border-slate-200 relative",
+      "header": "sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-slate-200 px-4 py-3 flex items-center justify-between",
+      "bottom_nav": "fixed bottom-0 left-0 right-0 max-w-md mx-auto z-50 bg-white border-t border-slate-200 shadow-2xl px-2 py-2 grid grid-cols-5 text-center",
+      "bottom_nav_items": [
+        {"key": "beranda", "label": "Beranda", "icon": "Home"},
+        {"key": "keluarga", "label": "Keluarga", "icon": "Users"},
+        {"key": "kunjungan", "label": "Kunjungan", "icon": "ClipboardCheck"},
+        {"key": "tugas", "label": "Tugas", "icon": "ListTodo"},
+        {"key": "profil", "label": "Profil", "icon": "User"}
+      ]
+    },
+    "admin_desktop_layout": {
+      "container": "flex min-h-screen bg-slate-100",
+      "sidebar": "w-64 bg-slate-900 text-slate-100 flex flex-col shrink-0 min-h-screen sticky top-0",
+      "content_area": "flex-1 p-6 md:p-8 overflow-y-auto max-w-7xl mx-auto"
+    }
+  },
+  "kader_wizard_specs": {
+    "total_steps": 8,
+    "step_labels": [
+      "Identitas Rumah & KK",
+      "Data Ibu Hamil & Nifas",
+      "Data Bayi & Balita",
+      "Data Remaja",
+      "Data Dewasa & Lansia",
+      "Skrining Spesifik TBC",
+      "Identifikasi Masalah & Bahaya",
+      "Edukasi & Rencana Tindak Lanjut"
+    ],
+    "ui_components": [
+      "Dynamic Target Group Selector cards with icon & age guidance",
+      "Large Touch Toggle Cards for Yes/No (Ya / Tidak) with 56px minimum touch target height",
+      "Info Tooltip modal/sheet trigger ('Apa maksudnya?') providing operational definitions for cadres",
+      "Auto-save draft indicator ('Draf Tersimpan Otomatis') with timestamp",
+      "Red Warning Alert Box whenever a 'Tanda Bahaya' (danger sign) is flagged"
+    ]
+  },
+  "admin_dashboard_features": {
+    "sections": [
+      "KPI Header Cards: Coverage percentage, Total Families visited, Red Priority cases, Pending Follow-ups",
+      "Interactive Priority List filterable by status (Red / Yellow / Green / Region / Target Group)",
+      "Follow-Up Action Center (Pusat Tindak Lanjut) with assignment to Health Officer / Bidan Desa",
+      "Weekly & Monthly Automated Recap generator with PDF, Excel, and CSV download buttons",
+      "Master Data Management: Kader accounts, Dusun/RT/RW regions, and Dynamic Questionnaire Manager",
+      "Simulated Accreditation Dashboard (Dashboard Akreditasi): Editable indicator cards, trends chart, narrative summary, PDCA/PDSA cycle tabs, and full-screen Presentation Mode"
+    ]
+  },
+  "target_group_categories": [
+    {"code": "ibu_hamil", "name": "Ibu Hamil", "icon": "HeartHandshake", "desc": "Pemeriksaan ANC, tablet tambah darah, tanda bahaya kehamilan"},
+    {"code": "nifas", "name": "Ibu Nifas", "icon": "Baby", "desc": "Pemeriksaan KF, vitamin A, edukasi ASI eksklusif"},
+    {"code": "bayi", "name": "Bayi (0-11 Bulan)", "icon": "Smile", "desc": "Imunisasi dasar, penimbangan, ASI eksklusif"},
+    {"code": "balita", "name": "Balita (12-59 Bulan)", "icon": "Activity", "desc": "Pemantauan tumbuh kembang, stunting, obat cacing"},
+    {"code": "remaja", "name": "Remaja (10-18 Tahun)", "icon": "UserCheck", "desc": "Skrining Anemia, aktivitas fisik, kesehatan reproduksi"},
+    {"code": "dewasa", "name": "Dewasa (19-59 Tahun)", "icon": "ShieldCheck", "desc": "Skrining Hipertensi, Diabetes, PTM, perokok"},
+    {"code": "lansia", "name": "Lansia (60+ Tahun)", "icon": "HeartPulse", "desc": "Skrining kemandirian, PTM, risiko jatuh"},
+    {"code": "tbc", "name": "Terduga / Pasien TBC", "icon": "Stethoscope", "desc": "Batuk > 2 minggu, BB turun, kepatuhan minum obat (PMO)"}
+  ],
+  "testing_conventions": {
+    "attribute_name": "data-testid",
+    "examples": [
+      "data-testid=\"nav-beranda\"",
+      "data-testid=\"nav-kunjungan\"",
+      "data-testid=\"btn-mulai-kunjungan\"",
+      "data-testid=\"input-search-keluarga\"",
+      "data-testid=\"wizard-next-step-btn\"",
+      "data-testid=\"wizard-prev-step-btn\"",
+      "data-testid=\"card-yes-option\"",
+      "data-testid=\"card-no-option\"",
+      "data-testid=\"btn-save-visit-draft\"",
+      "data-testid=\"btn-submit-visit\"",
+      "data-testid=\"admin-filter-status-red\"",
+      "data-testid=\"admin-export-excel-btn\"",
+      "data-testid=\"accreditation-edit-indicator-btn\"",
+      "data-testid=\"accreditation-presentation-mode-btn\""
+    ]
+  },
+  "image_urls": {
+    "hero_community_health": "https://images.pexels.com/photos/19550890/pexels-photo-19550890.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    "cadre_home_visit": "https://images.pexels.com/photos/7659570/pexels-photo-7659570.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    "community_posyandu": "https://images.unsplash.com/photo-1659718282409-203239812162?crop=entropy&cs=srgb&fm=jpg&q=85",
+    "puskesmas_team": "https://images.unsplash.com/photo-1621353880594-70b5fd44ecb3?crop=entropy&cs=srgb&fm=jpg&q=85",
+    "child_healthcare": "https://images.unsplash.com/photo-1643214439908-eefe2e9371d7?crop=entropy&cs=srgb&fm=jpg&q=85"
+  },
+  "instructions_to_main_agent": [
+    "Strictly follow the dual-viewport approach: Kader UI is mobile-first (max-w-md centered on desktop or responsive full width on mobile) while Admin UI is full-screen desktop dashboard",
+    "Implement mock state persistence with localStorage so Kader can save visit drafts and resume them seamlessly",
+    "Ensure all forms in Kader wizard use single question / card grouped layouts instead of standard bureaucratic tables",
+    "Every warning indicator must present clear actionable advice for cadres (e.g. 'Rujuk ke Puskesmas Segera' or 'Jadwalkan Kunjungan Ulang dalam 3 Hari')",
+    "Ensure all components include data-testid for key user flows as listed in testing_conventions"
+  ],
+  "UNIVERSAL GUIDELINES FOR MAIN AGENT": [
+    "Do not use dark colors as gradients",
+    "Create depth through layered design elements with z-index hierarchy",
+    "Use glass-morphism effects with backdrop filters (12-24px blur) on headers & sticky bars",
+    "MUST NOT apply universal transition (e.g. transition: all). Always specify explicit properties",
+    "MUST NOT center align the app container Globally. Keep natural text flow",
+    "Always use modern button styles (pill or rounded-xl) with hover states & high contrast",
+    "NEVER use AI assistant emoji characters like 🤖🧠💭💡 for UI icons. Use lucide-react icons",
+    "All interactive elements MUST include data-testid attribute in kebab-case format"
+  ]
+}

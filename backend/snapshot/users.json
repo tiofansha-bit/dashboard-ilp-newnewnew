@@ -1,0 +1,369 @@
+[
+ {
+  "id": "83d32e19-a6e5-4d2f-87e2-93a12609b88f",
+  "username": "admin",
+  "email": "tiofansha@gmail.com",
+  "nama": "Petugas Puskesmas Melati",
+  "role": "admin",
+  "wilayah": [
+   "Selat Tengah",
+   "Selat Hulu",
+   "Selat Dalam",
+   "Selat Utara"
+  ],
+  "posyandu": "",
+  "aktif": true,
+  "created_at": "2026-09-21T03:49:08.280633+00:00",
+  "password_hash": "$2b$12$nniTc9IVjBoyWiK0cjeZfuXDqB79sqmhy2r7490nQm6itR8ohI.La"
+ },
+ {
+  "id": "61d78d5a-7f38-4b71-b45b-02da2682b814",
+  "username": "kader11",
+  "nama": " Mila",
+  "role": "kader",
+  "wilayah": [
+   "Selat Tengah"
+  ],
+  "posyandu": "Seroja",
+  "target_keluarga": 30,
+  "aktif": true,
+  "created_at": "2026-09-22T01:11:12.125032+00:00",
+  "password_hash": "$2b$12$A5B13VOOa1s0Rh9yo02/f..AqU3S4UKL0BEVjGkYfMeA.YzrBC4Uq"
+ },
+ {
+  "id": "20666066-11c0-4774-a702-18464f9244b8",
+  "username": "kader12",
+  "nama": "Norlisa",
+  "role": "kader",
+  "wilayah": [
+   "Selat Hulu"
+  ],
+  "posyandu": "Teratai",
+  "target_keluarga": 30,
+  "aktif": true,
+  "created_at": "2026-09-22T01:19:47.033520+00:00",
+  "password_hash": "$2b$12$bfz2KrM9ehugCd44KBqxmeewkd4jgsrOZbeqXiC0JRDHfw.Zr6Tmy"
+ },
+ {
+  "id": "edf31e8a-94a2-4e9b-a593-e2c946b2102b",
+  "username": "kader13",
+  "nama": "Yuni",
+  "role": "kader",
+  "wilayah": [
+   "Selat Tengah"
+  ],
+  "posyandu": "Seroja",
+  "target_keluarga": 30,
+  "aktif": true,
+  "created_at": "2026-09-22T01:20:48.523087+00:00",
+  "password_hash": "$2b$12$xYwDN3PtDHOmPe2u2jGJpeRfhdqiR4GRNzKGCxxO8JgH/LsHaia1e"
+ },
+ {
+  "id": "ccf3270d-ab2b-4d27-93f3-a38f5f5a059b",
+  "username": "kader14",
+  "nama": "Masitah",
+  "role": "kader",
+  "wilayah": [
+   "Selat Hulu"
+  ],
+  "posyandu": "Anggur",
+  "target_keluarga": 30,
+  "aktif": true,
+  "created_at": "2026-09-22T01:21:30.825271+00:00",
+  "password_hash": "$2b$12$MvKrTN0EjyIv8PU4F/UVMeb0QK3HJUJsfXF2A2W0DF7QOWsN1NFTm"
+ },
+ {
+  "id": "96902398-6d85-4e62-be73-2bc50a38c811",
+  "username": "kader15",
+  "nama": "Mahrita",
+  "role": "kader",
+  "wilayah": [
+   "Selat Hulu"
+  ],
+  "posyandu": "Anggur",
+  "target_keluarga": 30,
+  "aktif": true,
+  "created_at": "2026-09-22T01:21:57.233881+00:00",
+  "password_hash": "$2b$12$CBr0x3UtsG4QdILykysdVennZDuiNm/Ql0Fogu3ZsYaUSdQZnoLgS"
+ },
+ {
+  "id": "d6ccfebe-31cb-4e9c-960d-c151ccd985ff",
+  "username": "kader16",
+  "nama": "Yuliana",
+  "role": "kader",
+  "wilayah": [
+   "Selat Utara"
+  ],
+  "posyandu": "Bina Bersama",
+  "target_keluarga": 30,
+  "aktif": true,
+  "created_at": "2026-09-22T01:22:28.621862+00:00",
+  "password_hash": "$2b$12$XVaMtbzqo6hcJ4qXtZlHvunUiLDoJrcUnfyB15867eyzLJp/u/Kw."
+ },
+ {
+  "id": "9eb855c2-5194-47c7-811f-1caea201686b",
+  "username": "kader17",
+  "nama": "Radiah",
+  "role": "kader",
+  "wilayah": [
+   "Selat Utara"
+  ],
+  "posyandu": "Amanah Selat Utara",
+  "target_keluarga": 30,
+  "aktif": true,
+  "created_at": "2026-09-22T01:23:12.440920+00:00",
+  "password_hash": "$2b$12$nsuMX58hdqB2ukMlaYj2beqP5.pXjTBrO9P/GHEyecyLUk8iZxCsC"
+ },
+ {
+  "id": "49fa791a-3af2-4d4f-8d91-9cd7d4fa5669",
+  "username": "kader18",
+  "nama": "Paisah",
+  "role": "kader",
+  "wilayah": [
+   "Selat Dalam"
+  ],
+  "posyandu": "Mawar",
+  "target_keluarga": 30,
+  "aktif": true,
+  "created_at": "2026-09-22T01:24:38.423342+00:00",
+  "password_hash": "$2b$12$dXPqy.zr3mbKPQUaVEJfsOniDN4q9FvMqlysV2O2J/lrGgAVrT.2m"
+ },
+ {
+  "id": "3ac42d16-2aba-4e13-9ea0-184725f3fc95",
+  "username": "kader19",
+  "nama": "Juharni",
+  "role": "kader",
+  "wilayah": [
+   "Selat Utara"
+  ],
+  "posyandu": "Amanah Selat Utara",
+  "target_keluarga": 30,
+  "aktif": true,
+  "created_at": "2026-09-22T01:25:28.542863+00:00",
+  "password_hash": "$2b$12$6glPYUT6ULpZ1iVez71GqujYGXv0uFvN4idXjJhRTvrWmgHoaBPUK"
+ },
+ {
+  "id": "01c4e52d-15da-4c63-9f75-2594f5f0cc42",
+  "username": "kader20",
+  "nama": "Dhea Rizki Fadila",
+  "role": "kader",
+  "wilayah": [
+   "Selat Dalam"
+  ],
+  "posyandu": "Mawar",
+  "target_keluarga": 30,
+  "aktif": true,
+  "created_at": "2026-09-22T01:26:34.228803+00:00",
+  "password_hash": "$2b$12$Mzk3J2IREZgxQMO960ofF.ps5zvBG9sv2sHiHdnnLKkvXmon6aDYG"
+ },
+ {
+  "id": "0becca5b-3fd9-4cc1-8c54-625771334d6a",
+  "username": "kader21",
+  "nama": "Agustinah",
+  "role": "kader",
+  "wilayah": [
+   "Selat Tengah"
+  ],
+  "posyandu": "Seroja",
+  "target_keluarga": 30,
+  "aktif": true,
+  "created_at": "2026-09-22T01:27:15.024233+00:00",
+  "password_hash": "$2b$12$hgtCtJZe9tOC7BWR915ThOR9VGN9VmdILnNeXQ6pHScn7s2G.mcTa"
+ },
+ {
+  "id": "d34df2c7-59eb-4f2c-b8c6-6259f3afd07b",
+  "username": "kader 22",
+  "nama": "Permata Sari",
+  "role": "kader",
+  "wilayah": [
+   "Selat Dalam"
+  ],
+  "posyandu": "Seroja",
+  "target_keluarga": 30,
+  "aktif": true,
+  "created_at": "2026-09-22T01:27:54.330039+00:00",
+  "password_hash": "$2b$12$yd7zm0E1d7SMsqTlNlPtsuK0XykKbS7h558AbLtPoFflXmD30LwOK"
+ },
+ {
+  "id": "bb045715-c659-4996-b54b-c69366a7854f",
+  "username": "kader23",
+  "nama": "Ema Fitriani",
+  "role": "kader",
+  "wilayah": [
+   "Selat Dalam"
+  ],
+  "posyandu": "Mawar",
+  "target_keluarga": 30,
+  "aktif": true,
+  "created_at": "2026-09-22T01:28:29.432304+00:00",
+  "password_hash": "$2b$12$l4a3.dObIuxMvLLyT1PYU.5psgV1ypk/j4Be0ZmI1NGCgT5AF9Uny"
+ },
+ {
+  "id": "dd5d5b3f-8e5b-4248-9e39-95c16752dee9",
+  "username": "kader24",
+  "nama": "Febri Yani",
+  "role": "kader",
+  "wilayah": [
+   "Selat Dalam"
+  ],
+  "posyandu": "Mawar",
+  "target_keluarga": 30,
+  "aktif": true,
+  "created_at": "2026-09-22T01:29:39.832585+00:00",
+  "password_hash": "$2b$12$0E864JLEVkVwsLVT.zkXteNYVPa87FsxPcJd/Oj7zw0Bo0y1ut.aW"
+ },
+ {
+  "id": "4a3f1c36-e7a0-4065-a23c-9b7b0bc864f1",
+  "username": "kader25",
+  "nama": "Jainah",
+  "role": "kader",
+  "wilayah": [
+   "Selat Tengah"
+  ],
+  "posyandu": "Seroja",
+  "target_keluarga": 30,
+  "aktif": true,
+  "created_at": "2026-09-22T01:34:18.524102+00:00",
+  "password_hash": "$2b$12$G4RLR.fZ.jWBLQD.tHg0xOxa6Qsg4rhDS2ljb9flrNrlP7w0OWUQK"
+ },
+ {
+  "id": "cfa9a968-4203-434c-b276-d897b2776540",
+  "username": "kader26",
+  "nama": "Hamsiah",
+  "role": "kader",
+  "wilayah": [
+   "Selat Tengah"
+  ],
+  "posyandu": "Seroja",
+  "target_keluarga": 30,
+  "aktif": true,
+  "created_at": "2026-09-22T01:35:57.126416+00:00",
+  "password_hash": "$2b$12$D7OMBIqPpk.JQejOek2qDOHgZwtnrIF.O6eaQeCeLmijA5s6vc1TC"
+ },
+ {
+  "id": "bdf7c8c2-7d24-4731-afc4-9e22181f4966",
+  "username": "kader27",
+  "nama": "Rahmini",
+  "role": "kader",
+  "wilayah": [
+   "Selat Tengah"
+  ],
+  "posyandu": "Seroja",
+  "target_keluarga": 30,
+  "aktif": true,
+  "created_at": "2026-09-22T01:36:31.345888+00:00",
+  "password_hash": "$2b$12$b7.zL9gL7f79xWFeA.5XD.IeQNSJ7WAS.jfzTbH7QJHjr2Zt1oUgW"
+ },
+ {
+  "id": "c23179c0-02ce-4aee-b085-4262a31b58af",
+  "username": "kader28",
+  "nama": "Siti Fatimah",
+  "role": "kader",
+  "wilayah": [
+   "Selat Tengah"
+  ],
+  "posyandu": "Seroja",
+  "target_keluarga": 30,
+  "aktif": true,
+  "created_at": "2026-09-22T01:37:05.024281+00:00",
+  "password_hash": "$2b$12$ZSSz1XTT54QskU4Ztex9W.PLUtAjdSK8BGtF8LioNUw8e4MF3g3/y"
+ },
+ {
+  "id": "b44233cc-6c8d-45f2-9951-348d33d04241",
+  "username": "kader29",
+  "nama": "Normilawati",
+  "role": "kader",
+  "wilayah": [
+   "Selat Tengah"
+  ],
+  "posyandu": "Seroja",
+  "target_keluarga": 30,
+  "aktif": true,
+  "created_at": "2026-09-22T01:37:55.950816+00:00",
+  "password_hash": "$2b$12$0V/7.giO.FU3c/JMIxysgOunDT/AwTbnA2MkWe3ZgLV4t600Gc3IC"
+ },
+ {
+  "id": "c1b01f2c-279b-40d7-8a72-98f59702eec1",
+  "username": "kader30",
+  "nama": "Hj. Mia",
+  "role": "kader",
+  "wilayah": [
+   "Selat Tengah"
+  ],
+  "posyandu": "Seroja",
+  "target_keluarga": 30,
+  "aktif": true,
+  "created_at": "2026-09-22T01:38:32.221483+00:00",
+  "password_hash": "$2b$12$W9XrWSp8mSOJgioqpCTgNOThB4dyOd4pvx8H65kHNkpNvylEzlo.S"
+ },
+ {
+  "id": "99f393c4-461f-4f0a-aecc-1309a3c0d717",
+  "username": "kader10",
+  "nama": "Norhayah",
+  "role": "kader",
+  "wilayah": [
+   "Selat Hulu"
+  ],
+  "posyandu": "Kamboja",
+  "target_keluarga": 30,
+  "aktif": true,
+  "created_at": "2026-09-28T01:18:46.894841+00:00",
+  "password_hash": "$2b$12$mdlzp68S46kFlLrUfDQco.2tVRW.x4TRxyUnnDhSaG/pRMCRfQo9C"
+ },
+ {
+  "id": "7e3e580f-d935-4720-9e98-c868aa4ea37e",
+  "username": "kader9",
+  "nama": "Siti Rahmah",
+  "role": "kader",
+  "wilayah": [
+   "Selat Hulu"
+  ],
+  "posyandu": "Kamboja",
+  "target_keluarga": 30,
+  "aktif": true,
+  "created_at": "2026-09-28T01:19:29.670733+00:00",
+  "password_hash": "$2b$12$W13KLvkCrjCI.O3J48Enbex7qKLx52zQcpZp6iWLX5qHj8zIyFCb6"
+ },
+ {
+  "id": "9a9a4d24-e3db-4cb2-84d3-4feb1727a9c1",
+  "username": "kader8",
+  "nama": "Arbaidah",
+  "role": "kader",
+  "wilayah": [
+   "Selat Hulu"
+  ],
+  "posyandu": "Kamboja",
+  "target_keluarga": 30,
+  "aktif": true,
+  "created_at": "2026-09-28T05:38:34.901915+00:00",
+  "password_hash": "$2b$12$m0.OejhA52MJwAEyT38ruOpaXAofWol5TyxKF1RioI1aVPwEGckQ6"
+ },
+ {
+  "id": "8ad0ed31-f2b4-4225-a7e0-290f97752c12",
+  "username": "kader7",
+  "nama": "Memy",
+  "role": "kader",
+  "wilayah": [
+   "Selat Hulu"
+  ],
+  "posyandu": "Kamboja",
+  "target_keluarga": 30,
+  "aktif": true,
+  "created_at": "2026-10-01T00:56:22.540549+00:00",
+  "password_hash": "$2b$12$sbVswKwUClKVZNPGDdYObuHEhhjWo20FFcBKBoyx0k4Dr40r/sJde"
+ },
+ {
+  "id": "6f9e831d-a48f-4d30-80fe-a1971f21dc16",
+  "username": "kader6",
+  "nama": "Fitriani",
+  "role": "kader",
+  "wilayah": [
+   "Selat Hulu"
+  ],
+  "posyandu": "Kamboja",
+  "target_keluarga": 30,
+  "aktif": true,
+  "created_at": "2026-10-01T01:34:19.047692+00:00",
+  "password_hash": "$2b$12$B9w7RiPQ1WsT2hmU40.koOhTIUvDY/KL5YIXVYZY6QguFgaRlnZqe"
+ }
+]
