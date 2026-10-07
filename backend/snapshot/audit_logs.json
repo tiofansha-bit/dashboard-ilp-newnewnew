@@ -1998,5 +1998,45 @@
   "entitas_id": "091326b8-95fa-4a17-9d41-461f8458f87e",
   "detail": "Muhammad Afdal",
   "waktu": "2026-10-01T01:20:37.640131+00:00"
+ },
+ {
+  "id": "32f7b28e-0dcf-49bc-9181-ddf036858089",
+  "user_id": "83d32e19-a6e5-4d2f-87e2-93a12609b88f",
+  "user_nama": "Petugas Puskesmas Melati",
+  "aksi": "export",
+  "entitas": "kasus",
+  "entitas_id": "",
+  "detail": "csv -",
+  "waktu": "2026-10-07T04:54:40.247267+00:00"
+ },
+ {
+  "id": "c5b5a78f-0801-44be-9f4f-51978df0d9c6",
+  "user_id": "83d32e19-a6e5-4d2f-87e2-93a12609b88f",
+  "user_nama": "Petugas Puskesmas Melati",
+  "aksi": "export",
+  "entitas": "keluarga",
+  "entitas_id": "",
+  "detail": "csv -",
+  "waktu": "2026-10-07T04:54:41.815056+00:00"
+ },
+ {
+  "id": "4f5174d0-6c53-4bf0-8597-d7e66314a86e",
+  "user_id": "83d32e19-a6e5-4d2f-87e2-93a12609b88f",
+  "user_nama": "Petugas Puskesmas Melati",
+  "aksi": "export",
+  "entitas": "kunjungan",
+  "entitas_id": "",
+  "detail": "csv -",
+  "waktu": "2026-10-07T04:54:42.771014+00:00"
+ },
+ {
+  "id": "026673f2-750c-444b-9f0c-5f2ddf941735",
+  "user_id": "83d32e19-a6e5-4d2f-87e2-93a12609b88f",
+  "user_nama": "Petugas Puskesmas Melati",
+  "aksi": "export",
+  "entitas": "tindak_lanjut",
+  "entitas_id": "",
+  "detail": "csv -",
+  "waktu": "2026-10-07T04:54:44.138094+00:00"
  }
 ]

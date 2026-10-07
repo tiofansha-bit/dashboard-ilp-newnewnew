@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { api, errMsg } from "@/lib/api";
 import { toast } from "sonner";
 import {
@@ -6,7 +6,7 @@ import {
 } from "recharts";
 import {
   Loader2, Plus, Save, Presentation, X, Edit2, Trash2, History, AlertTriangle,
-  TrendingUp, Copy, Maximize2, FileType,
+  TrendingUp, Copy, Maximize2, FileType, Lock,
 } from "lucide-react";
 
 const COLORS = ["#0D9488", "#0EA5E9", "#F59E0B", "#F43F5E", "#8B5CF6", "#10B981"];
@@ -18,10 +18,46 @@ const STATUS_LBL = { tercapai: "Tercapai", belum_tercapai: "Belum Tercapai", per
 
 const SimBanner = () => null;
 
+// Gate the editing controls behind the same admin PIN (hidden as a subtle icon).
+function EditUnlock({ onUnlock }) {
+  const [open, setOpen] = useState(false);
+  const [pin, setPin] = useState("");
+  const [err, setErr] = useState("");
+  const ref = useRef(null);
+  useEffect(() => {
+    const h = (e) => { if (ref.current && !ref.current.contains(e.target)) setOpen(false); };
+    document.addEventListener("mousedown", h);
+    return () => document.removeEventListener("mousedown", h);
+  }, []);
+  const verify = async () => {
+    setErr("");
+    try { await api.post("/mode/verify-pin", { pin }); setPin(""); setOpen(false); onUnlock(); }
+    catch (e) { setErr(errMsg(e)); }
+  };
+  return (
+    <div className="relative" ref={ref}>
+      <button data-testid="akre-edit-unlock" onClick={() => { setOpen((o) => !o); setErr(""); }} aria-label="buka edit"
+        className="rounded-lg p-2 text-slate-200 transition-colors hover:text-slate-400">
+        <Lock className="h-4 w-4" />
+      </button>
+      {open && (
+        <div data-testid="akre-edit-popover" className="absolute right-0 top-11 z-50 w-56 rounded-2xl border border-slate-200 bg-white p-3 shadow-xl">
+          <input data-testid="akre-edit-pin-input" type="password" inputMode="numeric" autoFocus value={pin}
+            onChange={(e) => setPin(e.target.value)} onKeyDown={(e) => e.key === "Enter" && verify()}
+            className="w-full rounded-lg border border-slate-200 px-3 py-2 text-sm tracking-widest" placeholder="••••••" />
+          {err && <p data-testid="akre-edit-pin-error" className="mt-1 text-xs text-rose-600">{err}</p>}
+          <button data-testid="akre-edit-pin-submit" onClick={verify} className="mt-2 flex w-full items-center justify-center rounded-lg bg-teal-600 px-3 py-2 text-sm font-semibold text-white hover:bg-teal-700"><Lock className="h-4 w-4" /></button>
+        </div>
+      )}
+    </div>
+  );
+}
+
 export default function Akreditasi() {
   const [list, setList] = useState(null);
   const [d, setD] = useState(null);
   const [edit, setEdit] = useState(false);
+  const [editUnlocked, setEditUnlocked] = useState(false);
   const [present, setPresent] = useState(false);
   const [showVer, setShowVer] = useState(false);
 
@@ -84,15 +120,22 @@ export default function Akreditasi() {
         <select value={d.id} onChange={(e) => setD(list.find((x) => x.id === e.target.value))} className="rounded-lg border border-slate-200 px-3 py-1.5 text-sm font-medium">
           {list.map((x) => <option key={x.id} value={x.id}>{x.judul}</option>)}
         </select>
-        <div className="ml-auto flex flex-wrap gap-2">
-          <button data-testid="akre-new" onClick={createNew} className="flex items-center gap-1.5 rounded-lg border border-slate-200 px-3 py-1.5 text-sm font-semibold text-slate-600"><Plus className="h-4 w-4" /> Baru</button>
-          <button data-testid="akre-duplicate" onClick={duplicate} className="flex items-center gap-1.5 rounded-lg border border-slate-200 px-3 py-1.5 text-sm font-semibold text-slate-600"><Copy className="h-4 w-4" /> Duplikat</button>
-          <button data-testid="akre-versions" onClick={() => setShowVer(true)} className="flex items-center gap-1.5 rounded-lg border border-slate-200 px-3 py-1.5 text-sm font-semibold text-slate-600"><History className="h-4 w-4" /> Versi</button>
+        <div className="ml-auto flex flex-wrap items-center gap-2">
           <button data-testid="accreditation-presentation-mode-btn" onClick={() => setPresent(true)} className="flex items-center gap-1.5 rounded-lg bg-slate-900 px-3 py-1.5 text-sm font-semibold text-white"><Presentation className="h-4 w-4" /> Mode Presentasi</button>
-          {edit ? (
-            <button data-testid="akre-save" onClick={save} className="flex items-center gap-1.5 rounded-lg bg-teal-600 px-4 py-1.5 text-sm font-semibold text-white"><Save className="h-4 w-4" /> Simpan</button>
+          {editUnlocked ? (
+            <>
+              <button data-testid="akre-new" onClick={createNew} className="flex items-center gap-1.5 rounded-lg border border-slate-200 px-3 py-1.5 text-sm font-semibold text-slate-600"><Plus className="h-4 w-4" /> Baru</button>
+              <button data-testid="akre-duplicate" onClick={duplicate} className="flex items-center gap-1.5 rounded-lg border border-slate-200 px-3 py-1.5 text-sm font-semibold text-slate-600"><Copy className="h-4 w-4" /> Duplikat</button>
+              <button data-testid="akre-versions" onClick={() => setShowVer(true)} className="flex items-center gap-1.5 rounded-lg border border-slate-200 px-3 py-1.5 text-sm font-semibold text-slate-600"><History className="h-4 w-4" /> Versi</button>
+              {edit ? (
+                <button data-testid="akre-save" onClick={save} className="flex items-center gap-1.5 rounded-lg bg-teal-600 px-4 py-1.5 text-sm font-semibold text-white"><Save className="h-4 w-4" /> Simpan</button>
+              ) : (
+                <button data-testid="accreditation-edit-indicator-btn" onClick={() => setEdit(true)} className="flex items-center gap-1.5 rounded-lg bg-teal-600 px-4 py-1.5 text-sm font-semibold text-white"><Edit2 className="h-4 w-4" /> Edit</button>
+              )}
+              <button data-testid="akre-edit-lock" onClick={() => { setEdit(false); setEditUnlocked(false); }} title="Kunci mode edit" className="rounded-lg p-2 text-slate-400 transition-colors hover:text-slate-600"><Lock className="h-4 w-4" /></button>
+            </>
           ) : (
-            <button data-testid="accreditation-edit-indicator-btn" onClick={() => setEdit(true)} className="flex items-center gap-1.5 rounded-lg bg-teal-600 px-4 py-1.5 text-sm font-semibold text-white"><Edit2 className="h-4 w-4" /> Edit</button>
+            <EditUnlock onUnlock={() => setEditUnlocked(true)} />
           )}
         </div>
       </div>

@@ -5,8 +5,13 @@ import QuestionField, { DangerGrid } from "./QuestionField";
 import { submitKunjungan, cacheSet, cacheGet } from "@/lib/offline";
 import {
   ArrowLeft, ArrowRight, Save, Send, Loader2, Check, ShieldAlert, Users,
-  Home as HomeIcon, ClipboardList, BookOpen, ListChecks, X, Circle, CheckCircle2,
+  Home as HomeIcon, ClipboardList, BookOpen, ListChecks, X, Circle, CheckCircle2, Activity,
 } from "lucide-react";
+
+// Skrining TBC berlaku untuk SEMUA kelompok usia. Pertanyaan merokok (TBC_ROKOK)
+// tidak diikutkan di sini agar tidak duplikat dengan ceklis kelompok tertentu.
+const tbcUniversalQuestions = (questions) =>
+  (questions?.["tbc"] || []).filter((q) => q.kode !== "TBC_ROKOK");
 
 const EDU_OPSI = ["Edukasi PHBS", "Gizi seimbang / Isi Piringku", "Pentingnya imunisasi", "ASI eksklusif", "Kepatuhan minum obat", "Bahaya merokok", "Kesehatan jiwa"];
 const DRAFT_KEY = (kid) => `pws_draft_${kid || "new"}`;
@@ -40,9 +45,10 @@ export default function Wizard({ go, params }) {
     setStep(1);
   };
 
-  // fetch questions for selected members' groups
+  // fetch questions for selected members' groups (+ selalu TBC utk semua usia)
   useEffect(() => {
-    const groups = [...new Set(keluarga?.anggota?.filter((a) => selMembers.includes(a.id)).map((a) => a.kelompok) || [])];
+    const memberGroups = keluarga?.anggota?.filter((a) => selMembers.includes(a.id)).map((a) => a.kelompok) || [];
+    const groups = [...new Set([...memberGroups, "tbc"])];
     groups.forEach((g) => {
       if (g && !questions[g] && g !== "belum_ditentukan")
         api.get("/master/questions", { params: { group: g } })
@@ -78,8 +84,10 @@ export default function Wizard({ go, params }) {
   // compute findings for summary
   const findings = useMemo(() => {
     const out = [];
+    const tbcQs = tbcUniversalQuestions(questions);
     selectedAnggota.forEach((a) => {
-      (questions[a.kelompok] || []).forEach((q) => {
+      const list = [...(questions[a.kelompok] || []), ...(a.kelompok === "tbc" ? [] : tbcQs)];
+      list.forEach((q) => {
         if (!q.problem_when?.length) return;
         const v = answers[a.id]?.[q.kode];
         const hit = Array.isArray(v) ? v.some((x) => q.problem_when.includes(x)) : q.problem_when.includes(v);
@@ -175,6 +183,7 @@ export default function Wizard({ go, params }) {
         {/* Checklist per member */}
         {cur.type === "checklist" && (
           <ChecklistStep anggota={cur.anggota} questions={questions[cur.anggota.kelompok] || []}
+            tbcQuestions={cur.anggota.kelompok === "tbc" ? [] : tbcUniversalQuestions(questions)}
             answers={answers[cur.anggota.id] || {}} setAns={(k, v) => setAns(cur.anggota.id, k, v)} />
         )}
 
@@ -264,10 +273,10 @@ export default function Wizard({ go, params }) {
   );
 }
 
-function ChecklistStep({ anggota, questions, answers, setAns }) {
+function ChecklistStep({ anggota, questions, tbcQuestions = [], answers, setAns }) {
   const ceklis = questions.filter((q) => q.section === "ceklis");
   const danger = questions.filter((q) => q.section === "tanda_bahaya");
-  if (questions.length === 0) return <div className="flex h-40 items-center justify-center"><Loader2 className="h-6 w-6 animate-spin text-teal-600" /></div>;
+  if (questions.length === 0 && tbcQuestions.length === 0) return <div className="flex h-40 items-center justify-center"><Loader2 className="h-6 w-6 animate-spin text-teal-600" /></div>;
   return (
     <div className="space-y-3">
       <div className="rounded-xl bg-teal-50 p-3">
@@ -275,6 +284,15 @@ function ChecklistStep({ anggota, questions, answers, setAns }) {
         <p className="text-xs text-teal-600">{anggota.kelompok_label}</p>
       </div>
       {ceklis.map((q) => <QuestionField key={q.kode} q={q} value={answers[q.kode]} onChange={(v) => setAns(q.kode, v)} />)}
+      {tbcQuestions.length > 0 && (
+        <div data-testid="tbc-screening-section" className="rounded-2xl border-2 border-sky-200 bg-sky-50/50 p-4">
+          <p className="mb-1 flex items-center gap-2 text-base font-bold text-sky-800"><Activity className="h-5 w-5" /> Skrining TBC (semua usia)</p>
+          <p className="mb-3 text-sm text-sky-600">Tanyakan gejala TBC untuk setiap sasaran, apa pun kelompok usianya.</p>
+          <div className="space-y-3">
+            {tbcQuestions.map((q) => <QuestionField key={q.kode} q={q} value={answers[q.kode]} onChange={(v) => setAns(q.kode, v)} />)}
+          </div>
+        </div>
+      )}
       {danger.length > 0 && (
         <div className="rounded-2xl border-2 border-rose-200 bg-rose-50/50 p-4">
           <p className="mb-3 flex items-center gap-2 text-base font-bold text-rose-800"><ShieldAlert className="h-5 w-5" /> Tanda Bahaya</p>

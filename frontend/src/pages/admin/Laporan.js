@@ -5,8 +5,9 @@ import { Loader2, FileDown, FileSpreadsheet, FileText, FileType, Filter } from "
 
 const JENIS = [
   { key: "kasus", label: "Daftar Tindak Lanjut & Sasaran Bermasalah" },
-  { key: "kunjungan", label: "Rekap Kunjungan Kader" },
+  { key: "kunjungan", label: "Rekap Kunjungan Rumah Kader" },
   { key: "keluarga", label: "Daftar Keluarga Terdaftar" },
+  { key: "tindak_lanjut", label: "Rekap Tindak Lanjut Pustu" },
 ];
 const KELURAHAN = ["Selat Tengah", "Selat Hulu", "Selat Dalam", "Selat Utara"];
 
@@ -20,7 +21,8 @@ export default function Laporan() {
       const res = await api.get(`/export/${jenis}`, { params: { fmt, start: flt.start, end: flt.end, kelurahan: flt.kelurahan }, responseType: "blob" });
       const url = URL.createObjectURL(res.data);
       const a = document.createElement("a");
-      a.href = url; a.download = `laporan_${jenis}.${fmt === "excel" ? "xlsx" : fmt}`; a.click();
+      const tgl = new Date().toISOString().slice(0, 10).replace(/-/g, "");
+      a.href = url; a.download = `laporan_${jenis}_${tgl}.${fmt === "excel" ? "xlsx" : fmt}`; a.click();
       URL.revokeObjectURL(url);
       toast.success(`Laporan ${fmt.toUpperCase()} diunduh`);
     } catch (e) { toast.error("Gagal mengunduh laporan"); }

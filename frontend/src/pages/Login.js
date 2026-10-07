@@ -88,8 +88,8 @@ export default function Login() {
               <button onClick={() => quick("admin", "admin123")} className="flex items-center gap-1.5 rounded-lg border border-slate-200 bg-white px-3 py-1.5 text-xs font-medium text-slate-700 hover:border-teal-400">
                 <Stethoscope className="h-3.5 w-3.5 text-teal-600" /> Petugas: admin
               </button>
-              <button onClick={() => quick("kader1", "kader123")} className="flex items-center gap-1.5 rounded-lg border border-slate-200 bg-white px-3 py-1.5 text-xs font-medium text-slate-700 hover:border-teal-400">
-                <Home className="h-3.5 w-3.5 text-teal-600" /> Kader: kader1
+              <button onClick={() => quick("kader11", "kader123")} className="flex items-center gap-1.5 rounded-lg border border-slate-200 bg-white px-3 py-1.5 text-xs font-medium text-slate-700 hover:border-teal-400">
+                <Home className="h-3.5 w-3.5 text-teal-600" /> Kader: kader11
               </button>
             </div>
           </div>

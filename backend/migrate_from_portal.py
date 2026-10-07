@@ -69,7 +69,8 @@ def main():
 
     data = {"wilayah": get("/master/wilayah"), "posyandu": get("/master/posyandu"),
             "master_questions": get("/master/questions"), "akreditasi": get("/akreditasi"),
-            "audit_logs": get("/audit"), "notifikasi": get("/notifikasi").get("items", [])}
+            "audit_logs": get("/audit"), "notifikasi": get("/notifikasi").get("items", []),
+            "tindak_lanjut_pustu": get("/admin/tindak-lanjut")}
     kaders = get("/admin/kader")
 
     keluarga, anggota, kunjungan, seen_v = [], [], [], set()

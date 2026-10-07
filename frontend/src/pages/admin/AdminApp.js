@@ -1,6 +1,6 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useAuth } from "@/context/AuthContext";
-import { api } from "@/lib/api";
+import { api, errMsg } from "@/lib/api";
 import { toast } from "sonner";
 import Dashboard from "./Dashboard";
 import Prioritas from "./Prioritas";
@@ -12,19 +12,21 @@ import AuditLog from "./AuditLog";
 import Laporan from "./Laporan";
 import RekapKader from "./RekapKader";
 import ImportData from "./ImportData";
+import TindakLanjutPustu from "./TindakLanjutPustu";
 import logo from "@/assets/logo.png";
 import {
   LayoutDashboard, AlertOctagon, Users, UserCog, ListChecks, PresentationIcon, ClipboardCheck,
-  ScrollText, FileDown, HeartPulse, LogOut, Bell, Menu, X, Presentation, KeyRound, Upload,
+  ScrollText, FileDown, HeartPulse, LogOut, Bell, Menu, X, Presentation, KeyRound, Upload, Stethoscope,
+  SlidersHorizontal, Lock,
 } from "lucide-react";
 import ChangePassword from "@/components/ChangePassword";
 
 const MENU = [
   { key: "dashboard", label: "Dashboard", icon: LayoutDashboard },
   { key: "prioritas", label: "Daftar Prioritas", icon: AlertOctagon },
+  { key: "tindak-lanjut-pustu", label: "Tindak Lanjut Pustu", icon: Stethoscope },
   { key: "keluarga", label: "Keluarga & Sasaran", icon: Users },
   { key: "laporan", label: "Laporan & Rekap", icon: FileDown },
-  { key: "akreditasi", label: "Mode", icon: Presentation },
   { key: "kader", label: "Manajemen Kader", icon: UserCog },
   { key: "rekap-kader", label: "Rekap per Kader", icon: ClipboardCheck },
   { key: "import", label: "Import Data", icon: Upload },
@@ -32,9 +34,84 @@ const MENU = [
   { key: "audit", label: "Audit Log", icon: ScrollText },
 ];
 
+// Hidden mode switcher — subtle icon in header, PIN protected. Only admin knows it exists.
+function ModeControl({ akreMode, setAkreMode, goDashboard }) {
+  const [open, setOpen] = useState(false);
+  const [unlocked, setUnlocked] = useState(false);
+  const [pin, setPin] = useState("");
+  const [err, setErr] = useState("");
+  const [changing, setChanging] = useState(false);
+  const [cur, setCur] = useState("");
+  const [nw, setNw] = useState("");
+  const ref = useRef(null);
+
+  useEffect(() => {
+    const h = (e) => { if (ref.current && !ref.current.contains(e.target)) setOpen(false); };
+    document.addEventListener("mousedown", h);
+    return () => document.removeEventListener("mousedown", h);
+  }, []);
+
+  const verify = async () => {
+    setErr("");
+    try { await api.post("/mode/verify-pin", { pin }); setUnlocked(true); setPin(""); }
+    catch (e) { setErr(errMsg(e)); }
+  };
+  const changePin = async () => {
+    setErr("");
+    try { await api.post("/mode/change-pin", { current_pin: cur, new_pin: nw }); toast.success("PIN diperbarui"); setChanging(false); setCur(""); setNw(""); }
+    catch (e) { setErr(errMsg(e)); }
+  };
+  const pick = (v) => { setAkreMode(v); goDashboard(); setOpen(false); toast.success(v ? "Mode Akreditasi aktif" : "Mode Data Asli aktif"); };
+
+  return (
+    <div className="relative" ref={ref}>
+      <button data-testid="hidden-mode-trigger" onClick={() => { setOpen((o) => !o); setErr(""); }} aria-label="pengaturan"
+        className="rounded-xl p-2 text-slate-200 transition-colors hover:text-slate-400">
+        <SlidersHorizontal className="h-4 w-4" />
+      </button>
+      {open && (
+        <div data-testid="mode-popover" className="absolute right-0 top-12 z-50 w-64 rounded-2xl border border-slate-200 bg-white p-3 shadow-xl">
+          {!unlocked ? (
+            <div className="space-y-2">
+              <p className="flex items-center gap-1.5 text-xs font-bold text-slate-600"><Lock className="h-3.5 w-3.5" /> Masukkan PIN</p>
+              <input data-testid="mode-pin-input" type="password" inputMode="numeric" autoFocus value={pin}
+                onChange={(e) => setPin(e.target.value)} onKeyDown={(e) => e.key === "Enter" && verify()}
+                className="w-full rounded-lg border border-slate-200 px-3 py-2 text-sm tracking-widest" placeholder="••••••" />
+              {err && <p data-testid="mode-pin-error" className="text-xs text-rose-600">{err}</p>}
+              <button data-testid="mode-pin-submit" onClick={verify} className="w-full rounded-lg bg-teal-600 px-3 py-2 text-sm font-semibold text-white hover:bg-teal-700">Buka</button>
+            </div>
+          ) : changing ? (
+            <div className="space-y-2">
+              <p className="text-xs font-bold text-slate-600">Ganti PIN</p>
+              <input data-testid="mode-pin-current" type="password" inputMode="numeric" value={cur} onChange={(e) => setCur(e.target.value)} className="w-full rounded-lg border border-slate-200 px-3 py-2 text-sm" placeholder="PIN saat ini" />
+              <input data-testid="mode-pin-new" type="password" inputMode="numeric" value={nw} onChange={(e) => setNw(e.target.value)} className="w-full rounded-lg border border-slate-200 px-3 py-2 text-sm" placeholder="PIN baru (4-8 digit)" />
+              {err && <p className="text-xs text-rose-600">{err}</p>}
+              <div className="flex gap-2">
+                <button data-testid="mode-pin-save" onClick={changePin} className="flex-1 rounded-lg bg-teal-600 px-3 py-2 text-sm font-semibold text-white hover:bg-teal-700">Simpan</button>
+                <button onClick={() => { setChanging(false); setErr(""); }} className="rounded-lg border border-slate-200 px-3 py-2 text-sm text-slate-600">Batal</button>
+              </div>
+            </div>
+          ) : (
+            <div className="space-y-2">
+              <p className="text-xs font-bold text-slate-600">Mode Tampilan Dashboard</p>
+              <div className="grid grid-cols-2 gap-2">
+                <button data-testid="mode-select-asli" onClick={() => pick(false)} className={`rounded-lg px-2 py-2 text-xs font-semibold transition-colors ${!akreMode ? "bg-teal-600 text-white" : "border border-slate-200 text-slate-600 hover:border-teal-400"}`}>Data Asli</button>
+                <button data-testid="mode-select-akreditasi" onClick={() => pick(true)} className={`rounded-lg px-2 py-2 text-xs font-semibold transition-colors ${akreMode ? "bg-teal-600 text-white" : "border border-slate-200 text-slate-600 hover:border-teal-400"}`}>Akreditasi</button>
+              </div>
+              <button data-testid="mode-change-pin" onClick={() => { setChanging(true); setErr(""); }} className="w-full rounded-lg border border-slate-200 px-3 py-2 text-xs font-semibold text-slate-600 hover:border-teal-400">Ganti PIN</button>
+              <button data-testid="mode-lock" onClick={() => { setUnlocked(false); setOpen(false); }} className="w-full text-center text-xs text-slate-400 hover:text-slate-600">Kunci</button>
+            </div>
+          )}
+        </div>
+      )}
+    </div>
+  );
+}
+
 export default function AdminApp() {
   const { user, logout } = useAuth();
   const [tab, setTab] = useState("dashboard");
+  const [akreMode, setAkreMode] = useState(false);
   const [open, setOpen] = useState(false);
   const [notif, setNotif] = useState({ items: [], unread: 0 });
   const [showNotif, setShowNotif] = useState(false);
@@ -96,6 +173,7 @@ export default function AdminApp() {
             </div>
           </div>
           <div className="relative flex items-center gap-2">
+            <ModeControl akreMode={akreMode} setAkreMode={setAkreMode} goDashboard={() => setTab("dashboard")} />
             <button data-testid="admin-change-password-btn" onClick={() => setShowPw(true)} title="Ganti Kata Sandi" className="rounded-xl border border-slate-200 p-2 text-slate-600 hover:bg-slate-50">
               <KeyRound className="h-5 w-5" />
             </button>
@@ -119,11 +197,11 @@ export default function AdminApp() {
         </header>
 
         <main className="flex-1 p-4 lg:p-8">
-          {tab === "dashboard" && <Dashboard />}
+          {tab === "dashboard" && (akreMode ? <Akreditasi /> : <Dashboard />)}
           {tab === "prioritas" && <Prioritas onChange={loadNotif} />}
+          {tab === "tindak-lanjut-pustu" && <TindakLanjutPustu />}
           {tab === "keluarga" && <KeluargaAdmin />}
           {tab === "laporan" && <Laporan />}
-          {tab === "akreditasi" && <Akreditasi />}
           {tab === "kader" && <KaderMgmt />}
           {tab === "rekap-kader" && <RekapKader />}
           {tab === "import" && <ImportData />}

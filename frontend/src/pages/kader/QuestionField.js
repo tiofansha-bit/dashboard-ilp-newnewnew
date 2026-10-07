@@ -71,6 +71,22 @@ export default function QuestionField({ q, value, onChange }) {
         </div>
       )}
 
+      {q.jenis === "multi" && (
+        <div className="mt-3 flex flex-wrap gap-2">
+          {(q.opsi || []).map((opt) => {
+            const arr = Array.isArray(value) ? value : [];
+            const active = arr.includes(opt);
+            return (
+              <button key={opt} type="button" data-testid={`${q.kode}-chip`}
+                onClick={() => onChange(active ? arr.filter((x) => x !== opt) : [...arr, opt])}
+                className={`inline-flex items-center gap-1.5 rounded-full border-2 px-3.5 py-2 text-sm font-medium transition-colors ${active ? "border-teal-500 bg-teal-50 text-teal-800" : "border-slate-200 bg-white text-slate-500 hover:border-slate-300"}`}>
+                {active && <Check className="h-4 w-4" />} {opt}
+              </button>
+            );
+          })}
+        </div>
+      )}
+
       {q.jenis === "number" && (
         <div className="mt-3">
           <div className="relative">

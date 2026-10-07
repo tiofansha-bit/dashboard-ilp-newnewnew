@@ -57,3 +57,8 @@ users 31 · wilayah 4 · posyandu 6 · master_questions 135 · keluarga 56 · an
   553 kasus (dewasa/kuning/baru/Selat Hulu) dibangun ulang dari temuan kunjungan karena batas 500 baris API (ID baru). KPI dashboard identik dgn produksi.
 - Snapshot diperbarui (`python backend/snapshot_data.py restore` untuk memulihkan).
 - Password: admin/admin123, kader/kader123 (hash tidak bisa diambil via API).
+
+## Sync dgn kode produksi (2026-06)
+- Frontend: diambil persis dari source map produksi (main.18d6458b.js.map): menu Tindak Lanjut Pustu, Mode switch tersembunyi ber-PIN (Data Asli/Akreditasi), edit Akreditasi dikunci PIN, skrining TBC semua usia di wizard, jenis pertanyaan "multi", laporan Rekap Tindak Lanjut Pustu.
+- Backend: dari branch `conflict_240926_1146` (dashboard-ilp-new) — tindak-lanjut CRUD + sumber, ekspor format baru (header resmi). Ditambahkan sendiri: POST /api/mode/verify-pin & /api/mode/change-pin (tidak ada di repo; perilaku disamakan dgn respons prod). PIN default MODE_PIN=123456.
+- Ekspor CSV lokal vs produksi: isi identik (selisih urutan baris & ±1 menit pada 553 kasus yg dibangun ulang).

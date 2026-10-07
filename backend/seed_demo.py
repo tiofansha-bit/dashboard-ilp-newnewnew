@@ -276,6 +276,18 @@ def _detail_defs():
                 "definisi": "Status imunisasi anak sesuai jadwal usia (0 bulan s.d. 18 bulan).",
                 "jenis": "imunisasi", "jadwal": BALITA_JADWAL, "satuan": None, "opsi": [],
                 "wajib": False, "problem_when": [], "priority": None, "report_required": False, "urutan": 6.1})
+    out.append({"kode": "DEWASA_RIWAYAT_KELUARGA", "group": "dewasa", "section": "ceklis",
+                "text": "Riwayat penyakit keluarga",
+                "definisi": "Riwayat penyakit yang pernah/sedang diderita anggota keluarga (boleh pilih lebih dari satu).",
+                "jenis": "multi", "satuan": None,
+                "opsi": ["Hipertensi", "Diabetes Melitus", "Stroke", "Jantung", "Asma", "Kanker", "Kolesterol Tinggi"],
+                "wajib": False, "problem_when": [], "priority": None, "report_required": False, "urutan": 12.5})
+    out.append({"kode": "DEWASA_KB", "group": "dewasa", "section": "ceklis",
+                "text": "Jenis kontrasepsi yang digunakan",
+                "definisi": "Metode kontrasepsi yang sedang digunakan (khusus perempuan usia subur). Pilih 'Tidak menggunakan' bila tidak memakai KB.",
+                "jenis": "single", "satuan": None,
+                "opsi": ["Tidak menggunakan", "Pil", "Kondom", "Suntik", "Implan/Susuk", "Lainnya"],
+                "wajib": False, "problem_when": [], "priority": None, "report_required": False, "urutan": 12.6})
     return out
 
 
