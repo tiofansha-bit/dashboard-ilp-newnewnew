@@ -607,7 +607,8 @@ async def get_kunjungan(vid: str, user=Depends(get_current_user)):
 async def kader_beranda(user=Depends(get_current_user)):
     wil = user.get("wilayah", [])
     total_kel = await db.keluarga.count_documents({**region_filter(user), "deleted": {"$ne": True}})
-    dikunjungi_ids = await db.kunjungan.distinct("keluarga_id", {"kader_id": user["id"], "status": "terkirim"})
+    own_ids = await db.keluarga.distinct("id", {**region_filter(user), "deleted": {"$ne": True}})
+    dikunjungi_ids = await db.kunjungan.distinct("keluarga_id", {"kader_id": user["id"], "status": "terkirim", "keluarga_id": {"$in": own_ids}})
     masalah = await db.kasus.count_documents({"kader_nama": user["nama"]})
     ditindak = await db.kasus.count_documents({"kader_nama": user["nama"], "status": {"$in": ["selesai", "dirujuk", "sudah_dikunjungi"]}})
     draf = await db.kunjungan.count_documents({"kader_id": user["id"], "status": "draf"})
@@ -697,7 +698,7 @@ async def dashboard_charts(start: str = "", end: str = "", kelurahan: str = "", 
     masalah = Counter()
     async for c in db.kasus.find(cq, {"masalah": 1}):
         masalah[c["masalah"]] += 1
-    top = [{"masalah": m, "jumlah": c} for m, c in masalah.most_common(10)]
+    top = [{"masalah": m, "jumlah": c} for m, c in masalah.most_common(50)]
     # tren bulanan
     tren = defaultdict(int)
     async for v in db.kunjungan.find(vq, {"created_at": 1}):
@@ -813,12 +814,12 @@ async def dashboard_jawaban(start: str = "", end: str = "", kelurahan: str = "",
         if items:
             groups.append({"group": g, "label": KELOMPOK_LABEL.get(g, g), "sasaran": sasaran.get(g, 0),
                            "responden": max(i["responden"] for i in items), "questions": items})
-    flat = [dict(i, group_label=g["label"]) for g in groups for i in g["questions"]
-            if i.get("masalah") and i["responden"] >= 3]
+    flat = [dict(i, group_label=g["label"], group=g["group"]) for g in groups for i in g["questions"]
+            if i.get("masalah")]
     flat.sort(key=lambda i: (i.get("priority") != "merah", -i["persen_masalah"]))
     utama = [{"group_label": i["group_label"], "text": i["text"], "persen": i["persen_masalah"],
               "masalah": i["masalah"], "responden": i["responden"], "priority": i.get("priority") or "kuning",
-              "kesimpulan": i["kesimpulan"]} for i in flat[:10]]
+              "kesimpulan": i["kesimpulan"], "group": i["group"]} for i in flat]
     return {"total_sasaran": len(latest), "kesimpulan_utama": utama, "groups": groups}
 
 @api.get("/dashboard/insights")

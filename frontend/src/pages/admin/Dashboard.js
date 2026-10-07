@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { api } from "@/lib/api";
 import JawabanSummary from "./JawabanSummary";
+import { TopSelect, usePref } from "@/components/TopSelect";
 import DashboardInsights from "./DashboardInsights";
 import {
   BarChart, Bar, LineChart, Line, PieChart, Pie, Cell, XAxis, YAxis, Tooltip, ResponsiveContainer, CartesianGrid,
@@ -23,11 +24,11 @@ function Kpi({ icon: Icon, label, value, suffix, tone }) {
   );
 }
 
-function ChartCard({ title, children }) {
+function ChartCard({ title, children, action, height }) {
   return (
     <div className="rounded-2xl border border-slate-200 bg-white p-5">
-      <p className="mb-4 text-sm font-bold text-slate-800">{title}</p>
-      <div className="h-64">{children}</div>
+      <div className="mb-4 flex items-center justify-between gap-2"><p className="text-sm font-bold text-slate-800">{title}</p>{action}</div>
+      <div className="h-64" style={height ? { height } : undefined}>{children}</div>
     </div>
   );
 }
@@ -37,6 +38,7 @@ export default function Dashboard() {
   const [charts, setCharts] = useState(null);
   const [flt, setFlt] = useState({ start: "", end: "", kelurahan: "" });
   const [view, setView] = useState("ringkasan");
+  const [topN, setTopN] = usePref("dash_top_masalah", 10);
   const [reloadKey, setReloadKey] = useState(0);
 
   const load = () => {
@@ -93,8 +95,9 @@ export default function Dashboard() {
               <ChartCard title="Cakupan per Kelurahan">
                 <ResponsiveContainer><BarChart data={charts.cakupan_kelurahan}><CartesianGrid strokeDasharray="3 3" stroke="#f1f5f9" /><XAxis dataKey="kelurahan" fontSize={11} /><YAxis fontSize={12} /><Tooltip /><Bar dataKey="kunjungan" fill="#14B8A6" radius={[6, 6, 0, 0]} /></BarChart></ResponsiveContainer>
               </ChartCard>
-              <ChartCard title="10 Masalah Terbanyak">
-                <ResponsiveContainer><BarChart layout="vertical" data={charts.top_masalah} margin={{ left: 0 }}><XAxis type="number" fontSize={12} /><YAxis type="category" dataKey="masalah" width={220} fontSize={10} interval={0} tickFormatter={(t) => (t.length > 38 ? t.slice(0, 36) + "…" : t)} /><Tooltip /><Bar dataKey="jumlah" fill="#F59E0B" radius={[0, 6, 6, 0]} /></BarChart></ResponsiveContainer>
+              <ChartCard title={topN ? `${topN} Masalah Terbanyak` : "Semua Masalah"} action={<TopSelect testid="top-masalah-select" value={topN} onChange={setTopN} />}
+                height={Math.max(256, (topN ? Math.min(topN, charts.top_masalah.length) : charts.top_masalah.length) * 24)}>
+                <ResponsiveContainer><BarChart layout="vertical" data={topN ? charts.top_masalah.slice(0, topN) : charts.top_masalah} margin={{ left: 0 }}><XAxis type="number" fontSize={12} /><YAxis type="category" dataKey="masalah" width={220} fontSize={10} interval={0} tickFormatter={(t) => (t.length > 38 ? t.slice(0, 36) + "…" : t)} /><Tooltip /><Bar dataKey="jumlah" fill="#F59E0B" radius={[0, 6, 6, 0]} /></BarChart></ResponsiveContainer>
               </ChartCard>
               <ChartCard title="Distribusi Kelompok Sasaran">
                 <ResponsiveContainer><PieChart><Pie data={charts.distribusi_kelompok} dataKey="jumlah" nameKey="kelompok" innerRadius={50} outerRadius={90} paddingAngle={2}>{charts.distribusi_kelompok.map((e, i) => <Cell key={i} fill={COLORS[i % COLORS.length]} />)}</Pie><Tooltip /></PieChart></ResponsiveContainer>

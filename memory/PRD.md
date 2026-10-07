@@ -62,3 +62,9 @@ users 31 · wilayah 4 · posyandu 6 · master_questions 135 · keluarga 56 · an
 - Frontend: diambil persis dari source map produksi (main.18d6458b.js.map): menu Tindak Lanjut Pustu, Mode switch tersembunyi ber-PIN (Data Asli/Akreditasi), edit Akreditasi dikunci PIN, skrining TBC semua usia di wizard, jenis pertanyaan "multi", laporan Rekap Tindak Lanjut Pustu.
 - Backend: dari branch `conflict_240926_1146` (dashboard-ilp-new) — tindak-lanjut CRUD + sumber, ekspor format baru (header resmi). Ditambahkan sendiri: POST /api/mode/verify-pin & /api/mode/change-pin (tidak ada di repo; perilaku disamakan dgn respons prod). PIN default MODE_PIN=123456.
 - Ekspor CSV lokal vs produksi: isi identik (selisih urutan baris & ±1 menit pada 553 kasus yg dibangun ulang).
+
+## Dashboard jawaban + kepemilikan keluarga (2026-06)
+- Kader hanya melihat/mengubah keluarga yang ia input sendiri (created_by) ATAU yang ditujukan ke dirinya (kader_id). Berlaku utk list, detail, edit, hapus, anggota, kunjungan, beranda, duplicate-check; GET /kunjungan/{id} kader hanya miliknya. Keluarga yg diinput admin tanpa kader (15) tidak tampil di kader mana pun.
+- GET /api/dashboard/jawaban: rekap jawaban kunjungan terakhir per sasaran per pertanyaan (Ya/Tidak/Sudah/Belum/opsi, angka rata2/min/maks, pemeriksaan Sudah/Belum, imunisasi Lengkap/Belum), % bermasalah, kalimat kesimpulan, top-10 "Kesimpulan Utama". Pertanyaan bersyarat (Jika HT/DM/TBC, Khusus remaja putri, Khusus ≥15 th) hanya dihitung utk sasaran yg memenuhi syarat.
+- GET /api/dashboard/insights: prioritas kunjungan, keluarga sudah/belum dikunjungi per kelurahan, kasus per kelurahan (merah/kuning/selesai), kasus per kelompok, kunjungan per posyandu, top 10 kader.
+- Frontend Dashboard: tab "Ringkasan & Grafik" (+6 grafik baru) & "Hasil Jawaban & Kesimpulan" (JawabanSummary.js, DashboardInsights.js).

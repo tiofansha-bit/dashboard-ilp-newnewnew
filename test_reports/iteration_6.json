@@ -1,0 +1,34 @@
+{
+  "summary": "Tested new dashboard features (jawaban/insights endpoints + Ringkasan vs Hasil Jawaban tabs with 6 new charts and kesimpulan utama) plus kader ownership isolation. All 19 backend pytest cases PASS (test_iteration6_dashboard_ownership.py). Frontend admin dashboard verified: both tabs render, all 6 new chart testids present (chart-prioritas-kunjungan, chart-keluarga-kelurahan, chart-kasus-kelurahan, chart-kasus-kelompok, chart-kunjungan-posyandu, chart-top-kader), KPI values 127/136/107.1/481/2520 all shown, kelurahan filter 'Selat Dalam' shrinks numbers correctly (18 sasaran dikunjungi; groups=Balita/Dewasa/Lansia). Jawaban tab displays kesimpulan-utama with 9 items, red (merah) priority item #1 'Napas: sesak/napas cepat/dada tertarik ke dalam 60.0% (3 dari 5) sasaran menjawab \"Ya\" — perlu tindak lanjut.', jawaban-group-* chips switch question list (balita→18 rows, dewasa→8 rows). Conditional-question notes present (e.g. 'Apakah terdiagnosis hipertensi?' and non-problem kesimpulan 'Dari 12 sasaran: Tidak 12 (100.0%).'). Kader11 mobile Beranda shows '14 Keluarga di wilayah' and '15 Sudah dikunjungi'. Backend tests confirm: kader11 sees 14 keluarga, kader12 and kader13 each see 0, admin sees 127, cross-kader GET/PUT/DELETE/anggota/kunjungan all return 404, and a family created by kader12 (Selat Hulu) is visible only to kader12 (not kader11). Test family created and successfully deleted — no residual test data.",
+  "backend_issues": {"critical": [], "minor": []},
+  "frontend_issues": {
+    "ui_bugs": [],
+    "integration_issues": [],
+    "design_issues": [
+      {"screen": "Dashboard — '10 Masalah Terbanyak' chart", "issues": ["Labels are truncated at 36 chars with ellipsis and width=220 — readable; no overlap observed."]}
+    ]
+  },
+  "test_report_links": [
+    "/app/backend/tests/test_iteration6_dashboard_ownership.py",
+    "/app/test_reports/pytest/iter6.xml"
+  ],
+  "action_items": [],
+  "critical_code_review_comments": [
+    "server.py `region_filter` (line 379-384) correctly isolates kader to {kader_id: self} OR {created_by: self, kader_id empty}. owns_keluarga/get_owned_keluarga enforce the same on single-resource endpoints — ownership logic is consistent across GET/PUT/DELETE/anggota/kunjungan.",
+    "dashboard_jawaban (line 790) uses `visit_query` with status in [terkirim, selesai] + takes latest per anggota (sort ascending so later overwrites prior) — correct 'kunjungan terakhir' semantics. Conditional predicates in `question_condition` cover HT_OBAT/DM_OBAT/TBC_OBAT/REMAJA_TTD/REMAJA_ANEMIA/REMAJA_TD/REMAJA_GD; verified DEWASA_HT_OBAT_MINUM filters to <50 responders.",
+    "server.py now 1764 lines — recommended to split (dashboard/, kasus/, admin/) in a future refactor; not blocking.",
+    "No MongoDB `_id` leaks (all queries use projection {_id:0}).",
+    "Minor: `GET /api/keluarga/duplicate-check` applies `region_filter` but query already has nama regex at top level and then `q.update(region_filter(user))` which can accidentally overwrite the top-level `$or` filter in region_filter (only one `$or` key allowed). Low impact since kaders mostly use this before creation and admin returns {} — but could silently misbehave for kader. Suggest wrapping with `$and`.",
+    "Login response uses `access_token` key (not `token`) — docs/tests should reference it; previous tests already use it."
+  ],
+  "updated_files": [
+    "/app/backend/tests/test_iteration6_dashboard_ownership.py (new, 19 tests)"
+  ],
+  "success_rate": {"backend": "100% (19/19)", "frontend": "100% on admin dashboard + kader11 Beranda smoke"},
+  "test_credentials": "admin/admin123, kader11..13/kader123, Mode PIN 123456",
+  "seed_data_creation": "One test family 'TEST_OWN_K12' briefly created by kader12 in Selat Hulu then deleted by same test. No persistent test data remains. Mode PIN unchanged.",
+  "retest_needed": false,
+  "main_agent_can_self_test": true,
+  "context_for_next_testing_agent": "Login endpoint returns `access_token` (NOT `token`). Frontend testids: dashboard-tab-ringkasan, dashboard-tab-jawaban, filter-start, filter-end, filter-kelurahan, apply-filter, kesimpulan-utama, kesimpulan-item-{0..9}, jawaban-group-{balita|dewasa|lansia|remaja|ibu_hamil|lansia|tbc}, jawaban-row-{KODE}, chart-prioritas-kunjungan/keluarga-kelurahan/kasus-kelurahan/kasus-kelompok/kunjungan-posyandu/top-kader. Admin dashboard JAWABAN endpoint only emits groups with responden>0 (so TBC/Remaja/Ibu Hamil groups may be absent if no visit has those answers — this is correct). region_filter for kader: {kader_id: self} OR {created_by: self AND kader_id empty}.",
+  "rca of the issue": "N/A — all features behave to spec."
+}

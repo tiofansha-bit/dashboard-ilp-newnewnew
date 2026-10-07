@@ -1,15 +1,49 @@
 import { useEffect, useState } from "react";
 import { api } from "@/lib/api";
 import { Loader2, AlertTriangle, Lightbulb, Info } from "lucide-react";
+import { TopSelect, usePref } from "@/components/TopSelect";
 
 const tone = (p) => (p === "merah" ? "border-rose-200 bg-rose-50 text-rose-700" : "border-amber-200 bg-amber-50 text-amber-700");
 const barColor = (masalah, i) => (masalah ? ["#F43F5E", "#FB923C", "#F59E0B"][i % 3] : ["#0D9488", "#14B8A6", "#0EA5E9", "#64748B"][i % 4]);
 
-function KesimpulanUtama({ items }) {
+const SEL = "rounded-lg border border-slate-200 px-2 py-1 text-xs font-semibold text-slate-600";
+
+function KesimpulanUtama({ all, groups }) {
+  const [topN, setTopN] = usePref("kesimpulan_top", 10);
+  const [grp, setGrp] = usePref("kesimpulan_group", "");
+  const [prio, setPrio] = usePref("kesimpulan_prio", "");
+  const [sort, setSort] = usePref("kesimpulan_sort", "bahaya");
+  const [minR, setMinR] = usePref("kesimpulan_min", 3);
+  let items = all.filter((i) => (!grp || i.group === grp) && (!prio || i.priority === prio) && i.responden >= minR);
+  const by = { persen: (a, b) => b.persen - a.persen, jumlah: (a, b) => b.masalah - a.masalah,
+    bahaya: (a, b) => (a.priority === "merah") === (b.priority === "merah") ? b.persen - a.persen : a.priority === "merah" ? -1 : 1 };
+  items = [...items].sort(by[sort]);
+  const total = items.length;
+  if (topN) items = items.slice(0, topN);
   return (
     <div data-testid="kesimpulan-utama" className="rounded-2xl border border-slate-200 bg-white p-5">
-      <p className="mb-1 flex items-center gap-2 text-sm font-bold text-slate-800"><Lightbulb className="h-4 w-4 text-amber-500" /> Kesimpulan Utama Masalah Kesehatan</p>
-      <p className="mb-4 text-xs text-slate-500">Diurutkan dari tanda bahaya, lalu persentase sasaran bermasalah tertinggi (berdasarkan jawaban kunjungan terakhir tiap sasaran).</p>
+      <div className="mb-4 flex flex-wrap items-start justify-between gap-3">
+        <div>
+          <p className="mb-1 flex items-center gap-2 text-sm font-bold text-slate-800"><Lightbulb className="h-4 w-4 text-amber-500" /> {topN ? `${topN} ` : ""}Masalah Kesehatan Utama</p>
+          <p className="text-xs text-slate-500">Menampilkan {items.length} dari {total} masalah · berdasarkan jawaban kunjungan terakhir tiap sasaran.</p>
+        </div>
+        <div className="flex flex-wrap items-center gap-2">
+          <TopSelect testid="kesimpulan-top-select" value={topN} onChange={setTopN} />
+          <select data-testid="kesimpulan-group-select" value={grp} onChange={(e) => setGrp(e.target.value)} className={SEL}>
+            <option value="">Semua kelompok</option>
+            {groups.map((g) => <option key={g.group} value={g.group}>{g.label}</option>)}
+          </select>
+          <select data-testid="kesimpulan-prio-select" value={prio} onChange={(e) => setPrio(e.target.value)} className={SEL}>
+            <option value="">Semua prioritas</option><option value="merah">Merah (tanda bahaya)</option><option value="kuning">Kuning</option>
+          </select>
+          <select data-testid="kesimpulan-sort-select" value={sort} onChange={(e) => setSort(e.target.value)} className={SEL}>
+            <option value="bahaya">Urut: tanda bahaya dulu</option><option value="persen">Urut: % tertinggi</option><option value="jumlah">Urut: jumlah sasaran</option>
+          </select>
+          <select data-testid="kesimpulan-min-select" value={minR} onChange={(e) => setMinR(Number(e.target.value))} className={SEL}>
+            {[1, 3, 5, 10, 20].map((n) => <option key={n} value={n}>Min. {n} responden</option>)}
+          </select>
+        </div>
+      </div>
       {items.length === 0 ? <p className="text-sm text-slate-400">Belum ada masalah terdeteksi.</p> : (
         <ol className="space-y-2">
           {items.map((it, i) => (
@@ -76,7 +110,7 @@ export default function JawabanSummary({ flt, reloadKey }) {
   const g = data.groups.find((x) => x.group === group) || data.groups[0];
   return (
     <div className="space-y-5">
-      <KesimpulanUtama items={data.kesimpulan_utama} />
+      <KesimpulanUtama all={data.kesimpulan_utama} groups={data.groups} />
       <div className="rounded-2xl border border-slate-200 bg-white p-5">
         <p className="mb-3 text-sm font-bold text-slate-800">Rekap Jawaban per Kelompok Sasaran <span className="font-normal text-slate-400">({data.total_sasaran} sasaran dikunjungi)</span></p>
         <div className="mb-4 flex flex-wrap gap-2">
