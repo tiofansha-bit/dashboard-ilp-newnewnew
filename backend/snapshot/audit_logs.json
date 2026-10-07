@@ -2038,5 +2038,505 @@
   "entitas_id": "",
   "detail": "csv -",
   "waktu": "2026-10-07T04:54:44.138094+00:00"
+ },
+ {
+  "id": "54fb24ea-7514-4411-9db8-17899962580e",
+  "user_id": "83d32e19-a6e5-4d2f-87e2-93a12609b88f",
+  "user_nama": "Petugas Puskesmas Melati",
+  "aksi": "update",
+  "entitas": "mode_pin",
+  "entitas_id": "",
+  "detail": "ganti PIN mode",
+  "waktu": "2026-10-07T04:58:16.934787+00:00"
+ },
+ {
+  "id": "537064f0-d719-4fb8-8c4d-e970364ff75e",
+  "user_id": "83d32e19-a6e5-4d2f-87e2-93a12609b88f",
+  "user_nama": "Petugas Puskesmas Melati",
+  "aksi": "update",
+  "entitas": "mode_pin",
+  "entitas_id": "",
+  "detail": "ganti PIN mode",
+  "waktu": "2026-10-07T04:58:17.991670+00:00"
+ },
+ {
+  "id": "4a2a53a4-65b3-4f85-84ed-029ba97b67b9",
+  "user_id": "83d32e19-a6e5-4d2f-87e2-93a12609b88f",
+  "user_nama": "Petugas Puskesmas Melati",
+  "aksi": "export",
+  "entitas": "kasus",
+  "entitas_id": "",
+  "detail": "csv -",
+  "waktu": "2026-10-07T04:58:18.152030+00:00"
+ },
+ {
+  "id": "0eb66b01-9061-4d41-be0e-ba353a6e7ff9",
+  "user_id": "83d32e19-a6e5-4d2f-87e2-93a12609b88f",
+  "user_nama": "Petugas Puskesmas Melati",
+  "aksi": "export",
+  "entitas": "keluarga",
+  "entitas_id": "",
+  "detail": "csv -",
+  "waktu": "2026-10-07T04:58:19.295079+00:00"
+ },
+ {
+  "id": "3bd5fe14-1d1c-4837-8d07-de5beb114d40",
+  "user_id": "83d32e19-a6e5-4d2f-87e2-93a12609b88f",
+  "user_nama": "Petugas Puskesmas Melati",
+  "aksi": "export",
+  "entitas": "kunjungan",
+  "entitas_id": "",
+  "detail": "csv -",
+  "waktu": "2026-10-07T04:58:19.473904+00:00"
+ },
+ {
+  "id": "9a77c8f3-8fb5-49b1-9662-35606036890d",
+  "user_id": "83d32e19-a6e5-4d2f-87e2-93a12609b88f",
+  "user_nama": "Petugas Puskesmas Melati",
+  "aksi": "export",
+  "entitas": "tindak_lanjut",
+  "entitas_id": "",
+  "detail": "csv -",
+  "waktu": "2026-10-07T04:58:19.646049+00:00"
+ },
+ {
+  "id": "166c3118-aef4-4aae-82cf-30422ebb4c1b",
+  "user_id": "83d32e19-a6e5-4d2f-87e2-93a12609b88f",
+  "user_nama": "Petugas Puskesmas Melati",
+  "aksi": "export",
+  "entitas": "kasus",
+  "entitas_id": "",
+  "detail": "excel -",
+  "waktu": "2026-10-07T04:58:19.770066+00:00"
+ },
+ {
+  "id": "ac53d269-fbaa-4108-8ed0-f0c1226e7216",
+  "user_id": "83d32e19-a6e5-4d2f-87e2-93a12609b88f",
+  "user_nama": "Petugas Puskesmas Melati",
+  "aksi": "export",
+  "entitas": "keluarga",
+  "entitas_id": "",
+  "detail": "excel -",
+  "waktu": "2026-10-07T04:58:22.088720+00:00"
+ },
+ {
+  "id": "69783fc8-25a6-43e4-a7d8-ecc3c06d24b1",
+  "user_id": "83d32e19-a6e5-4d2f-87e2-93a12609b88f",
+  "user_nama": "Petugas Puskesmas Melati",
+  "aksi": "export",
+  "entitas": "kunjungan",
+  "entitas_id": "",
+  "detail": "pdf -",
+  "waktu": "2026-10-07T04:58:22.282793+00:00"
+ },
+ {
+  "id": "b84f7a9d-804d-4b52-a946-d8e0715411c6",
+  "user_id": "83d32e19-a6e5-4d2f-87e2-93a12609b88f",
+  "user_nama": "Petugas Puskesmas Melati",
+  "aksi": "export",
+  "entitas": "tindak_lanjut",
+  "entitas_id": "",
+  "detail": "pdf -",
+  "waktu": "2026-10-07T04:58:22.880217+00:00"
+ },
+ {
+  "id": "5bdc084c-62ce-4bc9-af7f-e74ac915688f",
+  "user_id": "20666066-11c0-4774-a702-18464f9244b8",
+  "user_nama": "Norlisa",
+  "aksi": "create",
+  "entitas": "keluarga",
+  "entitas_id": "9503db00-9f53-4912-bad4-3ccb0552be08",
+  "detail": "TEST_OWN_K12",
+  "waktu": "2026-10-07T05:12:40.149557+00:00"
+ },
+ {
+  "id": "37a01b9b-9316-4484-8068-d4bbbef658b8",
+  "user_id": "20666066-11c0-4774-a702-18464f9244b8",
+  "user_nama": "Norlisa",
+  "aksi": "delete",
+  "entitas": "keluarga",
+  "entitas_id": "9503db00-9f53-4912-bad4-3ccb0552be08",
+  "detail": "TEST_OWN_K12",
+  "waktu": "2026-10-07T05:12:40.468802+00:00"
+ },
+ {
+  "id": "e0258928-8b2e-424e-9879-cb5441ece3e3",
+  "user_id": "83d32e19-a6e5-4d2f-87e2-93a12609b88f",
+  "user_nama": "Petugas Puskesmas Melati",
+  "aksi": "export",
+  "entitas": "kasus",
+  "entitas_id": "",
+  "detail": "pdf -",
+  "waktu": "2026-10-07T05:23:24.524933+00:00"
+ },
+ {
+  "id": "d66902cc-2049-4bf8-9632-eb03460a6842",
+  "user_id": "83d32e19-a6e5-4d2f-87e2-93a12609b88f",
+  "user_nama": "Petugas Puskesmas Melati",
+  "aksi": "export",
+  "entitas": "masalah_sasaran",
+  "entitas_id": "",
+  "detail": "csv -",
+  "waktu": "2026-10-07T05:27:35.181909+00:00"
+ },
+ {
+  "id": "128fea65-e2df-40ad-a1a1-f5f1f5e49702",
+  "user_id": "83d32e19-a6e5-4d2f-87e2-93a12609b88f",
+  "user_nama": "Petugas Puskesmas Melati",
+  "aksi": "export",
+  "entitas": "masalah_sasaran",
+  "entitas_id": "",
+  "detail": "excel -",
+  "waktu": "2026-10-07T05:27:35.404759+00:00"
+ },
+ {
+  "id": "651ef12b-f914-4d57-a5e7-903aef16016c",
+  "user_id": "83d32e19-a6e5-4d2f-87e2-93a12609b88f",
+  "user_nama": "Petugas Puskesmas Melati",
+  "aksi": "export",
+  "entitas": "masalah_sasaran",
+  "entitas_id": "",
+  "detail": "pdf -",
+  "waktu": "2026-10-07T05:27:36.227426+00:00"
+ },
+ {
+  "id": "ccac1d6d-39d3-4036-9f8e-465f7d697e7e",
+  "user_id": "83d32e19-a6e5-4d2f-87e2-93a12609b88f",
+  "user_nama": "Petugas Puskesmas Melati",
+  "aksi": "export",
+  "entitas": "masalah_kolektif",
+  "entitas_id": "",
+  "detail": "csv -",
+  "waktu": "2026-10-07T05:27:37.753317+00:00"
+ },
+ {
+  "id": "ff1e1a4c-ab9d-4411-964a-cb82d35854c2",
+  "user_id": "83d32e19-a6e5-4d2f-87e2-93a12609b88f",
+  "user_nama": "Petugas Puskesmas Melati",
+  "aksi": "export",
+  "entitas": "masalah_kolektif",
+  "entitas_id": "",
+  "detail": "excel -",
+  "waktu": "2026-10-07T05:27:37.799490+00:00"
+ },
+ {
+  "id": "2bbc6015-cdcd-476f-9419-c2ec5dff73fd",
+  "user_id": "83d32e19-a6e5-4d2f-87e2-93a12609b88f",
+  "user_nama": "Petugas Puskesmas Melati",
+  "aksi": "export",
+  "entitas": "masalah_kolektif",
+  "entitas_id": "",
+  "detail": "pdf -",
+  "waktu": "2026-10-07T05:27:37.868894+00:00"
+ },
+ {
+  "id": "84d0ba7e-4899-4fc8-af46-65a5241b3361",
+  "user_id": "83d32e19-a6e5-4d2f-87e2-93a12609b88f",
+  "user_nama": "Petugas Puskesmas Melati",
+  "aksi": "export",
+  "entitas": "kasus",
+  "entitas_id": "",
+  "detail": "csv -",
+  "waktu": "2026-10-07T05:27:37.958858+00:00"
+ },
+ {
+  "id": "ca461cb7-6215-42eb-a564-2d3f65f02f9e",
+  "user_id": "83d32e19-a6e5-4d2f-87e2-93a12609b88f",
+  "user_nama": "Petugas Puskesmas Melati",
+  "aksi": "export",
+  "entitas": "kasus",
+  "entitas_id": "",
+  "detail": "excel -",
+  "waktu": "2026-10-07T05:27:38.268660+00:00"
+ },
+ {
+  "id": "6ea3b0f8-4322-4fd5-9c67-9af230b959d9",
+  "user_id": "83d32e19-a6e5-4d2f-87e2-93a12609b88f",
+  "user_nama": "Petugas Puskesmas Melati",
+  "aksi": "export",
+  "entitas": "kasus",
+  "entitas_id": "",
+  "detail": "pdf -",
+  "waktu": "2026-10-07T05:27:39.788218+00:00"
+ },
+ {
+  "id": "ba567d99-2fe7-4972-90b5-fe6d03aa6d80",
+  "user_id": "83d32e19-a6e5-4d2f-87e2-93a12609b88f",
+  "user_nama": "Petugas Puskesmas Melati",
+  "aksi": "export",
+  "entitas": "masalah_sasaran",
+  "entitas_id": "",
+  "detail": "pdf -",
+  "waktu": "2026-10-07T05:27:56.498393+00:00"
+ },
+ {
+  "id": "ce3b68fd-5087-4908-97f5-972a2c5f8310",
+  "user_id": "83d32e19-a6e5-4d2f-87e2-93a12609b88f",
+  "user_nama": "Petugas Puskesmas Melati",
+  "aksi": "export",
+  "entitas": "masalah_kolektif",
+  "entitas_id": "",
+  "detail": "pdf -",
+  "waktu": "2026-10-07T05:27:57.964444+00:00"
+ },
+ {
+  "id": "21ddab2f-0f85-4750-a43f-35f42d101d9b",
+  "user_id": "83d32e19-a6e5-4d2f-87e2-93a12609b88f",
+  "user_nama": "Petugas Puskesmas Melati",
+  "aksi": "export",
+  "entitas": "masalah_sasaran",
+  "entitas_id": "",
+  "detail": "pdf - Selat Dalam",
+  "waktu": "2026-10-07T05:28:32.855294+00:00"
+ },
+ {
+  "id": "6cdb1ee3-ccbd-4747-a345-6e3a9a7f2c71",
+  "user_id": "83d32e19-a6e5-4d2f-87e2-93a12609b88f",
+  "user_nama": "Petugas Puskesmas Melati",
+  "aksi": "export",
+  "entitas": "masalah_sasaran",
+  "entitas_id": "",
+  "detail": "csv -",
+  "waktu": "2026-10-07T05:32:02.273467+00:00"
+ },
+ {
+  "id": "fa426160-1b39-468b-9dc1-142e3b65b545",
+  "user_id": "83d32e19-a6e5-4d2f-87e2-93a12609b88f",
+  "user_nama": "Petugas Puskesmas Melati",
+  "aksi": "export",
+  "entitas": "masalah_kolektif",
+  "entitas_id": "",
+  "detail": "csv -",
+  "waktu": "2026-10-07T05:32:02.620190+00:00"
+ },
+ {
+  "id": "17b4ceb3-868a-445f-aa52-27f3730eb69b",
+  "user_id": "83d32e19-a6e5-4d2f-87e2-93a12609b88f",
+  "user_nama": "Petugas Puskesmas Melati",
+  "aksi": "export",
+  "entitas": "kasus",
+  "entitas_id": "",
+  "detail": "csv -",
+  "waktu": "2026-10-07T05:32:02.742007+00:00"
+ },
+ {
+  "id": "420032c8-9b2f-4c79-a4ee-1a3573b03082",
+  "user_id": "83d32e19-a6e5-4d2f-87e2-93a12609b88f",
+  "user_nama": "Petugas Puskesmas Melati",
+  "aksi": "update",
+  "entitas": "laporan_settings",
+  "entitas_id": "",
+  "detail": "kop & tanda tangan laporan",
+  "waktu": "2026-10-07T05:32:02.985414+00:00"
+ },
+ {
+  "id": "4bf23322-52e0-45f0-bf0b-1d5d497e51d2",
+  "user_id": "83d32e19-a6e5-4d2f-87e2-93a12609b88f",
+  "user_nama": "Petugas Puskesmas Melati",
+  "aksi": "export",
+  "entitas": "masalah_kolektif",
+  "entitas_id": "",
+  "detail": "csv -",
+  "waktu": "2026-10-07T05:32:03.099024+00:00"
+ },
+ {
+  "id": "960dced2-c6e2-4ce2-844b-a1d52162354c",
+  "user_id": "83d32e19-a6e5-4d2f-87e2-93a12609b88f",
+  "user_nama": "Petugas Puskesmas Melati",
+  "aksi": "export",
+  "entitas": "kunjungan",
+  "entitas_id": "",
+  "detail": "csv -",
+  "waktu": "2026-10-07T05:32:03.105329+00:00"
+ },
+ {
+  "id": "53439d83-3e5f-4619-944e-f6891800ce28",
+  "user_id": "83d32e19-a6e5-4d2f-87e2-93a12609b88f",
+  "user_nama": "Petugas Puskesmas Melati",
+  "aksi": "export",
+  "entitas": "masalah_kolektif",
+  "entitas_id": "",
+  "detail": "pdf -",
+  "waktu": "2026-10-07T05:32:03.168554+00:00"
+ },
+ {
+  "id": "69637b96-7f2e-444f-be9f-444a0b0495af",
+  "user_id": "83d32e19-a6e5-4d2f-87e2-93a12609b88f",
+  "user_nama": "Petugas Puskesmas Melati",
+  "aksi": "export",
+  "entitas": "keluarga",
+  "entitas_id": "",
+  "detail": "csv -",
+  "waktu": "2026-10-07T05:32:03.709461+00:00"
+ },
+ {
+  "id": "691d9119-b620-4303-86a5-7c4aa7a4a4b9",
+  "user_id": "83d32e19-a6e5-4d2f-87e2-93a12609b88f",
+  "user_nama": "Petugas Puskesmas Melati",
+  "aksi": "export",
+  "entitas": "tindak_lanjut",
+  "entitas_id": "",
+  "detail": "csv -",
+  "waktu": "2026-10-07T05:32:03.747518+00:00"
+ },
+ {
+  "id": "048ea1fd-1e35-4efa-8558-f2d2fab9cf3e",
+  "user_id": "83d32e19-a6e5-4d2f-87e2-93a12609b88f",
+  "user_nama": "Petugas Puskesmas Melati",
+  "aksi": "export",
+  "entitas": "masalah_sasaran",
+  "entitas_id": "",
+  "detail": "excel -",
+  "waktu": "2026-10-07T05:32:03.863681+00:00"
+ },
+ {
+  "id": "bdd4e201-72e0-47a7-befa-d42efd537777",
+  "user_id": "83d32e19-a6e5-4d2f-87e2-93a12609b88f",
+  "user_nama": "Petugas Puskesmas Melati",
+  "aksi": "update",
+  "entitas": "laporan_settings",
+  "entitas_id": "",
+  "detail": "kop & tanda tangan laporan",
+  "waktu": "2026-10-07T05:32:04.368454+00:00"
+ },
+ {
+  "id": "210c8490-c6bd-4533-a730-85b3f09f0553",
+  "user_id": "83d32e19-a6e5-4d2f-87e2-93a12609b88f",
+  "user_nama": "Petugas Puskesmas Melati",
+  "aksi": "export",
+  "entitas": "masalah_kolektif",
+  "entitas_id": "",
+  "detail": "excel -",
+  "waktu": "2026-10-07T05:32:04.447832+00:00"
+ },
+ {
+  "id": "088be7a1-d2d9-4bd6-94b8-da9142e36d01",
+  "user_id": "83d32e19-a6e5-4d2f-87e2-93a12609b88f",
+  "user_nama": "Petugas Puskesmas Melati",
+  "aksi": "export",
+  "entitas": "kasus",
+  "entitas_id": "",
+  "detail": "excel -",
+  "waktu": "2026-10-07T05:32:04.522800+00:00"
+ },
+ {
+  "id": "41ac0dd2-d2d3-43d8-9ea8-99ecbd7edb8e",
+  "user_id": "83d32e19-a6e5-4d2f-87e2-93a12609b88f",
+  "user_nama": "Petugas Puskesmas Melati",
+  "aksi": "export",
+  "entitas": "kunjungan",
+  "entitas_id": "",
+  "detail": "excel -",
+  "waktu": "2026-10-07T05:32:06.063670+00:00"
+ },
+ {
+  "id": "31f1b4a4-7652-4a68-877f-687561041854",
+  "user_id": "83d32e19-a6e5-4d2f-87e2-93a12609b88f",
+  "user_nama": "Petugas Puskesmas Melati",
+  "aksi": "export",
+  "entitas": "keluarga",
+  "entitas_id": "",
+  "detail": "excel -",
+  "waktu": "2026-10-07T05:32:06.172061+00:00"
+ },
+ {
+  "id": "9c280cb3-bc69-4130-a7f9-4da8af69137b",
+  "user_id": "83d32e19-a6e5-4d2f-87e2-93a12609b88f",
+  "user_nama": "Petugas Puskesmas Melati",
+  "aksi": "export",
+  "entitas": "tindak_lanjut",
+  "entitas_id": "",
+  "detail": "excel -",
+  "waktu": "2026-10-07T05:32:06.309080+00:00"
+ },
+ {
+  "id": "bf5430d2-b4b1-41b1-909e-03023d7eb8b8",
+  "user_id": "83d32e19-a6e5-4d2f-87e2-93a12609b88f",
+  "user_nama": "Petugas Puskesmas Melati",
+  "aksi": "export",
+  "entitas": "masalah_sasaran",
+  "entitas_id": "",
+  "detail": "pdf -",
+  "waktu": "2026-10-07T05:32:06.394142+00:00"
+ },
+ {
+  "id": "bc36e281-ce13-467a-9be4-2a1a67240f2e",
+  "user_id": "83d32e19-a6e5-4d2f-87e2-93a12609b88f",
+  "user_nama": "Petugas Puskesmas Melati",
+  "aksi": "export",
+  "entitas": "masalah_kolektif",
+  "entitas_id": "",
+  "detail": "pdf -",
+  "waktu": "2026-10-07T05:32:07.535248+00:00"
+ },
+ {
+  "id": "500da49c-12d0-4f1c-bb78-74fbc46658ca",
+  "user_id": "83d32e19-a6e5-4d2f-87e2-93a12609b88f",
+  "user_nama": "Petugas Puskesmas Melati",
+  "aksi": "export",
+  "entitas": "kasus",
+  "entitas_id": "",
+  "detail": "pdf -",
+  "waktu": "2026-10-07T05:32:07.626931+00:00"
+ },
+ {
+  "id": "509b32d0-041c-4371-a60e-8d21daca8a3b",
+  "user_id": "83d32e19-a6e5-4d2f-87e2-93a12609b88f",
+  "user_nama": "Petugas Puskesmas Melati",
+  "aksi": "export",
+  "entitas": "kunjungan",
+  "entitas_id": "",
+  "detail": "pdf -",
+  "waktu": "2026-10-07T05:32:10.741836+00:00"
+ },
+ {
+  "id": "23404533-d10c-4146-bddd-549429b450d0",
+  "user_id": "83d32e19-a6e5-4d2f-87e2-93a12609b88f",
+  "user_nama": "Petugas Puskesmas Melati",
+  "aksi": "export",
+  "entitas": "keluarga",
+  "entitas_id": "",
+  "detail": "pdf -",
+  "waktu": "2026-10-07T05:32:10.884173+00:00"
+ },
+ {
+  "id": "4c00bad0-b31f-4a0f-b624-2b8d5b5299dc",
+  "user_id": "83d32e19-a6e5-4d2f-87e2-93a12609b88f",
+  "user_nama": "Petugas Puskesmas Melati",
+  "aksi": "export",
+  "entitas": "tindak_lanjut",
+  "entitas_id": "",
+  "detail": "pdf -",
+  "waktu": "2026-10-07T05:32:11.020075+00:00"
+ },
+ {
+  "id": "d7faf5e8-a5f4-4089-a177-4d7e5e33b7f1",
+  "user_id": "83d32e19-a6e5-4d2f-87e2-93a12609b88f",
+  "user_nama": "Petugas Puskesmas Melati",
+  "aksi": "export",
+  "entitas": "masalah_sasaran",
+  "entitas_id": "",
+  "detail": "csv -",
+  "waktu": "2026-10-07T05:36:05.415600+00:00"
+ },
+ {
+  "id": "848c3616-a07c-48b8-9f60-394ba30ee7e4",
+  "user_id": "83d32e19-a6e5-4d2f-87e2-93a12609b88f",
+  "user_nama": "Petugas Puskesmas Melati",
+  "aksi": "export",
+  "entitas": "masalah_kolektif",
+  "entitas_id": "",
+  "detail": "pdf -",
+  "waktu": "2026-10-07T05:36:05.697605+00:00"
+ },
+ {
+  "id": "d7c4ad8f-03d3-49fa-a45a-f5f7be7c3384",
+  "user_id": "83d32e19-a6e5-4d2f-87e2-93a12609b88f",
+  "user_nama": "Petugas Puskesmas Melati",
+  "aksi": "export",
+  "entitas": "masalah_sasaran",
+  "entitas_id": "",
+  "detail": "excel -",
+  "waktu": "2026-10-07T05:36:05.965055+00:00"
  }
 ]
